@@ -11,6 +11,7 @@ import { ContactUsComponent } from "./components/contact-us/contact-us.component
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
+  title = "The-Girls-Room"
   @ViewChild('navbar') navbarRef!: ElementRef<HTMLDivElement>;
   isSticky = false;
   navHeight = 80;
