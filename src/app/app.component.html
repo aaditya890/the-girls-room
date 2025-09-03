@@ -1,1 +1,230 @@
-<h1>Hello</h1>
+<div class="w-full bg-black text-white text-[13px] leading-none">
+    <div class="mx-auto max-w-7xl px-4">
+        <div class="flex items-center justify-between h-8">
+            <span class="opacity-80">+123 4567 8900</span>
+            <span class="opacity-80">Free shipping on orders over $50</span>
+            <button aria-label="Search" class="opacity-80 hover:opacity-100 transition">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="m21 21-4.35-4.35M10 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16z" />
+                </svg>
+            </button>
+        </div>
+    </div>
+</div>
+
+<nav #navbar class="left-0 right-0 z-40 transition-colors duration-300"
+    [ngClass]="isSticky ? 'fixed bg-white/95 shadow-sm backdrop-blur supports-[backdrop-filter]:bg-white/85' : 'absolute bg-transparent'"
+    [style.top.px]="isSticky ? 0 : topbarHeight">
+    <div class="mx-auto max-w-7xl px-6">
+        <div class="flex h-20 items-center justify-between">
+            <ul class="hidden md:flex items-center gap-10 text-sm tracking-[0.22em] font-medium"
+                [ngClass]="isSticky ? 'text-black' : 'text-white'">
+                <li>
+                    <a href="#" class="relative pb-1"
+                        [ngClass]="isSticky ? 'hover:text-neutral-800' : 'hover:text-white/80'">
+                        HOME
+                        <span class="absolute left-0 -bottom-0.5 h-0.5 w-8"
+                            [ngClass]="isSticky ? 'bg-rose-400' : 'bg-white'"></span>
+                    </a>
+                </li>
+                <li><a href="#" [ngClass]="isSticky ? 'hover:text-neutral-800' : 'hover:text-white/80'">PRICING</a></li>
+                <li><a href="#" [ngClass]="isSticky ? 'hover:text-neutral-800' : 'hover:text-white/80'">SERVICE</a></li>
+            </ul>
+
+            <a aria-label="Home" class="text-3xl md:text-4xl font-semibold select-none"
+                [ngClass]="isSticky ? 'text-black' : 'text-white'">PASS<span class="tracking-tight">/</span>M</a>
+
+            <div class="flex items-center gap-6">
+                <ul class="hidden md:flex items-center gap-10 text-sm tracking-[0.22em] font-medium"
+                    [ngClass]="isSticky ? 'text-black' : 'text-white'">
+                    <li><a href="#" [ngClass]="isSticky ? 'hover:text-neutral-800' : 'hover:text-white/80'">ABOUT</a>
+                    </li>
+                    <li><a href="#" [ngClass]="isSticky ? 'hover:text-neutral-800' : 'hover:text-white/80'">CONTACT</a>
+                    </li>
+                </ul>
+                <div class="flex items-center gap-5" [ngClass]="isSticky ? 'text-black' : 'text-white'">
+                    <button aria-label="Search" class="hover:opacity-80 transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="m21 21-4.35-4.35M10 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16z" />
+                        </svg>
+                    </button>
+                    <button aria-label="Cart" class="relative hover:opacity-80 transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor">
+                            <path stroke-width="2" d="M6 6h15l-1.5 9h-12zM8 6l.9-2h6.2l.9 2" />
+                            <circle cx="9" cy="19" r="1.5" />
+                            <circle cx="18" cy="19" r="1.5" />
+                        </svg>
+                        <span
+                            class="absolute -top-1 -right-1 h-4 w-4 rounded-full bg-red-500 text-white text-[10px] leading-4 text-center">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div *ngIf="isSticky" [style.height.px]="navHeight"></div>
+
+<section class="relative min-h-[78vh] md:min-h-[88vh] flex items-center"
+    [style.backgroundImage]="'url(' + heroUrl + ')'" style="background-size: cover; background-position: center;">
+    <div class="absolute inset-0 bg-black/30"></div>
+    <div class="relative mx-auto max-w-7xl px-6 py-24 md:py-32">
+        <!-- <h1 class="text-white text-5xl md:text-7xl font-semibold leading-tight max-w-3xl">FACE YOUR SKIN WITH US</h1> -->
+        <!-- <p class="mt-4 text-white/80 italic">Maecenas ligula cursus quam non nulla</p> -->
+    </div>
+</section>
+
+<section class="py-20">
+    <div class="mx-auto max-w-7xl px-6">
+        <div class="grid lg:grid-cols-[1.1fr,0.9fr] gap-12 items-center">
+            <div>
+                <h2 class="text-3xl md:text-5xl font-semibold tracking-wide">HELLO NEW YOU REFRESHING</h2>
+                <p class="mt-2 italic text-neutral-500">With 30-minute premium treat</p>
+                <p class="mt-6 text-neutral-700 leading-relaxed max-w-xl">Phasellus faucibus vehicula rutrum in ante
+                    ligula vel arcu quis lacinia posuere metus eget ligula ipsum maximus lobortis nec imperdiet felis.
+                </p>
+                <a href="#"
+                    class="mt-8 inline-flex items-center justify-center h-11 px-8 border border-neutral-900 text-neutral-900 tracking-widest text-xs">READ
+                    MORE</a>
+            </div>
+            <div class="grid grid-cols-3 gap-8">
+                <div class="flex flex-col items-center gap-3">
+                    <div class="w-full aspect-[3/4] bg-neutral-100"></div>
+                    <div class="text-xs text-neutral-500">BEAUTY MASK</div>
+                   
+                </div>
+                <div class="flex flex-col items-center gap-3">
+                    <div class="w-full aspect-[3/4] bg-neutral-100"></div>
+                    <div class="text-xs text-neutral-500">COLLAGEN CREAM</div>
+                    
+                </div>
+                <div class="flex flex-col items-center gap-3">
+                    <div class="w-full aspect-[3/4] bg-neutral-100"></div>
+                    <div class="text-xs text-neutral-500">FACIAL CLEANSER</div>
+                   
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-16 grid md:grid-cols-2 gap-10">
+            <div class="bg-neutral-100 p-10 relative overflow-hidden">
+                <div class="max-w-xs">
+                    <h3 class="text-sm font-semibold tracking-[0.22em]">BEAUTY ROUTINE & NATURAL CARE</h3>
+                    <p class="mt-2 text-sm text-neutral-600">Morbi ligula ante varius metus</p>
+                </div>
+                <div class="absolute -right-6 bottom-6 h-28 w-28 rounded-full bg-white border border-neutral-200"></div>
+            </div>
+            <div class="bg-neutral-100 p-10 relative overflow-hidden">
+                <div class="max-w-xs">
+                    <h3 class="text-sm font-semibold tracking-[0.22em]">BEAUTY ROUTINE & NATURAL CARE</h3>
+                    <p class="mt-2 text-sm text-neutral-600">Morbi ligula ante varius metus</p>
+                </div>
+                <div class="absolute -right-6 bottom-6 h-28 w-28 rounded-full bg-white border border-neutral-200"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-20">
+    <div class="mx-auto max-w-7xl px-6">
+        <div class="text-center">
+            <h2 class="text-3xl md:text-5xl font-semibold tracking-wide">OUR BESTSELLERS</h2>
+            <p class="mt-2 text-neutral-500">Donec vitae pulvinar ligula quisque</p>
+        </div>
+        <div class="mt-10 grid grid-cols-2 md:grid-cols-4 gap-10">
+            <div class="text-center">
+                <div class="w-full aspect-[3/4] bg-neutral-100"></div>
+                <div class="mt-4 text-xs tracking-[0.16em]">FACIAL CREAM</div>
+                
+            </div>
+            <div class="text-center">
+                <div class="w-full aspect-[3/4] bg-neutral-100"></div>
+                <div class="mt-4 text-xs tracking-[0.16em]">REFRESH TONIC</div>
+               
+            </div>
+            <div class="text-center">
+                <div class="w-full aspect-[3/4] bg-neutral-100"></div>
+                <div class="mt-4 text-xs tracking-[0.16em]">CREAM MASK</div>
+               
+            </div>
+            <div class="text-center">
+                <div class="w-full aspect-[3/4] bg-neutral-100"></div>
+                <div class="mt-4 text-xs tracking-[0.16em]">WHITE SERUM</div>
+             
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-20">
+    <div class="mx-auto max-w-7xl px-6 bg-neutral-100">
+        <div class="grid md:grid-cols-2">
+            <div class="aspect-[4/3] md:aspect-auto md:h-full bg-neutral-300"></div>
+            <div class="p-10 md:p-16 flex flex-col justify-center">
+                <div class="w-48 h-56 bg-neutral-200 mb-6"></div>
+                <h3 class="text-xl md:text-2xl font-semibold tracking-wide">THE GIFT OF PASSIM BEAUTY</h3>
+                <a href="#"
+                    class="mt-4 inline-flex h-10 items-center justify-center px-6 border border-neutral-900 text-neutral-900 text-xs tracking-widest">GET
+                    GIFT CARD</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-12">
+    <div class="mx-auto max-w-7xl px-6">
+        <div class="flex flex-wrap items-center justify-between gap-8">
+            <div class="h-10 w-28 bg-rose-400/80"></div>
+            <div class="h-10 w-28 bg-rose-400/70"></div>
+            <div class="h-10 w-28 bg-rose-400/60"></div>
+            <div class="h-10 w-28 bg-rose-400/50"></div>
+            <div class="h-10 w-28 bg-rose-400/40"></div>
+            <div class="h-10 w-28 bg-rose-400/30"></div>
+        </div>
+    </div>
+</section>
+
+<app-contact-us></app-contact-us>
+
+<footer class="border-t border-neutral-200">
+    <div class="mx-auto max-w-7xl px-6 py-16">
+        <div class="grid md:grid-cols-4 gap-10">
+            <div>
+                <div class="text-3xl md:text-4xl font-semibold">TEXT</div>
+            </div>
+
+            <div class="text-sm text-neutral-700 grid gap-2">
+                <a href="#">ABOUT</a>
+                <a href="#">BOOKING</a>
+                <a href="#">PRICING</a>
+                <a href="#">SERVICE</a>
+                <a href="#">CONTACT US</a>
+            </div>
+            <div class="text-sm text-neutral-700 grid gap-2">
+                <a href="#">INSTAGRAM</a>
+                <a href="#">TWITTER</a>
+                <a href="#">FACEBOOK</a>
+                <a href="#">PINTEREST</a>
+                <a href="#">BLOG</a>
+            </div>
+            <div>
+                <div class="text-sm tracking-[0.16em]">SUBSCRIBE TO OUR NEWSLETTER</div>
+                <div class="mt-4 flex items-center gap-2">
+                    <input type="email" placeholder="Your Email"
+                        class="h-11 w-full border border-neutral-300 px-3 outline-none focus:ring-2 focus:ring-neutral-800" />
+                    <button
+                        class="h-11 px-4 border border-neutral-900 text-neutral-900 text-xs tracking-widest">SEND</button>
+                </div>
+            </div>
+        </div>
+        <div class="mt-12 text-[12px] text-neutral-500">&copy;. All Rights Reserved</div>
+    </div>
+    <div class="py-6 text-right pr-6">
+        <a href="#" class="text-rose-500 text-xs tracking-[0.2em]">BACK TO TOP</a>
+    </div>
+</footer>
