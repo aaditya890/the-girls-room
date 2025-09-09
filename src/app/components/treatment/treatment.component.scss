@@ -1,0 +1,17 @@
+/* Added animation for right-to-left image slider */
+@keyframes slide-right-to-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-slide-right-to-left {
+  animation: slide-right-to-left 30s linear infinite;
+}
+
+.animate-slide-right-to-left:hover {
+  animation-play-state: paused;
+}

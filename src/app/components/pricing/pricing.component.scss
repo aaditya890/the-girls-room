@@ -1,0 +1,13 @@
+// Custom styles for pricing component
+.service-card {
+  transition: all 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-2px);
+}
+
+// Smooth scrolling for anchor links
+html {
+  scroll-behavior: smooth;
+}
