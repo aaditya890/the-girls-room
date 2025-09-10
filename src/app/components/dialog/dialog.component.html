@@ -1,1 +1,85 @@
-<p>dialog works!</p>
+<div
+    class="flex flex-col-reverse md:flex-row w-full md:max-w-4xl mx-auto bg-white shadow-lg overflow-hidden rounded-lg">
+    <div class="absolute top-3 right-3 z-10 text-white sm:text-black font-bold">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+            class="size-8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+        </svg>
+
+    </div>
+    <!-- Image Section with Background (visible only on md and above) -->
+    <div
+        class="hidden md:block md:w-1/2 relative h-80 md:h-auto bg-[url('assets/dailogImage.webp')] bg-cover bg-center">
+        <!-- Dark overlay -->
+        <div class="absolute inset-0 bg-black/40"></div>
+        <!-- Centered Overlay Text -->
+        <div class="absolute inset-0 flex flex-col justify-center items-center text-white text-center p-4">
+            <p
+                class="text-2xl sm:text-3xl md:text-5xl font-bold mb-3 bg-black bg-opacity-70 px-6 py-2 rounded-md mt-80">
+                30% OFF
+            </p>
+            <span class="text-xs sm:text-sm md:text-base bg-white text-black px-4 py-2 rounded-md leading-tight">
+                DUE TO HIGH DEMAND. 30% OFF IS <br />
+                BACK FOR A LIMITED TIME ONLY
+            </span>
+        </div>
+    </div>
+
+    <!-- Form Section -->
+    <div class="md:w-1/2 relative flex flex-col justify-center 
+              bg-[url('assets/dailogImage.webp')] bg-cover bg-center md:bg-none">
+        <!-- Overlay only for mobile -->
+        <div class="absolute inset-0 bg-black/50 md:hidden"></div>
+
+        <!-- Content -->
+        <div class="relative md:bg-transparent p-4 rounded-lg">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4 
+           text-white md:text-zinc-800 drop-shadow-md text-center tracking-wide">
+                GET 30% OFF
+            </h2>
+
+            <p class="text-center text-lg sm:text-xl font-semibold mb-3 
+          text-white md:text-gray-800">
+                Your First Treatment Course at <br class="hidden sm:block" /> EF MEDISPA
+            </p>
+
+            <p class="text-center text-sm sm:text-base mb-6 
+          text-white/90 md:text-gray-600 leading-relaxed">
+                Established <span class="font-bold text-zinc-900">2007</span> · <br/>
+                <span class="font-bold text-zinc-900">250,000+</span> treatments performed
+            </p>
+
+
+            <form class="space-y-2 relative">
+                <div>
+                    <input type="text" placeholder="Full name"
+                        class="w-full px-4 py-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-1 focus:ring-zinc-500">
+                </div>
+                <div>
+                    <input type="email" placeholder="Email"
+                        class="w-full px-4 py-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-1 focus:ring-zinc-500">
+                </div>
+                <div>
+                    <input type="text" placeholder="Subject"
+                        class="w-full px-4 py-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-1 focus:ring-zinc-500">
+                </div>
+                <div>
+                    <textarea placeholder="Message" rows="4"
+                        class="w-full px-4 py-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-1 focus:ring-zinc-500"></textarea>
+                </div>
+                <div>
+                    <button type="submit"
+                        class="w-full bg-zinc-800 text-white font-semibold py-3 rounded-sm hover:bg-zinc-900 transition-colors">
+                        BOOK FREE CONSULTATION
+                    </button>
+                </div>
+                <div>
+                    <span class="text-xs text-white md:text-gray-800 text-justify">
+                        *By signing up you accept our terms and conditions. Cannot be used in
+                        conjunction with other offers. May exclude certain courses. Offer valid for new clients.
+                    </span>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
