@@ -19,10 +19,8 @@ export class AppComponent implements OnInit{
   constructor(private MatDialog:MatDialog){} 
 
   ngOnInit(): void {
-    console.log("AppComponent initialized......");
+    console.log("The Girls Room ! Welcome to our website. We are delighted to have you here and look forward to assisting you on your journey to enhanced beauty and confidence.");
   }
 
-  openDialog(){
-    this.MatDialog.open(DialogComponent)
-  }
+  
 }

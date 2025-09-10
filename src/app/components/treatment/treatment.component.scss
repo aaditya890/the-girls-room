@@ -1,17 +1,18 @@
-/* Added animation for right-to-left image slider */
-@keyframes slide-right-to-left {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+/* Continuous marquee leftwards */
+.marquee {
+  width: max-content;               /* let content decide width */
+  animation: marquee-left 28s linear infinite;
+}
+.group:hover .marquee {
+  animation-play-state: paused;     /* pause on hover */
 }
 
-.animate-slide-right-to-left {
-  animation: slide-right-to-left 30s linear infinite;
+@keyframes marquee-left {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); } /* because list is duplicated */
 }
 
-.animate-slide-right-to-left:hover {
-  animation-play-state: paused;
+/* Accessibility: respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .marquee { animation-duration: 0s; }
 }

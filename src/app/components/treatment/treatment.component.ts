@@ -18,9 +18,9 @@ type Treatment = {
 
 
 type AfterCareData = {
-  url:string,
-  title:string,
-  subtitle:string
+  url: string,
+  title: string,
+  subtitle: string
 }
 
 @Component({
@@ -34,40 +34,40 @@ export class TreatmentComponent {
   heroUrl = "assets/images/treatments-hero.jpg"
   selectedTreatment: any
 
-  intro = `Experience the perfect blend of advanced skincare technology and personalized care. Our comprehensive treatment menu addresses every aspect of skin health and aesthetic enhancement, from revitalizing facials that restore your natural glow to precision dermal treatments that turn back time. Each service is carefully curated to deliver exceptional results while maintaining the highest standards of safety and comfort.`
+  intro = `Explore advanced skincare and personalized care with our curated treatments. From glow-restoring facials to precision dermal therapies, each service is designed for exceptional results with the highest standards of safety and comfort.`
 
   aftercareData: AfterCareData[] = [
-  {
-    url: "assets/after-care/1.webp",
-    title: "JAW FILLER AND CHIN FILLER",
-    subtitle: "Defined Facial Contouring",
-  },
-  {
-    url: "assets/after-care/2.webp",
-    title: "Anti-wrinkle Treatment Jaw and Cheek Filler",
-    subtitle: "Smoother Lifted Look",
-  },
-  {
-    url: "assets/after-care/3.webp",
-    title: "1ML LIP FILLER",
-    subtitle: "Plump Natural Shape",
-  },
-  {
-    url: "assets/after-care/4.webp",
-    title: "JAW FILLER",
-    subtitle: "Sharp Jawline Definition",
-  },
-  {
-    url: "assets/after-care/5.webp",
-    title: "1ml Lip Filler",
-    subtitle: "Balanced Lip Volume",
-  },
-  {
-    url: "assets/after-care/6.webp",
-    title: "1ml Lip Filler",
-    subtitle: "Soft Even Shape",
-  },
-];
+    {
+      url: "assets/after-care/11.webp",
+      title: "JAW FILLER AND CHIN FILLER",
+      subtitle: "Enhances facial definition while keeping proportions naturally balanced.",
+    },
+    {
+      url: "assets/after-care/16.webp",
+      title: "Lip Filler",
+      subtitle: "Soft, even lip shape with subtle enhancement and long-lasting finish.",
+    },
+    {
+      url: "assets/after-care/12.webp",
+      title: "Anti-wrinkle Treatment Jaw and Cheek Filler",
+      subtitle: "Reduces wrinkles and lifts cheek contours for a refreshed profile.",
+    },
+    {
+      url: "assets/after-care/13.webp",
+      title: "LIP FILLER",
+      subtitle: "Adds gentle volume for fuller, natural-looking lips with symmetry.",
+    },
+    {
+      url: "assets/after-care/14.webp",
+      title: "JAW FILLER",
+      subtitle: "Sculpts and sharpens the jawline for a more defined silhouette.",
+    },
+    {
+      url: "assets/after-care/15.webp",
+      title: "Lip Filler",
+      subtitle: "Creates balanced lip volume with hydration and smooth, soft edges.",
+    },
+  ];
 
   treatments: Treatment[] = [
     {
