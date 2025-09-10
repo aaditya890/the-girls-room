@@ -40,12 +40,13 @@ export class HomeComponent {
   // Hero Section Data
   services: Service[] = [
     { name: "Laser Removal", image: "assets/service-images/laser-hair-removal.webp" },
-    { name: "Fat Dissolving", image: "assets/service-images/fat-dissolving.webp" },
+    { name: "Fat Dissolving", image: "assets/service-images/fat-dissolving.webp" }, 
     { name: "Facial Therapy", image: "assets/service-images/facial-treatment.webp" },
     { name: "Dermal Filler", image: "assets/service-images/dermal-filler.webp" },
     { name: "Anti-Wrinkle", image: "assets/service-images/anti-wrinkle-treatment.webp" },
-    { name: "Waxing", image: "assets/service-images/waxing.webp" },
-    { name: "Hydra Facial", image: "assets/service-images/hydra-facial.webp" }
+    { name: "Waxing", image: "assets/service-images/waxing.webp" }, 
+    { name: "Hydra Facial", image: "assets/service-images/hydra-facial.webp" },
+    { name: "Skin Care", image: "assets/service-images/skin-care.webp" }
   ];
 
   // Features Section Data

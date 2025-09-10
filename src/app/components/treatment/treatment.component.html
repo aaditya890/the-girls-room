@@ -120,22 +120,22 @@
     <div class="mb-16 relative overflow-hidden rounded-2xl p-4">
       <div class="relative h-64 overflow-hidden rounded-xl">
         <div class="flex animate-slide-right-to-left">
-          @for (image of aftercareImages; track $index) {
+          @for (image of aftercareData; track $index) {
             <div class="flex-shrink-0 w-80 h-64 mx-4">
-              <img [src]="image.url" [alt]="image.caption" 
+              <img [src]="image.url" [alt]="image.title" 
                    class="w-full h-full object-cover rounded-lg shadow-lg">
               <div class="mt-2 text-center">
-                <p class="text-sm font-medium text-neutral-800">{{ image.caption }}</p>
+                <p class="text-sm font-medium text-neutral-800">{{ image.subtitle }}</p>
               </div>
             </div>
           }
           <!-- Duplicate for seamless loop -->
-          @for (image of aftercareImages; track $index) {
+          @for (image of aftercareData; track $index) {
             <div class="flex-shrink-0 w-80 h-64 mx-4">
-              <img [src]="image.url" [alt]="image.caption" 
+              <img [src]="image.url" [alt]="image.title" 
                    class="w-full h-full object-cover rounded-lg shadow-lg">
               <div class="mt-2 text-center">
-                <p class="text-sm font-medium text-neutral-800">{{ image.caption }}</p>
+                <p class="text-sm font-medium text-neutral-800">{{ image.subtitle }}</p>
               </div>
             </div>
           }
@@ -190,95 +190,89 @@
   </div>
 </section>
 
-<!-- Treatment Detail Dialog -->
-<div *ngIf="selectedTreatment" 
-     class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm animate-in fade-in duration-300"
+<!-- Treatment Detail Dialog (NO IMAGE) -->
+<div *ngIf="selectedTreatment"
+     class="fixed inset-0 z-50 grid place-items-center p-4 bg-black/50 backdrop-blur-sm"
      (click)="closeTreatmentDialog()">
-  <div class="relative bg-white rounded-lg shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden animate-in slide-in-from-bottom-4 duration-300"
+
+  <div class="relative w-full max-w-3xl md:max-w-4xl h-[85vh] md:h-[90vh] bg-white rounded-xl shadow-2xl overflow-hidden"
        (click)="$event.stopPropagation()">
-    
-    <!-- Close Button -->
+
+    <!-- Close -->
     <button (click)="closeTreatmentDialog()"
-            class="absolute top-4 right-4 z-10 w-8 h-8 bg-white/90 hover:bg-white rounded-full flex items-center justify-center transition-colors">
+            class="absolute top-4 right-4 z-10 w-8 h-8 bg-white/90 hover:bg-white rounded-full flex items-center justify-center transition">
       <svg class="w-5 h-5 text-neutral-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
       </svg>
     </button>
 
-    <div class="grid md:grid-cols-2 h-full">
-      <!-- Image Section -->
-      <div class="aspect-[4/3] md:aspect-auto bg-neutral-100">
-        <img [src]="selectedTreatment.image" 
-             [alt]="selectedTreatment.title"
-             class="w-full h-full object-cover" />
+    <!-- Content only -->
+    <div class="h-full overflow-y-auto p-6 md:p-8">
+      <!-- Header -->
+      <h2 class="text-2xl md:text-3xl font-light text-neutral-800 mb-2">
+        {{ selectedTreatment.title }}
+      </h2>
+      <p class="text-neutral-600 text-sm mb-6">
+        {{ selectedTreatment.summary }}
+      </p>
+
+      <!-- Detailed Content -->
+      <h3 class="text-lg font-medium text-neutral-800 mb-3">Treatment Overview</h3>
+      <p class="text-neutral-700 leading-relaxed whitespace-pre-line mb-6">
+        {{ selectedTreatment.content }}
+      </p>
+
+      <!-- Benefits -->
+      <ng-container *ngIf="selectedTreatment.benefits?.length">
+        <h3 class="text-lg font-medium text-neutral-800 mb-3">Key Benefits</h3>
+        <ul class="space-y-2 mb-6">
+          <li *ngFor="let benefit of selectedTreatment.benefits"
+              class="flex items-start gap-2 text-sm text-neutral-700">
+            <svg class="w-4 h-4 text-red-600 mt-0.5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+            {{ benefit }}
+          </li>
+        </ul>
+      </ng-container>
+
+      <!-- Treatment Details -->
+      <div class="grid grid-cols-2 gap-4 p-4 bg-neutral-50 rounded-lg mb-6">
+        <div>
+          <div class="text-xs text-neutral-500 uppercase tracking-wide">Duration</div>
+          <div class="text-sm font-medium text-neutral-800">{{ selectedTreatment.duration }}</div>
+        </div>
+        <div>
+          <div class="text-xs text-neutral-500 uppercase tracking-wide">Downtime</div>
+          <div class="text-sm font-medium text-neutral-800">{{ selectedTreatment.downtime }}</div>
+        </div>
+        <div>
+          <div class="text-xs text-neutral-500 uppercase tracking-wide">Results</div>
+          <div class="text-sm font-medium text-neutral-800">{{ selectedTreatment.results }}</div>
+        </div>
+        <div>
+          <div class="text-xs text-neutral-500 uppercase tracking-wide">Sessions</div>
+          <div class="text-sm font-medium text-neutral-800">{{ selectedTreatment.sessions }}</div>
+        </div>
       </div>
 
-      <!-- Content Section -->
-      <div class="p-6 md:p-8 overflow-y-auto">
-        <div class="space-y-6">
-          <!-- Header -->
-          <div>
-            <h2 class="text-2xl md:text-3xl font-light text-neutral-800 mb-2">{{ selectedTreatment.title }}</h2>
-            <p class="text-neutral-600 text-sm">{{ selectedTreatment.summary }}</p>
-          </div>
-
-          <!-- Detailed Content -->
-          <div class="prose prose-sm max-w-none">
-            <h3 class="text-lg font-medium text-neutral-800 mb-3">Treatment Overview</h3>
-            <p class="text-neutral-700 leading-relaxed whitespace-pre-line">{{ selectedTreatment.content }}</p>
-          </div>
-
-          <!-- Benefits -->
-          <div>
-            <h3 class="text-lg font-medium text-neutral-800 mb-3">Key Benefits</h3>
-            <ul class="space-y-2">
-              <li *ngFor="let benefit of selectedTreatment.benefits" 
-                  class="flex items-start gap-2 text-sm text-neutral-700">
-                <svg class="w-4 h-4 text-red-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                </svg>
-                {{ benefit }}
-              </li>
-            </ul>
-          </div>
-
-          <!-- Treatment Details -->
-          <div class="grid grid-cols-2 gap-4 p-4 bg-neutral-50 rounded-lg">
-            <div>
-              <div class="text-xs text-neutral-500 uppercase tracking-wide">Duration</div>
-              <div class="text-sm font-medium text-neutral-800">{{ selectedTreatment.duration }}</div>
-            </div>
-            <div>
-              <div class="text-xs text-neutral-500 uppercase tracking-wide">Downtime</div>
-              <div class="text-sm font-medium text-neutral-800">{{ selectedTreatment.downtime }}</div>
-            </div>
-            <div>
-              <div class="text-xs text-neutral-500 uppercase tracking-wide">Results</div>
-              <div class="text-sm font-medium text-neutral-800">{{ selectedTreatment.results }}</div>
-            </div>
-            <div>
-              <div class="text-xs text-neutral-500 uppercase tracking-wide">Sessions</div>
-              <div class="text-sm font-medium text-neutral-800">{{ selectedTreatment.sessions }}</div>
-            </div>
-          </div>
-
-          <!-- Action Buttons -->
-          <div class="flex gap-3 pt-4">
-            <a [routerLink]="['/contact']"
-               (click)="closeTreatmentDialog()"
-               class="flex-1 inline-flex items-center justify-center h-11 px-6 bg-neutral-800 text-white text-xs tracking-[0.16em] hover:bg-neutral-700 transition-colors">
-              BOOK CONSULTATION
-            </a>
-            <button (click)="closeTreatmentDialog()"
-                    class="inline-flex items-center justify-center h-11 px-6 border border-neutral-300 text-neutral-700 text-xs tracking-[0.16em] hover:bg-neutral-50 transition-colors">
-              CLOSE
-            </button>
-          </div>
-        </div>
+      <!-- Actions (sticks to bottom on long content) -->
+      <div class="flex gap-3 sticky bottom-0 bg-white pt-4 pb-2 -mx-6 px-6 md:-mx-8 md:px-8 border-t">
+        <a [routerLink]="['/contact']"
+           (click)="closeTreatmentDialog()"
+           class="flex-1 inline-flex items-center justify-center h-11 px-6 bg-neutral-800 text-white text-xs tracking-[0.16em] hover:bg-neutral-700 transition">
+          BOOK CONSULTATION
+        </a>
+        <button (click)="closeTreatmentDialog()"
+                class="inline-flex items-center justify-center h-11 px-6 border border-neutral-300 text-neutral-700 text-xs tracking-[0.16em] hover:bg-neutral-50 transition">
+          CLOSE
+        </button>
       </div>
     </div>
   </div>
 </div>
+
+
 
 <!-- Contact Section -->
 <app-contact-us></app-contact-us>

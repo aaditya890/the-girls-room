@@ -16,6 +16,13 @@ type Treatment = {
   sessions: string
 }
 
+
+type AfterCareData = {
+  url:string,
+  title:string,
+  subtitle:string
+}
+
 @Component({
   selector: "app-treatment",
   standalone: true,
@@ -29,38 +36,44 @@ export class TreatmentComponent {
 
   intro = `Experience the perfect blend of advanced skincare technology and personalized care. Our comprehensive treatment menu addresses every aspect of skin health and aesthetic enhancement, from revitalizing facials that restore your natural glow to precision dermal treatments that turn back time. Each service is carefully curated to deliver exceptional results while maintaining the highest standards of safety and comfort.`
 
-  aftercareImages = [
-    {
-      url: "assets/images/aftercare/consultation.jpg",
-      caption: "Initial Consultation",
-    },
-    {
-      url: "assets/images/aftercare/treatment.jpg",
-      caption: "Professional Treatment",
-    },
-    {
-      url: "assets/images/aftercare/aftercare-kit.jpg",
-      caption: "Aftercare Kit Provided",
-    },
-    {
-      url: "assets/images/aftercare/follow-up.jpg",
-      caption: "Follow-up Support",
-    },
-    {
-      url: "assets/images/aftercare/results.jpg",
-      caption: "Beautiful Results",
-    },
-    {
-      url: "assets/images/aftercare/maintenance.jpg",
-      caption: "Ongoing Maintenance",
-    },
-  ]
+  aftercareData: AfterCareData[] = [
+  {
+    url: "assets/after-care/1.webp",
+    title: "JAW FILLER AND CHIN FILLER",
+    subtitle: "Defined Facial Contouring",
+  },
+  {
+    url: "assets/after-care/2.webp",
+    title: "Anti-wrinkle Treatment Jaw and Cheek Filler",
+    subtitle: "Smoother Lifted Look",
+  },
+  {
+    url: "assets/after-care/3.webp",
+    title: "1ML LIP FILLER",
+    subtitle: "Plump Natural Shape",
+  },
+  {
+    url: "assets/after-care/4.webp",
+    title: "JAW FILLER",
+    subtitle: "Sharp Jawline Definition",
+  },
+  {
+    url: "assets/after-care/5.webp",
+    title: "1ml Lip Filler",
+    subtitle: "Balanced Lip Volume",
+  },
+  {
+    url: "assets/after-care/6.webp",
+    title: "1ml Lip Filler",
+    subtitle: "Soft Even Shape",
+  },
+];
 
   treatments: Treatment[] = [
     {
       title: "Facials",
       slug: "facials",
-      image: "assets/images/treatments/facial.jpg",
+      image: "assets/service-images/facial-treatment.webp",
       summary:
         "Tailored skincare treatments designed to cleanse, exfoliate, and hydrate the skin, improving texture and promoting a healthy glow. Suitable for all skin types.",
       content: `Our signature facial treatments combine traditional techniques with modern technology to deliver exceptional results. Each session begins with a thorough skin analysis to determine the most suitable approach for your unique skin type and concerns.
@@ -84,7 +97,7 @@ Our skilled aestheticians employ specialized massage techniques to improve circu
     {
       title: "Hydra Facial",
       slug: "hydra-facial",
-      image: "assets/images/treatments/hydrafacial.jpg",
+      image: "assets/service-images/hydra-facial.webp",
       summary:
         "A non-invasive, multi-step treatment that deeply cleanses, exfoliates, and hydrates the skin using advanced serums and vortex technology. Ideal for improving skin tone, texture, and clarity.",
       content: `Our HydraFacial treatment is a revolutionary approach to skin health that combines cleansing, exfoliation, extraction, hydration, and antioxidant protection in one comprehensive session. Using patented vortex technology, this treatment delivers immediate results with no downtime.
@@ -108,7 +121,7 @@ This treatment is suitable for all skin types and addresses multiple concerns si
     {
       title: "Anti-Wrinkle Injections",
       slug: "anti-wrinkle-injections",
-      image: "assets/images/treatments/anti-wrinkle.jpg",
+      image: "assets/service-images/anti-wrinkle-treatment.webp",
       summary:
         "Botulinum toxin injections that relax targeted facial muscles to reduce the appearance of fine lines and wrinkles. Commonly used on the forehead, crow's feet, and frown lines.",
       content: `Our anti-wrinkle treatments effectively address dynamic wrinkles caused by repetitive facial expressions. This popular treatment is particularly effective for forehead lines, frown lines between the eyebrows, and crow's feet around the eyes.
@@ -132,7 +145,7 @@ The procedure is quick and relatively comfortable, with most clients returning t
     {
       title: "Dermal Fillers",
       slug: "dermal-fillers",
-      image: "assets/images/treatments/fillers.jpg",
+      image: "assets/service-images/dermal-filler.webp",
       summary:
         "Injectable treatments using hyaluronic acid to restore volume, enhance facial contours, and smooth deep lines. Popular for lips, cheeks, and nasolabial folds.",
       content: `Dermal fillers offer a non-surgical solution to restore volume, smooth wrinkles, and enhance facial contours. Using premium hyaluronic acid-based fillers, we can address various concerns including nasolabial folds, marionette lines, lip enhancement, and cheek augmentation.
@@ -156,7 +169,7 @@ The procedure is relatively quick with minimal discomfort, thanks to the use of 
     {
       title: "Fat Dissolving Injections",
       slug: "fat-dissolving-injections",
-      image: "assets/images/treatments/fat-dissolving.jpg",
+      image: "assets/service-images/fat-dissolving.webp",
       summary:
         "Minimally invasive injections that break down stubborn fat cells in targeted areas such as the chin, abdomen, or thighs. Helps contour and slim the treated area.",
       content: `Fat dissolving treatments offer a non-surgical approach to reducing localized fat deposits that are resistant to diet and exercise. Using FDA-approved injectable solutions, we can effectively target areas such as double chins, jowls, and other small fat pockets.
@@ -180,7 +193,7 @@ Multiple sessions may be required depending on the area being treated and the am
     {
       title: "Waxing",
       slug: "waxing",
-      image: "assets/images/treatments/waxing.jpg",
+      image: "assets/service-images/waxing.webp",
       summary:
         "Professional hair removal using warm wax to extract hair from the root. Leaves skin smooth and hair-free for up to four weeks.",
       content: `Our professional waxing services provide effective hair removal using high-quality warm wax formulations. We offer comprehensive waxing treatments for all areas of the body, from facial hair to full body services.
@@ -204,7 +217,7 @@ The treatment removes hair from the root, resulting in slower regrowth and progr
     {
       title: "Laser Hair Removal",
       slug: "laser-hair-removal",
-      image: "assets/images/treatments/laser-hair-removal.jpg",
+      image: "assets/service-images/laser-hair-removal.webp",
       summary:
         "Advanced treatment using medical-grade laser technology to permanently reduce unwanted hair. Safe, effective, and suitable for most skin types.",
       content: `Our laser hair removal treatments utilize state-of-the-art medical-grade laser technology to provide permanent hair reduction. The advanced laser systems target hair follicles with precision while protecting the surrounding skin.
@@ -228,7 +241,7 @@ Our certified technicians customize each treatment based on your skin type, hair
     {
       title: "Skin Care",
       slug: "skin-care",
-      image: "assets/images/treatments/skin-care.jpg",
+      image: "assets/service-images/skin-care.webp",
       summary:
         "Targeted skin care plans using professional-grade products to improve clarity, hydration, and overall skin health. Suitable for all skin types.",
       content: `Our Skin Care treatments focus on restoring balance and strengthening the skin barrier with a personalised plan. After a detailed skin analysis, we select professional-grade cleansers, exfoliants, serums, and moisturisers tailored to your goals—whether that's calming sensitivity, clearing breakouts, brightening pigmentation, or boosting hydration.
