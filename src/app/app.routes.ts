@@ -20,5 +20,13 @@ export const routes: Routes = [
    {
     path:'treatment',
     loadComponent: () => import('./components/treatment/treatment.component').then(c => c.TreatmentComponent)
+   },
+   {
+      path: 'privacy-policy',
+      loadComponent: () => import('./components/privacy-policy/privacy-policy.component').then(c => c.PrivacyPolicyComponent)
+   },
+   {
+      path: 'terms-and-conditions',
+      loadComponent: () => import('./components/terms-and-conditions/terms-and-conditions.component').then(c => c.TermsAndConditionsComponent)
    }
 ];
