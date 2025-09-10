@@ -1,15 +1,5 @@
-<!-- Hero -->
-<section class="relative min-h-[65vh] flex items-center justify-center bg-cover bg-center"
-  [style.backgroundImage]="'url(' + heroUrl + ')'">
-  <div class="absolute inset-0 bg-black/50"></div>
-  <div class="relative text-center px-6 max-w-4xl">
-    <h1 class="text-white text-5xl md:text-7xl font-light leading-tight mb-4">Treatments</h1>
-    <p class="text-white/90 text-lg md:text-xl font-light max-w-2xl mx-auto">Tailored care for healthy, radiant confidence</p>
-  </div>
-</section>
-
 <!-- Intro -->
-<section class="pt-14 pb-8 bg-gradient-to-br from-white via-red-50/30 to-white relative overflow-hidden">
+<section class="pt-28 pb-10 bg-gradient-to-br from-white via-red-50/30 to-white relative overflow-hidden">
   <!-- Background decorative elements -->
   <div class="absolute top-10 right-10 w-32 h-32 bg-red-100/40 rounded-full blur-3xl"></div>
   <div class="absolute bottom-10 left-10 w-24 h-24 bg-red-200/30 rounded-full blur-2xl"></div>
@@ -107,75 +97,65 @@
 </section>
 
 
-<!-- Enhanced After Treatment Care Section -->
+<!-- After Treatment Care: Auto-Scrolling Cards -->
 <section class="py-20 bg-white">
   <div class="mx-auto max-w-7xl px-6">
-     <div class="text-left mb-12">
-      <h2 class="text-3xl md:text-4xl font-light text-neutral-800 mb-2">After <span class="text-red-500">Care</span>
+    <!-- Heading -->
+    <div class="text-left mb-10">
+      <h2 class="text-3xl md:text-4xl font-light text-neutral-800 mb-2">
+        After <span class="text-red-500">Care</span>
       </h2>
-      <p class="text-neutral-600 max-w-2xl">Comprehensive aftercare to maximize your treatment results and ensure optimal healing</p>
+      <p class="text-neutral-600 max-w-2xl">
+        Comprehensive aftercare to maximize your treatment results and ensure optimal healing
+      </p>
     </div>
-    
-    <!-- Added image slider section -->
-    <div class="mb-16 relative overflow-hidden rounded-2xl p-4">
-      <div class="relative h-64 overflow-hidden rounded-xl">
-        <div class="flex animate-slide-right-to-left">
-          @for (image of aftercareData; track $index) {
-            <div class="flex-shrink-0 w-80 h-64 mx-4">
-              <img [src]="image.url" [alt]="image.title" 
-                   class="w-full h-full object-cover rounded-lg shadow-lg">
-              <div class="mt-2 text-center">
-                <p class="text-sm font-medium text-neutral-800">{{ image.subtitle }}</p>
+
+    <!-- AUTO-SCROLL ROW (marquee) -->
+    <div class="group relative overflow-hidden rounded-2xl py-2">
+      <div class="marquee flex items-stretch">
+        <!-- 2x list to make a seamless loop -->
+        <ng-container *ngFor="let _ of [0,1]; let pass = index">
+          @for (item of aftercareData; track item.url) {
+            <!-- CARD -->
+            <article
+              class="mx-4 w-72 sm:w-80 shrink-0 rounded-2xl bg-white ring-1 ring-neutral-200/70 shadow-sm hover:ring-neutral-300 transition-all duration-300">
+              
+              <!-- Title -->
+              <div class="h-12 px-5 flex items-center justify-center text-center">
+                <h3 class="text-[15px] font-semibold text-neutral-800 line-clamp-1 w-full">
+                  {{ item.title }}
+                </h3>
               </div>
-            </div>
-          }
-          <!-- Duplicate for seamless loop -->
-          @for (image of aftercareData; track $index) {
-            <div class="flex-shrink-0 w-80 h-64 mx-4">
-              <img [src]="image.url" [alt]="image.title" 
-                   class="w-full h-full object-cover rounded-lg shadow-lg">
-              <div class="mt-2 text-center">
-                <p class="text-sm font-medium text-neutral-800">{{ image.subtitle }}</p>
+
+              <!-- Image (consistent aspect, centered) -->
+              <div class="px-5">
+                <div class="relative aspect-[4/3] rounded-xl bg-neutral-50 ring-1 ring-neutral-200 overflow-hidden flex items-center justify-center">
+                  <!-- Want full image, no crop? change to object-contain -->
+                  <img [src]="item.url" [alt]="item.title"
+                       class="w-full h-full object-cover rounded-xl" />
+                  <div class="pointer-events-none absolute inset-0 shadow-[inset_0_1px_0_rgba(255,255,255,0.5)]"></div>
+                </div>
               </div>
-            </div>
+
+              <!-- Subtitle -->
+              <div class="h-14 px-6 pb-5 pt-3 flex items-center justify-center">
+                <p class="text-sm text-neutral-600 text-center leading-relaxed line-clamp-2">
+                  {{ item.subtitle }}
+                </p>
+              </div>
+            </article>
           }
-        </div>
-      </div>
-    </div>
-    
-    
-    
-    <!-- Aftercare Tips -->
-    <div class="mt-12 p-8 bg-red-50 border border-red-200 rounded-lg">
-      <h3 class="text-xl font-medium text-neutral-800 mb-4 text-center">Essential Aftercare Reminders</h3>
-      <div class="grid md:grid-cols-2 gap-6">
-        <div>
-          <h4 class="font-medium text-neutral-800 mb-2">First 24 Hours</h4>
-          <ul class="text-sm text-neutral-600 space-y-1">
-            <li>• Keep treated area clean and dry</li>
-            <li>• Apply prescribed aftercare products only</li>
-            <li>• Avoid touching or rubbing the area</li>
-            <li>• Sleep with head elevated if facial treatment</li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="font-medium text-neutral-800 mb-2">First Week</h4>
-          <ul class="text-sm text-neutral-600 space-y-1">
-            <li>• Continue gentle skincare routine</li>
-            <li>• Avoid makeup on treated areas (if applicable)</li>
-            <li>• Stay hydrated and eat nutritious foods</li>
-            <li>• Report any unusual symptoms immediately</li>
-          </ul>
-        </div>
+        </ng-container>
       </div>
     </div>
   </div>
 </section>
 
+
 <!-- CTA Section -->
 <section class="py-16 bg-neutral-800">
   <div class="mx-auto max-w-4xl px-6 text-center">
-    <h2 class="text-3xl md:text-4xl font-light text-white mb-4">Ready to Begin Your Journey?</h2>
+    <h2 class="text-3xl md:text-4xl font-light text-white mb-4">Ready to Begin ?</h2>
     <p class="text-neutral-300 text-lg mb-8 max-w-2xl mx-auto">Book a consultation with our expert team to discover the perfect treatment plan for you.</p>
     <div class="flex flex-col sm:flex-row gap-4 justify-center">
       <a [routerLink]="['/contact']"
@@ -235,26 +215,6 @@
           </li>
         </ul>
       </ng-container>
-
-      <!-- Treatment Details -->
-      <div class="grid grid-cols-2 gap-4 p-4 bg-neutral-50 rounded-lg mb-6">
-        <div>
-          <div class="text-xs text-neutral-500 uppercase tracking-wide">Duration</div>
-          <div class="text-sm font-medium text-neutral-800">{{ selectedTreatment.duration }}</div>
-        </div>
-        <div>
-          <div class="text-xs text-neutral-500 uppercase tracking-wide">Downtime</div>
-          <div class="text-sm font-medium text-neutral-800">{{ selectedTreatment.downtime }}</div>
-        </div>
-        <div>
-          <div class="text-xs text-neutral-500 uppercase tracking-wide">Results</div>
-          <div class="text-sm font-medium text-neutral-800">{{ selectedTreatment.results }}</div>
-        </div>
-        <div>
-          <div class="text-xs text-neutral-500 uppercase tracking-wide">Sessions</div>
-          <div class="text-sm font-medium text-neutral-800">{{ selectedTreatment.sessions }}</div>
-        </div>
-      </div>
 
       <!-- Actions (sticks to bottom on long content) -->
       <div class="flex gap-3 sticky bottom-0 bg-white pt-4 pb-2 -mx-6 px-6 md:-mx-8 md:px-8 border-t">
