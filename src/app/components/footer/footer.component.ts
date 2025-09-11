@@ -10,7 +10,8 @@ import { RouterLink } from "@angular/router";
   styleUrl: './footer.component.scss'
 })
 export class FooterComponent {
-  constructor(private viewportScroller: ViewportScroller){}
+  emailText = "support@thegirlsroomlondon.com"
+  constructor(private viewportScroller: ViewportScroller) { }
 
   subscribeNewsletter(): void {
     // Newsletter subscription logic
