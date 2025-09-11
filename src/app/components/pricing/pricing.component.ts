@@ -1,5 +1,6 @@
 import { Component } from "@angular/core"
 import { CommonModule } from "@angular/common"
+import { ContactUsComponent } from "../contact-us/contact-us.component";
 
 interface Service {
   name: string
@@ -16,7 +17,7 @@ interface ServiceCategory {
 @Component({
   selector: "app-pricing",
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ContactUsComponent],
   templateUrl: "./pricing.component.html",
   styleUrls: [], // Remove SCSS file reference
 })
@@ -210,7 +211,7 @@ export class PricingComponent {
       "HydraFacial Treatments": "HydraFacial",
       "Face and Neck Treatments": "Face & Neck",
       "Upper Body Treatments": "Upper Body",
-      "Brazilian Wax": "Brazilian",
+      "Laser hair removal": "Laser Hair Removal",
       "Body Wax": "Body Wax",
       "Cosmetic Injectables & Treatments": "Injectables",
       "Dermal Fillers": "Fillers",
