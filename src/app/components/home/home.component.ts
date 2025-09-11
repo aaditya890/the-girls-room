@@ -71,7 +71,7 @@ export class HomeComponent {
         "Enjoy a relaxing and welcoming atmosphere designed to make your beauty journey stress-free.",
     },
     {
-      icon: "assets/service-images/4.webp",
+      icon: "assets/service-images/p.webp",
       title: "Affordable Packages",
       description:
         "Get premium quality treatments at transparent and competitive prices, with flexible packages.",
