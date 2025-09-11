@@ -28,5 +28,9 @@ export const routes: Routes = [
    {
       path: 'terms-and-conditions',
       loadComponent: () => import('./components/terms-and-conditions/terms-and-conditions.component').then(c => c.TermsAndConditionsComponent)
+   },
+   {
+      path:'testimonials',
+      loadComponent: () => import('./components/testimonials/testimonials.component').then(c => c.TestimonialsComponent)
    }
 ];

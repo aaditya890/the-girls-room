@@ -136,14 +136,22 @@
                                 class="absolute bottom-0 left-0 w-0 h-0.5 bg-red-500 transition-all duration-300 group-hover:w-full"></span>
                         </a>
                     </li>
+                    <li>
+                        <a routerLink="/testimonials" class="relative py-2 transition-all duration-300 group"
+                            [ngClass]="isSticky ? 'hover:text-red-500' : 'hover:text-gray-500'">
+                           TESTIMONIALS
+                            <span
+                                class="absolute bottom-0 left-0 w-0 h-0.5 bg-red-500 transition-all duration-300 group-hover:w-full"></span>
+                        </a>
+                    </li>
                 </ul>
 
                 <!-- Action Buttons -->
                 <div class="flex items-center gap-4">
-                    <a
+                    <!-- <a
                         class="bg-red-500 hidden sm:block text-white py-1 cursor-pointer px-4 rounded-md hover:bg-red-600 transition-colors">
                         Book Now
-                    </a>
+                    </a> -->
 
                     <!-- Mobile Menu Button -->
                     <button class="lg:hidden p-2 rounded-lg transition-colors"
@@ -188,6 +196,11 @@
                 class="block py-3 text-gray-900 font-medium hover:text-red-500 transition-colors border-b border-gray-100"
                 (click)="closeMobileMenu()">
                 CONTACT
+            </a>
+            <a routerLink="/testimonials"
+                class="block py-3 text-gray-900 font-medium hover:text-red-500 transition-colors border-b border-gray-100"
+                (click)="closeMobileMenu()">
+                TESTIMONIALS
             </a>
             <button
                 class="w-full mt-4 bg-red-500 text-white py-3 px-6 rounded-full font-medium hover:bg-red-600 transition-colors">

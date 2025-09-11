@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ContactUsComponent } from "../contact-us/contact-us.component";
-import { PricingComponent } from "../pricing/pricing.component";
+import { ReviewTestimonialComponent } from "../review-testimonial/review-testimonial.component";
 
 
 interface Service {
@@ -24,7 +24,7 @@ interface FAQ {
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [ContactUsComponent],
+  imports: [ContactUsComponent,  ReviewTestimonialComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })

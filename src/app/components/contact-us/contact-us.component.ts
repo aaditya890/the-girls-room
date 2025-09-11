@@ -1,6 +1,7 @@
 import { Component } from "@angular/core"
 import { CommonModule } from "@angular/common"
 import { ReactiveFormsModule, FormBuilder, Validators } from "@angular/forms"
+import { Router } from "@angular/router"
 
 
 @Component({
@@ -32,7 +33,7 @@ export class ContactUsComponent {
     message: ["", [Validators.required, Validators.minLength(10)]],
   })
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder,public router:Router) { }
 
   async submitToWhatsApp() {
     if (this.contactForm.invalid) {
