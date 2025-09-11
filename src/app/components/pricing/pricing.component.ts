@@ -27,7 +27,7 @@ export class PricingComponent {
   serviceCategories: ServiceCategory[] = [
     {
       title: "HydraFacial Treatments",
-      icon: "!",
+      icon: "assets/Logo/pricing-page-icons/hydrafacial-treatments.webp",
       services: [
         { name: "Signature HydraFacial", price: "£135", duration: "45 min" },
         { name: "Deluxe HydraFacial (with boosters)", price: "£150", duration: "50 min" },
@@ -43,7 +43,7 @@ export class PricingComponent {
     },
     {
       title: "Face and Neck Treatments",
-      icon: "!",
+      icon: "assets/Logo/pricing-page-icons/face-neck-treatments.webp",
       services: [
         { name: "Full Face", price: "£65", duration: "15 min" },
         { name: "Lip and Chin", price: "£45", duration: "10 min" },
@@ -62,7 +62,7 @@ export class PricingComponent {
     },
     {
       title: "Upper Body Treatments",
-      icon: "!",
+      icon: "assets/Logo/pricing-page-icons/upper-body-treatments.webp",
       services: [
         { name: "Underarms", price: "£10", duration: "10 min" },
         { name: "Half Arms", price: "£65", duration: "10 min" },
@@ -72,7 +72,7 @@ export class PricingComponent {
     },
     {
       title: "Brazilian Wax",
-      icon: "!",
+      icon: "assets/Logo/pricing-page-icons/brazilian-wax.webp",
       services: [
         { name: "Female Brazilian and Underarms", price: "£50", duration: "10 min" },
         { name: "Female Full Leg, Brazilian, and Underarms", price: "£165", duration: "30 min" },
@@ -95,7 +95,7 @@ export class PricingComponent {
     },
     {
       title: "Body Wax",
-      icon: "!",
+      icon: "assets/Logo/pricing-page-icons/body-wax.webp",
       services: [
         { name: "Ladies' Waxing - Hollywood (Hot Wax)", price: "£35.00", duration: "60 min" },
         { name: "Ladies' Waxing - Brazilian (Hot Wax)", price: "£30.00", duration: "50 min" },
@@ -123,7 +123,7 @@ export class PricingComponent {
     },
     {
       title: "Cosmetic Injectables & Treatments",
-      icon: "!",
+      icon: "assets/Logo/pricing-page-icons/cosmetic-injectables-treatments.webp",
       services: [
         { name: "Fat Dissolving Injections - Chin", price: "£60", duration: "30 min" },
         { name: "Fat Dissolving Injections - Face", price: "£80", duration: "30 min" },
@@ -148,7 +148,7 @@ export class PricingComponent {
     },
     {
       title: "Dermal Fillers",
-      icon: "!",
+      icon: "assets/Logo/pricing-page-icons/derma-fillers.webp",
       services: [
         { name: "Lip Filler 0.5ml", price: "£90", duration: "45 min" },
         { name: "Lip Filler 1ml", price: "£180", duration: "45 min" },
@@ -165,7 +165,7 @@ export class PricingComponent {
     },
     {
       title: "Facials",
-      icon: "!",
+      icon: "assets/Logo/pricing-page-icons/facials.webp",
       services: [
         { name: "Dermaplaning", price: "£50.00", duration: "30-45 mins" },
         { name: "Facial - Micro-Needling", price: "£80.00", duration: "20-40 mins" },
