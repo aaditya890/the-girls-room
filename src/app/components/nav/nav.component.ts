@@ -1,74 +1,62 @@
 import { CommonModule, ViewportScroller } from '@angular/common';
-import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
-import { NavigationEnd, Router, RouterLink } from '@angular/router';
+import { Component, ElementRef, HostListener, ViewChild, AfterViewInit } from '@angular/core';
+import { NavigationEnd, Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { filter } from 'rxjs';
+import { NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'app-nav',
   standalone: true,
-  imports: [CommonModule,RouterLink],
+  imports: [CommonModule, RouterLink, RouterLinkActive, NgOptimizedImage],
   templateUrl: './nav.component.html',
   styleUrl: './nav.component.scss'
 })
 export class NavComponent {
-  title = "The-Girls-Room"
+ title = 'The-Girls-Room';
 
-  @ViewChild("navbar") navbarRef!: ElementRef<HTMLDivElement>
+  @ViewChild('navbar') navbarRef!: ElementRef<HTMLDivElement>;
 
-  isSticky = false
-  navHeight = 80
-  topbarHeight = 40
-  showMobileMenu = false
+  isSticky = false;
+  navHeight = 80;
+  topbarHeight = 40;
+  showMobileMenu = false;
 
   constructor(
     private router: Router,
-    private viewportScroller: ViewportScroller,
+    private viewportScroller: ViewportScroller
   ) {
-    this.router.events.pipe(filter((event) => event instanceof NavigationEnd)).subscribe(() => {
-      this.viewportScroller.scrollToPosition([0, 0])
-      this.closeMobileMenu() // Close mobile menu on route change
-    })
+    this.router.events
+      .pipe(filter((event) => event instanceof NavigationEnd))
+      .subscribe(() => {
+        this.viewportScroller.scrollToPosition([0, 0]);
+        this.closeMobileMenu();
+      });
   }
 
   ngAfterViewInit(): void {
     queueMicrotask(() => {
       if (this.navbarRef?.nativeElement) {
-        this.navHeight = this.navbarRef.nativeElement.offsetHeight || this.navHeight
+        this.navHeight = this.navbarRef.nativeElement.offsetHeight || this.navHeight;
       }
-      this.onScroll()
-    })
+      this.onScroll();
+    });
   }
 
-  @HostListener("window:scroll", [])
+  @HostListener('window:scroll')
   onScroll(): void {
-    const y = window.scrollY || window.pageYOffset
-    this.isSticky = y > 50 // Increased threshold for better UX
+    const y = window.scrollY || window.pageYOffset;
+    this.isSticky = y > 50;
   }
 
-  @HostListener("window:resize", [])
+  @HostListener('window:resize')
   onResize(): void {
-    // Close mobile menu on window resize
-    if (window.innerWidth >= 1024) {
-      // lg breakpoint
-      this.showMobileMenu = false
-    }
+    if (window.innerWidth >= 1024) this.showMobileMenu = false; // lg breakpoint
   }
 
-  toggleMobileMenu(): void {
-    this.showMobileMenu = !this.showMobileMenu
-  }
+  toggleMobileMenu(): void { this.showMobileMenu = !this.showMobileMenu; }
+  closeMobileMenu(): void { this.showMobileMenu = false; }
 
-  closeMobileMenu(): void {
-    this.showMobileMenu = false
-  }
-
-
-  // Navigation methods
-  navigateToBooking(): void {
-    this.router.navigate(["/contact"])
-  }
-
-  navigateToTreatments(): void {
-    this.router.navigate(["/treatments"])
-  }
+  // Navigation helpers
+  navigateToBooking(): void { this.router.navigate(['/contact']); }
+  navigateToTreatments(): void { this.router.navigate(['/treatments']); }
 }

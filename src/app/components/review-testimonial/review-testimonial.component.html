@@ -92,24 +92,5 @@
                 </div>
             </div>
         </div>
-
-        <!-- Dots Indicator -->
-        <div class="flex justify-center mt-2 sm:mt-8 space-x-2">
-            <!-- Desktop Dots -->
-            <div class="hidden md:flex space-x-2">
-                <button *ngFor="let dot of getDots(); let i = index" (click)="goToSlide(i)"
-                    [class]="currentSlide === i ? 'bg-red-400' : 'bg-gray-300'"
-                    class="w-2 h-2 rounded-full transition-colors duration-200 hover:bg-red-400">
-                </button>
-            </div>
-
-            <!-- Mobile Dots -->
-            <div class="md:hidden flex space-x-2">
-                <button *ngFor="let testimonial of testimonials; let i = index" (click)="goToMobileSlide(i)"
-                    [class]="currentMobileSlide === i ? 'bg-teal-500' : 'bg-gray-300'"
-                    class="w-2 h-2 rounded-full transition-colors duration-200 hover:bg-teal-400">
-                </button>
-            </div>
-        </div>
     </div>
 </section>

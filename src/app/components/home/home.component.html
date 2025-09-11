@@ -33,15 +33,17 @@
 
                     <div class="flex flex-col sm:flex-row gap-3">
                         <button
-                            class="px-6 py-3 bg-red-500 text-white font-semibold rounded-lg hover:bg-red-600 transition-all shadow-lg">
+                            class="px-6 py-3 bg-red-500 text-black font-semibold rounded-lg hover:bg-red-600 transition-shadow shadow-lg">
                             <span class="flex items-center justify-center gap-2">
                                 BOOK CONSULTATION
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                    aria-hidden="true">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M17 8l4 4m0 0l-4 4m4-4H3" />
                                 </svg>
                             </span>
                         </button>
+
 
                         <button
                             class="px-6 py-3 font-mono bg-white border border-gray-300 text-gray-700 font-semibold rounded-lg hover:border-red-500 hover:text-red-500 transition-all">
@@ -56,8 +58,9 @@
                     </div>
 
                     <div class="flex flex-col">
-                        <h3 class="text-xs font-semibold text-gray-700 uppercase tracking-wide mb-2">Our Accreditations
-                        </h3>
+                        <h2 class="text-xs font-semibold text-gray-700 uppercase tracking-wide mb-2">
+                            Our Accreditations
+                        </h2>
                         <div
                             class="mt-2 inline-flex items-center gap-4 rounded-xl border border-gray-200 bg-white/70 px-3 py-2 shadow-sm backdrop-blur-sm w-fit max-w-[420px]">
                             <img src="assets/certificates/certification-1.png" alt="CPD Accredited"
@@ -179,53 +182,76 @@
     </div>
 </section>
 
-<!-- FAQ Section -->
-<section class="pt-20 pb-12">
-    <div class="mx-auto max-w-7xl ">
+<!-- Faqs Section -->
+<section class="bg-white py-16 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto">
+       <!-- Header -->
         <div class="mb-12">
-            <div class="flex items-center gap-3 mb-4">
-                <h2 class="text-3xl lg:text-4xl font-bold text-gray-900">FAQ's</h2>
-                <svg class="w-8 h-8 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
+            <div class="flex items-center gap-2 mb-4">
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-900">Frequently Asked
+                    <span class="text-red-500">Questions</span>
+                </h2>
             </div>
             <p class="text-lg text-gray-600">
-                Get answers to your most common questions.
+               Get answers to your most common questions about our aesthetic treatments and procedures.
             </p>
         </div>
 
-        <div class="space-y-4">
-            @for (faq of faqs; track $index) {
-            <div
-                class="border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition-shadow duration-300">
-                <button (click)="toggleFAQ(faq.id)"
-                    class="w-full px-6 py-5 text-left flex items-center justify-between bg-white hover:bg-gray-50 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-inset">
-                    <h3 class="text-lg font-semibold text-gray-900 pr-4">
-                        {{ faq.question }}
-                    </h3>
-                    <div class="flex-shrink-0">
-                        <svg class="w-6 h-6 text-red-500 transform transition-transform duration-200"
-                            [class.rotate-45]="faq.isExpanded" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-                        </svg>
-                    </div>
-                </button>
-
-                <div class="overflow-hidden transition-all duration-300 ease-in-out" [class.max-h-0]="!faq.isExpanded"
-                    [class.max-h-96]="faq.isExpanded">
-                    <div class="px-6 pb-5 pt-2 bg-gray-50 border-t border-gray-100">
-                        <p class="text-gray-700 leading-relaxed">
-                            {{ faq.answer }}
-                        </p>
-                    </div>
-                </div>
-            </div>
-            }
-        </div>
+    <!-- Treatment Category Tabs -->
+    <div class="mb-8">
+      <div class="flex flex-wrap justify-center gap-2 sm:gap-4">
+        @for (category of categories; track $index) {
+            <button  
+          (click)="setActiveCategory(category)"
+          [class]="activeCategory === category ? 'bg-red-500 text-white border-red-500' : 'bg-white text-gray-700 border-gray-300 hover:bg-gray-50'"
+          class="px-4 py-2 text-sm font-medium border rounded-lg transition-all duration-200">
+          {{ category }}
+        </button>
+        }
+      </div> 
     </div>
+
+    <!-- FAQ Items -->
+    <div class="space-y-4 max-w-7xl mx-auto">
+    
+        @for (faq of getFilteredFAQs(); track $index) {
+             <div 
+        class="border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition-all duration-300">
+        <button 
+          (click)="toggleFAQ(faq.id)"
+          class="w-full px-6 py-5 text-left flex items-center justify-between bg-white hover:bg-gray-50 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-inset">
+          <h3 class="text-lg font-semibold text-gray-900 pr-4">
+            {{ faq.question }}
+          </h3>
+          <div class="flex-shrink-0">
+            <svg 
+              class="w-6 h-6 text-red-500 transform transition-transform duration-200"
+              [class.rotate-45]="faq.isExpanded" 
+              fill="none" 
+              stroke="currentColor" 
+              viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+            </svg>
+          </div>
+        </button>
+
+        <div 
+          class="overflow-hidden transition-all duration-300 ease-in-out"
+          [class.max-h-0]="!faq.isExpanded"
+          [class.max-h-96]="faq.isExpanded">
+          <div class="px-6 pb-5 pt-2 bg-gray-50 border-t border-gray-100">
+            <p class="text-gray-700 leading-relaxed whitespace-pre-line">
+              {{ faq.answer }}
+            </p>
+          </div>
+        </div>
+      </div>
+        }
+     
+    </div>
+  </div>
 </section>
+
 
 <app-review-testimonial></app-review-testimonial>
 <app-contact-us></app-contact-us>

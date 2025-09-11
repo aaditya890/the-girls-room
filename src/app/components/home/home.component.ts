@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ContactUsComponent } from "../contact-us/contact-us.component";
 import { ReviewTestimonialComponent } from "../review-testimonial/review-testimonial.component";
-
+import { NgOptimizedImage } from '@angular/common';
 
 interface Service {
   name: string;
@@ -18,6 +18,7 @@ interface FAQ {
   id: number
   question: string
   answer: string
+  category: string
   isExpanded: boolean
 }
 
@@ -78,64 +79,334 @@ export class HomeComponent {
   ];
 
   // FAQ Section Data
+   activeCategory = "Anti-Wrinkle Treatments"
+
+  categories = [
+    "Expand All",
+    "Anti-Wrinkle Treatments",
+    "Dermal Fillers",
+    "HydraFacials",
+    "Body Waxing",
+    "Dermaplaning Treatment",
+    "Microneedling",
+    "Laser Hair Removal",
+  ]
+
   faqs: FAQ[] = [
+    // Anti-Wrinkle Treatments - General FAQs
     {
       id: 1,
-      question: "Which treatment is best for me?",
+      question: "How long do anti-wrinkle treatment results last?",
       answer:
-        "We start with a complimentary consultation and skin/medical assessment to understand your goals and suitability. Your practitioner will recommend a personalised plan that may include Laser Hair Removal, Facial Therapy, Dermal Filler, Anti-Wrinkle injections, Fat Dissolving, or a tailored Skin Care routine. Patch tests are carried out where required (e.g., laser) before any course begins.",
-      isExpanded: true,
+        "Anti-wrinkle treatment results typically last 3-6 months, depending on the individual, treatment area, and lifestyle factors. Regular treatments help maintain optimal results.",
+      category: "Anti-Wrinkle Treatments",
+      isExpanded: false,
     },
     {
       id: 2,
-      question: "How does Laser Hair Removal work and how many sessions will I need?",
+      question: "When will I see results from anti-wrinkle treatments?",
       answer:
-        "Our medical-grade laser targets the pigment in the hair follicle to reduce regrowth. Most clients need 6–8 sessions spaced 4–6 weeks apart, with occasional maintenance. A patch test is required at least 24–48 hours before your first session. You should shave the area 24 hours prior, avoid sunbeds/self-tan, and use SPF on exposed areas throughout your course.",
+        "You'll start to see results within 3-5 days, with full effects visible after 10-14 days. The muscles gradually relax, smoothing out wrinkles and fine lines.",
+      category: "Anti-Wrinkle Treatments",
       isExpanded: false,
     },
     {
       id: 3,
-      question: "Is Fat Dissolving safe and what results can I expect?",
+      question: "Are anti-wrinkle treatments painful?",
       answer:
-        "Fat Dissolving injections (for small, stubborn pockets like chin or lower abdomen) break down fat cells which are then naturally eliminated by the body. Typical plans are 2–4 sessions, 4–6 weeks apart. You may experience swelling, tenderness, or bruising for 3–7 days. Results build gradually; a balanced lifestyle helps maintain them. Not suitable during pregnancy/breastfeeding or for certain medical conditions.",
+        "Most clients experience minimal discomfort. The injections feel like small pinpricks, and the procedure is over quickly. We can apply numbing cream if needed.",
+      category: "Anti-Wrinkle Treatments",
       isExpanded: false,
     },
     {
       id: 4,
-      question: "I have sensitive or acne-prone skin—can I book Facial Therapy?",
+      question: "What should I avoid before anti-wrinkle treatment?",
       answer:
-        "Yes. Our Facial Therapy is fully bespoke. We select gentle, clinically backed actives and adjust intensity based on your skin type and tolerance. Treatments can target congestion, dehydration, dullness, or pigmentation. Mild redness can occur and usually settles within hours. You’ll receive a home-care plan to maintain results between visits.",
+        "Avoid alcohol, caffeine, sunbeds, and blood thinners where possible for 24-48 hours before treatment. Stop strong skincare actives like retinol 2-3 days before.",
+      category: "Anti-Wrinkle Treatments",
       isExpanded: false,
     },
     {
       id: 5,
-      question: "How long do Dermal Fillers last and are they reversible?",
+      question: "Can I wear makeup after anti-wrinkle treatment?",
       answer:
-        "We use premium hyaluronic-acid fillers to softly enhance features and restore volume. Longevity is typically 6–12 months depending on the area, product, and lifestyle. You may see mild swelling or bruising for a few days. HA fillers can be dissolved with hyaluronidase if clinically indicated. A full medical consultation is completed prior to treatment.",
+        "Wait at least 4 hours before applying makeup. Avoid touching or massaging the treated area for 24 hours to prevent the product from spreading.",
+      category: "Anti-Wrinkle Treatments",
       isExpanded: false,
     },
+
+    // Dermal Fillers - General FAQs
     {
       id: 6,
-      question: "When will I see results from Anti-Wrinkle injections and how long do they last?",
+      question: "How long do dermal filler results last?",
       answer:
-        "Initial smoothing is usually noticed in 3–5 days, with peak results around 2 weeks. Effects commonly last 3–4 months, varying by dose, muscle strength, and lifestyle. We offer a two-week review (where appropriate) to ensure a natural, balanced finish.",
+        "Dermal filler results typically last 6-18 months, depending on the type of filler used, treatment area, and individual metabolism. Lip fillers may last 6-12 months, while cheek fillers can last 12-18 months.",
+      category: "Dermal Fillers",
       isExpanded: false,
     },
     {
       id: 7,
-      question: "What aftercare should I follow and is there any downtime?",
+      question: "When will I see results from dermal fillers?",
       answer:
-        "Most treatments have little to no downtime. General guidance: avoid heat, steam rooms, and strenuous exercise for 24 hours; keep the area clean; use SPF 30+ daily; avoid alcohol the day of injectable treatments; and don’t massage treated areas unless advised. Your practitioner will give you tailored aftercare and red-flag advice to contact us if needed.",
+        "Results are visible immediately after treatment, though there may be initial swelling. Final results are seen after 2-3 weeks once any swelling has completely subsided.",
+      category: "Dermal Fillers",
       isExpanded: false,
     },
     {
       id: 8,
-      question: "How do bookings, pricing, and cancellations work?",
+      question: "Are dermal filler treatments painful?",
       answer:
-        "Treatment prices vary by area and plan; full costs are confirmed during consultation. A deposit may be required to secure your appointment and is redeemable against treatment. We kindly ask for at least 48 hours’ notice to reschedule; late cancellations or no-shows may forfeit the deposit. We accept major cards. Please arrive a few minutes early for forms and patch tests where applicable.",
+        "Most fillers contain lidocaine (local anaesthetic) to minimize discomfort. You may feel pressure and mild discomfort during injection, but pain is generally minimal.",
+      category: "Dermal Fillers",
       isExpanded: false,
     },
-  ];
+    {
+      id: 9,
+      question: "What should I avoid before dermal filler treatment?",
+      answer:
+        "Avoid alcohol, caffeine, sunbeds, and blood thinners where possible. Stop strong skincare actives like retinol or acids 2-3 days before treatment.",
+      category: "Dermal Fillers",
+      isExpanded: false,
+    },
+    {
+      id: 10,
+      question: "What if I notice bruising or swelling after fillers?",
+      answer:
+        "Apply a cold compress and arnica cream. Mild swelling and bruising are normal and should resolve within a few days. Avoid heat treatments and exercise for 24-48 hours.",
+      category: "Dermal Fillers",
+      isExpanded: false,
+    },
+
+    // HydraFacials - General FAQs
+    {
+      id: 11,
+      question: "How long do HydraFacial results last?",
+      answer:
+        "HydraFacial results are visible immediately and can last 5-7 days. For optimal results, we recommend monthly treatments to maintain healthy, glowing skin.",
+      category: "HydraFacials",
+      isExpanded: false,
+    },
+    {
+      id: 12,
+      question: "When will I see results from HydraFacial?",
+      answer:
+        "You'll see immediate results after your HydraFacial treatment. Your skin will appear brighter, smoother, and more hydrated right away.",
+      category: "HydraFacials",
+      isExpanded: false,
+    },
+    {
+      id: 13,
+      question: "Is HydraFacial treatment painful?",
+      answer:
+        "HydraFacial is completely painless and relaxing. Most clients find the treatment soothing and enjoyable, with no discomfort during or after the procedure.",
+      category: "HydraFacials",
+      isExpanded: false,
+    },
+    {
+      id: 14,
+      question: "Are there side effects with HydraFacial?",
+      answer:
+        "HydraFacial has minimal side effects. Some clients may experience slight redness immediately after treatment, which typically fades within an hour.",
+      category: "HydraFacials",
+      isExpanded: false,
+    },
+    {
+      id: 15,
+      question: "Is there downtime after HydraFacial?",
+      answer:
+        "There's no downtime with HydraFacial. You can return to your normal activities immediately and even apply makeup right after treatment if desired.",
+      category: "HydraFacials",
+      isExpanded: false,
+    },
+
+    // Body Waxing - General FAQs
+    {
+      id: 16,
+      question: "How long do body waxing results last?",
+      answer:
+        "Body waxing results typically last 3-6 weeks, depending on your hair growth cycle and the area treated. Regular waxing can lead to finer, sparser hair regrowth over time.",
+      category: "Body Waxing",
+      isExpanded: false,
+    },
+    {
+      id: 17,
+      question: "Is body waxing painful?",
+      answer:
+        "There is some discomfort during waxing, but it's brief and manageable. The pain decreases with regular treatments as hair becomes finer and skin adapts.",
+      category: "Body Waxing",
+      isExpanded: false,
+    },
+    {
+      id: 18,
+      question: "What should I avoid before body waxing?",
+      answer:
+        "Avoid sun exposure, sunbeds, and exfoliating 24-48 hours before treatment. Don't shave for at least 2 weeks prior - hair should be 1/4 inch long for effective waxing.",
+      category: "Body Waxing",
+      isExpanded: false,
+    },
+    {
+      id: 19,
+      question: "What can I expect immediately after body waxing?",
+      answer:
+        "Mild redness and sensitivity are normal and usually fade within a few hours. The treated area may feel tender, and you might see some minor bumps initially.",
+      category: "Body Waxing",
+      isExpanded: false,
+    },
+    {
+      id: 20,
+      question: "Are there aftercare restrictions for body waxing?",
+      answer:
+        "Avoid heat treatments, hot baths, saunas, and tight clothing for 24-48 hours. Use gentle, fragrance-free products and avoid sun exposure on treated areas.",
+      category: "Body Waxing",
+      isExpanded: false,
+    },
+
+    // Dermaplaning - General FAQs
+    {
+      id: 21,
+      question: "How long do dermaplaning results last?",
+      answer:
+        "Dermaplaning results typically last 3-4 weeks. Your skin will remain smooth and bright until the hair naturally regrows, which is usually finer than before.",
+      category: "Dermaplaning Treatment",
+      isExpanded: false,
+    },
+    {
+      id: 22,
+      question: "When will I see results from dermaplaning?",
+      answer:
+        "Results are immediate! Your skin will feel incredibly smooth and look brighter right after treatment, with improved makeup application and skincare absorption.",
+      category: "Dermaplaning Treatment",
+      isExpanded: false,
+    },
+    {
+      id: 23,
+      question: "Is dermaplaning treatment painful?",
+      answer:
+        "Dermaplaning is completely painless. You'll feel a gentle scraping sensation as the blade removes dead skin and hair, but there's no discomfort involved.",
+      category: "Dermaplaning Treatment",
+      isExpanded: false,
+    },
+    {
+      id: 24,
+      question: "Are there side effects with dermaplaning?",
+      answer:
+        "Side effects are minimal. Some clients may experience slight redness immediately after treatment, which typically subsides within an hour.",
+      category: "Dermaplaning Treatment",
+      isExpanded: false,
+    },
+    {
+      id: 25,
+      question: "Can I go in the sun after dermaplaning?",
+      answer:
+        "Avoid direct sun exposure for 24-48 hours after treatment and always use SPF 30+ daily. Your skin will be more sensitive to UV rays after exfoliation.",
+      category: "Dermaplaning Treatment",
+      isExpanded: false,
+    },
+
+    // Microneedling - General FAQs
+    {
+      id: 26,
+      question: "How long do microneedling results last?",
+      answer:
+        "Microneedling results develop over 4-6 weeks as collagen production increases. Results can last 4-6 months, with optimal results achieved through a series of 3-6 treatments.",
+      category: "Microneedling",
+      isExpanded: false,
+    },
+    {
+      id: 27,
+      question: "When will I see results from microneedling?",
+      answer:
+        "Initial results may be visible within a few days, but significant improvements appear after 4-6 weeks as new collagen forms. Full results develop over 2-3 months.",
+      category: "Microneedling",
+      isExpanded: false,
+    },
+    {
+      id: 28,
+      question: "Is microneedling treatment painful?",
+      answer:
+        "We apply numbing cream before treatment to minimize discomfort. You may feel mild pressure and tingling during the procedure, but pain is generally minimal.",
+      category: "Microneedling",
+      isExpanded: false,
+    },
+    {
+      id: 29,
+      question: "Are there side effects with microneedling?",
+      answer:
+        "Temporary redness and mild swelling are normal for 24-48 hours after treatment. Your skin may feel tight and look slightly sunburned initially.",
+      category: "Microneedling",
+      isExpanded: false,
+    },
+    {
+      id: 30,
+      question: "What should I avoid before microneedling?",
+      answer:
+        "Avoid retinol, acids, and exfoliating products for 3-5 days before treatment. Don't have facial treatments or use sunbeds 1-2 weeks prior.",
+      category: "Microneedling",
+      isExpanded: false,
+    },
+
+    // Laser Hair Removal - General FAQs
+    {
+      id: 31,
+      question: "How long do laser hair removal results last?",
+      answer:
+        "Laser hair removal provides long-lasting results. After completing a full course (6-8 sessions), most clients enjoy permanent hair reduction with occasional maintenance sessions.",
+      category: "Laser Hair Removal",
+      isExpanded: false,
+    },
+    {
+      id: 32,
+      question: "When will I see results from laser hair removal?",
+      answer:
+        "Hair will start shedding 1-3 weeks after treatment. You'll notice significant reduction after 3-4 sessions, with optimal results after completing the full course.",
+      category: "Laser Hair Removal",
+      isExpanded: false,
+    },
+    {
+      id: 33,
+      question: "Is laser hair removal painful?",
+      answer:
+        "Most clients describe the sensation as a rubber band snapping against the skin. We use cooling technology to minimize discomfort during treatment.",
+      category: "Laser Hair Removal",
+      isExpanded: false,
+    },
+    {
+      id: 34,
+      question: "What should I avoid before laser hair removal?",
+      answer:
+        "Avoid plucking, waxing, and sunbeds for 4-6 weeks before treatment. Shave the area 24 hours prior and avoid fake tan. A patch test is required 24-48 hours before your first session.",
+      category: "Laser Hair Removal",
+      isExpanded: false,
+    },
+    {
+      id: 35,
+      question: "Are there aftercare restrictions for laser hair removal?",
+      answer:
+        "Avoid heat treatments, hot baths, saunas, and exercise for 24-48 hours. Use SPF 30+ daily and avoid sun exposure on treated areas. Don't pluck or wax between sessions.",
+      category: "Laser Hair Removal",
+      isExpanded: false,
+    },
+  ]
+
+  setActiveCategory(category: string) {
+    this.activeCategory = category
+    // Close all expanded FAQs when switching categories
+    this.faqs.forEach((faq) => (faq.isExpanded = false))
+  }
+
+  getFilteredFAQs(): FAQ[] {
+    if (this.activeCategory === "Expand All") {
+      return this.faqs
+    }
+    return this.faqs.filter((faq) => faq.category === this.activeCategory)
+  }
+
+  toggleFAQ(id: number) {
+    const faq = this.faqs.find((f) => f.id === id)
+    if (faq) {
+      faq.isExpanded = !faq.isExpanded
+    }
+  }
 
   ngOnInit(): void {
     this.startCarousel();
@@ -232,15 +503,6 @@ export class HomeComponent {
 
   get currentServiceName(): string {
     return this.services[this.currentIndex]?.name ?? '';
-  }
-
-
-  // Faq Section Methods
-   toggleFAQ(id: number): void {
-    const faq = this.faqs.find((f) => f.id === id)
-    if (faq) {
-      faq.isExpanded = !faq.isExpanded
-    }
   }
 
 }

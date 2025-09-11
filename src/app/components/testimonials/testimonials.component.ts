@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from "@angular/core"
 import { CommonModule } from "@angular/common"
 import { ReviewTestimonialComponent } from "../review-testimonial/review-testimonial.component";
+import { ContactUsComponent } from "../contact-us/contact-us.component";
 
 type AfterCareData = {
   url: string,
@@ -22,12 +23,12 @@ interface Certificate {
 @Component({
   selector: "app-testimonials",
   standalone: true,
-  imports: [CommonModule, ReviewTestimonialComponent],
+  imports: [CommonModule, ReviewTestimonialComponent, ContactUsComponent],
   templateUrl: "./testimonials.component.html",
-  styleUrls: ["./testimonials.component.scss"], 
+  styleUrls: ["./testimonials.component.scss"],
 })
-export class TestimonialsComponent  {
-   
+export class TestimonialsComponent {
+
   aftercareData: AfterCareData[] = [
     {
       url: "assets/after-care/11.webp",
@@ -61,12 +62,12 @@ export class TestimonialsComponent  {
     },
   ];
 
- currentSlide = 0
+  currentSlide = 0
   isAutoPlaying = true
   autoSlideInterval = 3500 // 3.5 seconds for smooth viewing
   private slideTimer: any
 
-  certificates: Certificate[] = [
+certificates: Certificate[] = [
   {
     id: 1,
     title: "Advanced Botox",
@@ -112,7 +113,18 @@ export class TestimonialsComponent  {
     image: "assets/certificates/PATHWAY-TO-AESTHETICS.webp",
     year: "2023",
   },
+  // NEW
+  {
+    id: 6,
+    title: "Post-Operative Care",
+    description: "Qualified in post-operative care protocols for aesthetic procedures.",
+    recipient: "Angela Francis",
+    institution: "The Vogue Academy",
+    image: "assets/certificates/Advanced-filler-Lily.webp", // or your file, e.g. 'assets/certificates/Advanced-filler-Lily.webp'
+    year: "2024",
+  },
 ];
+
 
 
   ngOnInit() {
