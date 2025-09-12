@@ -14,6 +14,17 @@ interface ServiceCategory {
   icon?: string
 }
 
+interface PackageCategory {
+  category: string
+  packages: Package[]
+}
+
+interface Package {
+  name: string
+  price: string
+  duration: string
+}
+
 @Component({
   selector: "app-pricing",
   standalone: true,
@@ -25,26 +36,61 @@ export class PricingComponent {
   activeCategory = -1 // Start with "All" selected
   expandedServices: { [key: string]: boolean } = {}
 
-  serviceCategories: ServiceCategory[] = [
+   serviceCategories: ServiceCategory[] = [
     {
-      title: "HydraFacial Treatments",
-      icon: "assets/Logo/pricing-page-icons/hydrafacial-treatments.webp",
+      title: "Cosmetic Injectables",
+      icon: "assets/Logo/pricing-page-icons/cosmetic-injectables-treatments.webp",
       services: [
-        { name: "Signature HydraFacial", price: "£135", duration: "45 min" },
-        { name: "Deluxe HydraFacial (with boosters)", price: "£150", duration: "50 min" },
-        { name: "Platinum HydraFacial (LED + booster + lymph)", price: "£200", duration: "60 min" },
-        { name: "Express HydraFacial (quick cleanse & hydrate)", price: "£90", duration: "30 min" },
-        { name: "Glass Botox HydraFacial", price: "£250", duration: "60 min" },
-        { name: "Face + Neck", price: "£230", duration: "60 min" },
-        { name: "Face + Neck + Décolletage", price: "£300", duration: "75 min" },
-        { name: "Lip Perk / Eye Perk (Add-On)", price: "£35", duration: "15 min" },
-        { name: "LED Light Therapy (Add-On)", price: "£35", duration: "25 min" },
-        { name: "Lymphatic Drainage (Add-On)", price: "£30", duration: "15 min" },
+        { name: "Fat Dissolving Injections", price: "£60.00", duration: "30-45 mins" },
+        { name: "Anti-Wrinkle Injections", price: "£100.00", duration: "20-40 mins" },
+        { name: "Dermal Fillers", price: "£90.00", duration: "45 mins - 1 hr 20 mins" },
+        { name: "Vitamin Injections", price: "£30.00", duration: "30 mins" },
       ],
     },
     {
-      title: "Face and Neck Treatments",
-      icon: "assets/Logo/pricing-page-icons/face-neck-treatments.webp",
+      title: "Fat Dissolving Injections",
+      icon: "assets/Logo/pricing-page-icons/fat-dissolving.webp",
+      services: [
+        { name: "Chin", price: "£60", duration: "30 min" },
+        { name: "Face", price: "£80", duration: "30 min" },
+        { name: "Bra area", price: "£70", duration: "45 min" },
+        { name: "Inner thighs", price: "£80", duration: "45 min" },
+        { name: "Stomach and bra area", price: "£110", duration: "60 min" },
+        { name: "Under arms", price: "£90", duration: "30 min" },
+        { name: "Thighs/sides", price: "£100", duration: "30 min" },
+        { name: "Stomach area top and bottom", price: "£150", duration: "45 min" },
+      ],
+    },
+    {
+      title: "Dermal Fillers",
+      icon: "assets/Logo/pricing-page-icons/derma-fillers.webp",
+      services: [
+        { name: "Lip Filler 0.5ml", price: "£90", duration: "45 min" },
+        { name: "Lip Filler 1ml", price: "£180", duration: "45 min" },
+        { name: "Chin Filler 1ml", price: "£150", duration: "45 min" },
+        { name: "Nasolabial Folds 1ml", price: "£150", duration: "45 min" },
+        { name: "Smile Lines 1ml", price: "£150", duration: "45 min" },
+        { name: "Tear Trough Filler", price: "£200", duration: "45 min" },
+        { name: "Cheek Enhancement Filler", price: "£250", duration: "45 min" },
+        { name: "Jaw Sculpting Filler", price: "£350", duration: "45 min" },
+        { name: "Lips and Cheeks", price: "£450", duration: "55 min" },
+        { name: "Jaw, Cheeks and Chin", price: "£750", duration: "1 Hour" },
+        { name: "Lips, jaw, Cheeks and Chin", price: "£950", duration: "1 Hour" },
+      ],
+    },
+    {
+      title: "Facials",
+      icon: "assets/Logo/pricing-page-icons/facials.webp",
+      services: [
+        { name: "Dermaplaning", price: "£50.00", duration: "120 min" },
+        { name: "Facial - Micro-Needling", price: "£80.00", duration: "30-40 mins" },
+        { name: "Girls glow", price: "£50.00", duration: "30 mins" },
+        { name: "Semi-Permanent Makeup - Hydra Gloss Lip", price: "£80", duration: "120 min" },
+      ],
+    },
+    {
+      title: "Laser Hair Removal - Face & Neck",
+      icon: "assets/Logo/pricing-page-icons/face-neck-laser-removal.webp",
       services: [
         { name: "Full Face", price: "£65", duration: "15 min" },
         { name: "Lip and Chin", price: "£45", duration: "10 min" },
@@ -62,19 +108,13 @@ export class PricingComponent {
       ],
     },
     {
-      title: "Upper Body Treatments",
-      icon: "assets/Logo/pricing-page-icons/upper-body-treatments.webp",
+      title: "Laser Hair Removal - Body",
+      icon: "assets/Logo/pricing-page-icons/body-laser-hair-removal.webp",
       services: [
         { name: "Underarms", price: "£10", duration: "10 min" },
         { name: "Half Arms", price: "£65", duration: "10 min" },
         { name: "Full Arms", price: "£99", duration: "15 min" },
         { name: "1/4 Arms", price: "£50", duration: "10 min" },
-      ],
-    },
-    {
-      title: "Brazilian Wax",
-      icon: "assets/Logo/pricing-page-icons/brazilian-wax.webp",
-      services: [
         { name: "Female Brazilian and Underarms", price: "£50", duration: "10 min" },
         { name: "Female Full Leg, Brazilian, and Underarms", price: "£165", duration: "30 min" },
         { name: "Female Hollywood Brazilian", price: "£55", duration: "10 min" },
@@ -95,7 +135,7 @@ export class PricingComponent {
       ],
     },
     {
-      title: "Body Wax",
+      title: "Waxing Services",
       icon: "assets/Logo/pricing-page-icons/body-wax.webp",
       services: [
         { name: "Ladies' Waxing - Hollywood (Hot Wax)", price: "£35.00", duration: "60 min" },
@@ -122,63 +162,45 @@ export class PricingComponent {
         { name: "Ladies' Waxing - Upper Body - Back", price: "£15.00", duration: "35 min" },
       ],
     },
+  ]
+
+  laserPackages: PackageCategory[] = [
     {
-      title: "Cosmetic Injectables & Treatments",
-      icon: "assets/Logo/pricing-page-icons/cosmetic-injectables-treatments.webp",
-      services: [
-        { name: "Fat Dissolving Injections - Chin", price: "£60", duration: "30 min" },
-        { name: "Fat Dissolving Injections - Face", price: "£80", duration: "30 min" },
-        { name: "Fat Dissolving Injections - Bra area", price: "£70", duration: "45 min" },
-        { name: "Fat Dissolving Injections - Inner thighs", price: "£80", duration: "45 min" },
-        { name: "Fat Dissolving Injections - Stomach and bra area", price: "£110", duration: "60 min" },
-        { name: "Fat Dissolving Injections - Under arms", price: "£90", duration: "30 min" },
-        { name: "Fat Dissolving Injections - Thighs/sides", price: "£100", duration: "30 min" },
-        { name: "Fat Dissolving Injections - Stomach area top and bottom", price: "£150", duration: "45 min" },
-        { name: "Anti-Wrinkle Injections - Bunny lines", price: "£100", duration: "20 min" },
-        { name: "Anti-Wrinkle Injections - Eye brow lift", price: "£100", duration: "20 min" },
-        { name: "Anti-Wrinkle Injections - Lip Flip", price: "£90", duration: "20 min" },
-        { name: "Anti-Wrinkle Injections - Smokers lines", price: "£120", duration: "20 min" },
-        { name: "Anti-Wrinkle Injections - Two areas", price: "£180", duration: "30 min" },
-        { name: "Anti-Wrinkle Injections - Three areas", price: "£210", duration: "30 min" },
-        { name: "Anti-Wrinkle Injections - Jawline slimmer", price: "£250", duration: "40 min" },
-        { name: "Anti-Wrinkle Injections - Neck lift", price: "£200", duration: "41 min" },
-        { name: "Anti-Wrinkle Injections - Arm pits", price: "£200", duration: "42 min" },
-        { name: "Vitamin Injections - B12 injections", price: "£30", duration: "30 min" },
-        { name: "Vitamin Injections - B-complex inject", price: "£45", duration: "30 min" },
+      category: "Face Packages",
+      packages: [
+        { name: "Smooth & Fresh (3 Areas)", price: "£75", duration: "25 min" },
+        { name: "Full Face Glow (Face + Neck)", price: "£150", duration: "30 min" },
+        { name: "Beard Perfection (Beard, Jawline, Neck)", price: "£140", duration: "30 min" },
       ],
     },
     {
-      title: "Dermal Fillers",
-      icon: "assets/Logo/pricing-page-icons/derma-fillers.webp",
-      services: [
-        { name: "Lip Filler 0.5ml", price: "£90", duration: "45 min" },
-        { name: "Lip Filler 1ml", price: "£180", duration: "45 min" },
-        { name: "Chin Filler 1ml", price: "£150", duration: "45 min" },
-        { name: "Nasolabial Folds 1ml", price: "£150", duration: "45 min" },
-        { name: "Smile Lines 1ml", price: "£150", duration: "45 min" },
-        { name: "Tear Trough Filler", price: "£200", duration: "45 min" },
-        { name: "Cheek Enhancement Filler", price: "£250", duration: "45 min" },
-        { name: "Jaw Sculpting Filler", price: "£350", duration: "45 min" },
-        { name: "Lips and Cheeks", price: "£450", duration: "55 min" },
-        { name: "Jaw, Cheeks and Chin", price: "£750", duration: "1 Hour" },
-        { name: "Lips, Jaw, Cheeks and Chin", price: "£950", duration: "1 Hour" },
+      category: "Upper Body Packages",
+      packages: [
+        { name: "Arm Elegance (Full Arms + Underarms)", price: "£110", duration: "25 min" },
+        { name: "Underarm & Bikini Duo", price: "£60", duration: "20 min" },
       ],
     },
     {
-      title: "Facials",
-      icon: "assets/Logo/pricing-page-icons/facials.webp",
-      services: [
-        { name: "Dermaplaning", price: "£50.00", duration: "30-45 mins" },
-        { name: "Facial - Micro-Needling", price: "£80.00", duration: "20-40 mins" },
-        { name: "Girls glow", price: "£50.00", duration: "45 mins-1 hr 20 mins" },
-        { name: "Semi-Permanent Makeup - Hydra Gloss Lip", price: "£80", duration: "30 mins" },
+      category: "Lower Body Packages",
+      packages: [
+        { name: "Hollywood & Smooth Legs (Hollywood + Legs + Underarms)", price: "£220", duration: "45 min" },
+        { name: "Brazilian Bliss (Brazilian + Bikini + Peri-anal + Buttocks)", price: "£120", duration: "40 min" },
+        { name: "Leg Perfection (Full Legs + Toes + 1/4 Arm)", price: "£180", duration: "40 min" },
+      ],
+    },
+    {
+      category: "Full Body Packages",
+      packages: [
+        { name: "Female Full Body (6 Sessions)", price: "£1,650", duration: "—" },
+        { name: "Male Full Body (6 Sessions)", price: "£1,650", duration: "—" },
+        { name: "Mini Full Body (Excl. back & shoulders, 6 Sessions)", price: "£1,350", duration: "—" },
       ],
     },
   ]
 
-  packages = [
-    { name: "Course of 3", discount: "10% off" },
-    { name: "Course of 6", discount: "15% off" },
+  courseDeals: any[] = [
+    { name: "Buy 6 sessions", discount: "15% OFF" },
+    { name: "Buy 8 sessions", discount: "1 FREE" },
   ]
 
   importantInfo = [
