@@ -1,27 +1,27 @@
 <!-- Floating WhatsApp Button (Bottom Right) -->
-    <div class="fixed bottom-6 right-6 z-50 group">
-        <button (click)="whatsappEnquiry()"
-            class="relative w-14 h-14 md:w-16 md:h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl shadow-2xl shadow-green-500/30 transform transition-all duration-300 hover:scale-110 flex items-center justify-center overflow-visible">
-            <svg class="w-7 h-7 md:w-8 md:h-8 text-white z-10 relative" fill="currentColor" viewBox="0 0 24 24">
-                <path
-                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.465 3.085" />
-            </svg>
+<div class="fixed bottom-6 right-6 z-50 group">
+    <button (click)="whatsappEnquiry()"
+        class="relative w-14 h-14 md:w-16 md:h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl shadow-2xl shadow-green-500/30 transform transition-all duration-300 hover:scale-110 flex items-center justify-center overflow-visible">
+        <svg class="w-7 h-7 md:w-8 md:h-8 text-white z-10 relative" fill="currentColor" viewBox="0 0 24 24">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.465 3.085" />
+        </svg>
 
-            <!-- Pulse Effect -->
-            <div
-                class="absolute inset-0 bg-green-400 rounded-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-300 animate-ping">
-            </div>
-        </button>
-
-        <!-- Tooltip -->
+        <!-- Pulse Effect -->
         <div
-            class="absolute bottom-full right-0 mb-3 px-3 py-2 bg-slate-800/90 backdrop-blur-sm text-white text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap border border-slate-700 shadow-xl">
-            Quick WhatsApp Inquiry
-            <div
-                class="absolute top-full right-4 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-slate-800">
-            </div>
+            class="absolute inset-0 bg-green-400 rounded-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-300 animate-ping">
+        </div>
+    </button>
+
+    <!-- Tooltip -->
+    <div
+        class="absolute bottom-full right-0 mb-3 px-3 py-2 bg-slate-800/90 backdrop-blur-sm text-white text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap border border-slate-700 shadow-xl">
+        Quick WhatsApp Inquiry
+        <div
+            class="absolute top-full right-4 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-slate-800">
         </div>
     </div>
+</div>
 
 <!-- Hero Section -->
 <section class="relative bg-white overflow-visible">
@@ -158,99 +158,85 @@
 </section>
 
 
-<section class="py-24 mb-10 overflow-x-clip">
-<div class="mb-12 px-8 mx-auto max-w-7xl">
-  <h2 class="font-bold text-2xl sm:text-4xl text-[#0e1649]">
-    <span>Trending on</span>
-    <span class="ml-2 inline-flex items-center rounded-md  bg-gradient-to-r from-[#6a1b6e]/12 to-[#b21e6b]/12 ring-1 ring-inset ring-[#6a1b6e]/25">
-      <!-- <span class="bg-clip-text text-transparent bg-gradient-to-r from-[#6a1b6e] to-[#b21e6b]">Reels</span> -->
-             <span class="text-white bg-gradient-to-r from-red-500 to-red-500 px-2 py-0.5">Reels</span>
-    </span>
+<section class="py-24 mb-10 overflow-x-clip max-auto marquesection">
+    <div class="mb-12 px-8 mx-auto max-w-7xl">
+        <h2 class="font-bold text-2xl sm:text-4xl text-[#0e1649]">
+            <span>Trending on</span>
+            <span
+                class="ml-2 inline-flex items-center rounded-md bg-gradient-to-r from-[#6a1b6e]/12 to-[#b21e6b]/12 ring-1 ring-inset ring-[#6a1b6e]/25">
+                <span class="text-white bg-gradient-to-r from-red-500 to-red-500 px-2 py-0.5">
+                    Reels
+                </span>
+            </span>
 
-    <br class="hidden sm:block" />
-    <span class="mt-2 inline-flex items-center gap-2 text-base sm:text-lg font-semibold">
-      <span class="relative flex h-2.5 w-2.5">
-        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-gray-500/35"></span>
-        <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-gray-500"></span>
-      </span>
-      <span class="inline-flex items-center rounded-full bg-white/60 px-3 py-1 border border-[#0e1649]/15 text-[#0e1649] backdrop-blur-sm hover:bg-white/80 transition">
-        Tap to Visit
-      </span>
-    </span>
-  </h2>
-</div>
-  <!-- edge-to-edge scroller without 100vw hack -->
-  <div class="relative -mx-4 sm:-mx-6 lg:-mx-8">
-    <!-- track -->
-    <div
-      #trackRef
-      class="no-scrollbar mt-4 flex gap-3 md:gap-4 overflow-x-auto snap-x snap-mandatory
+            <br class="hidden sm:block" />
+            <span class="mt-2 inline-flex items-center gap-2 text-base sm:text-lg font-semibold">
+                <span class="relative flex h-2.5 w-2.5">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-gray-500/35"></span>
+                    <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-gray-500"></span>
+                </span>
+                <span
+                    class="inline-flex items-center rounded-full bg-white/60 px-3 py-1 border border-[#0e1649]/15 text-[#0e1649] backdrop-blur-sm hover:bg-white/80 transition">
+                    Tap to Visit
+                </span>
+            </span>
+        </h2>
+    </div>
+
+    <!-- edge-to-edge scroller with soft shadows -->
+    <div class="relative overflow-hidden mx-auto max-w-7xl rounded-lg border">
+        <!-- left rounded fade mask -->
+         <!-- <div class="h-[300px] w-[100px] absolute bg-neutral-600 rounded-full z-20 -left-10 top-28 blur-[130px]"></div> -->
+          
+        <!-- right rounded fade mask -->
+          <!-- <div class="h-[300px] w-[100px] absolute bg-neutral-600 rounded-full z-20 -right-10 top-28 blur-[120px]"></div> -->
+        <!-- track -->
+        <div #trackRef class="no-scrollbar mt-4 flex gap-3 md:gap-4 justify-center 
+             overflow-x-auto snap-x snap-mandatory
              scroll-smooth select-none touch-pan-x cursor-grab
              px-4 sm:px-6 lg:px-8
              [scroll-padding-inline:1rem] sm:[scroll-padding-inline:1.5rem] lg:[scroll-padding-inline:2rem]"
-      (wheel)="onWheel($event)"
-      (pointerdown)="onPointerDown($event)"
-      (pointermove)="onPointerMove($event)"
-      (pointerup)="onPointerUp($event)"
-      (pointercancel)="onPointerUp($event)"
-      (mouseleave)="onPointerUp($event)"
-      tabindex="0"
-      role="list"
-      aria-label="Social videos"
-    >
+            (wheel)="onWheel($event)" (pointerdown)="onPointerDown($event)" (pointermove)="onPointerMove($event)"
+            (pointerup)="onPointerUp($event)" (pointercancel)="onPointerUp($event)" (mouseleave)="onPointerUp($event)"
+            tabindex="0" role="list" aria-label="Social videos">
+            <!-- COMPACT CARD -->
+            @for (v of items; track $index) {
+            <article role="listitem" class="relative shrink-0 snap-start
+                 w-[64vw] xs:w-[58vw] sm:w-[48vw] md:w-[36vw]
+                 lg:w-[240px] xl:w-[260px] 2xl:w-[280px]
+                 rounded-2xl overflow-hidden bg-white shadow-lg">
+                <!-- 9:16 aspect -->
+                <div class="relative aspect-[9/16] bg-gray-100">
+                    <video #videoEl class="absolute inset-0 w-full h-full object-cover" [poster]="v.poster || ''"
+                        [src]="v.src" preload="metadata" playsinline muted loop></video>
 
-      <!-- COMPACT CARD -->
-       @for (v of items; track $index) {
-         <article
-      
-        role="listitem"
-        class="relative shrink-0 snap-start
-               w-[64vw] xs:w-[58vw] sm:w-[48vw] md:w-[36vw]
-               lg:w-[240px] xl:w-[260px] 2xl:w-[280px]
-               rounded-2xl overflow-hidden bg-white shadow-lg"
-      >
-        <!-- 9:16 aspect -->
-        <div class="relative aspect-[9/16] bg-gray-100">
-          <video
-            #videoEl
-            class="absolute inset-0 w-full h-full object-cover"
-            [poster]="v.poster || ''"
-            [src]="v.src"
-            preload="metadata"
-            playsinline
-            muted
-            loop
-          ></video>
-
-          <!-- FULL-WIDTH BRAND OVERLAY (no side gaps) -->
-          <div class="pointer-events-none absolute inset-0">
-            <!-- gradient layer -->
-            <div
-              class="absolute inset-x-0 bottom-0 h-16 md:h-20
-                     bg-gradient-to-b from-transparent via-gray-500/70 to-gray-500/90">
-            </div>
-            <!-- text layer with padding -->
-            <div class="absolute bottom-2 left-3 right-3">
-              <div class="text-white font-extrabold text-sm sm:text-base drop-shadow">
-                {{ v.title }}
-              </div>
-            </div>
-          </div>
+                    <!-- FULL-WIDTH BRAND OVERLAY -->
+                    <div class="pointer-events-none absolute inset-0">
+                        <!-- gradient layer -->
+                        <!-- <div
+                class="absolute inset-x-0 bottom-0 h-16 md:h-20
+                       bg-gradient-to-b from-transparent via-gray-500/70 to-gray-500/90"
+              ></div> -->
+                        <!-- text layer with padding -->
+                        <div class="absolute bottom-2 left-3 right-3">
+                            <div class="text-white font-extrabold text-sm sm:text-base drop-shadow">
+                                {{ v.title }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            }
+            <!-- /card -->
         </div>
-      </article>
-      <!-- /card -->
-       }
-     
-
     </div>
-  </div>
 </section>
 
 
 <!-- Banner Section -->
 <section class="relative bg-cover bg-center bg-no-repeat h-[300px] flex items-center"
     style="background-image: url('assets/banner-image.webp');">
-    <div class="container mx-auto px-6 md:px-12">
+    <div class="container mx-auto px-6 md:px-28">
         <div class="max-w-lg text-white">
             <h1 class="text-3xl md:text-4xl font-semibold leading-snug">
                 Step up your beauty game <br />
@@ -266,8 +252,8 @@
 
 <!-- Faqs Section -->
 <section class="bg-white py-16 px-4 sm:px-6 lg:px-8">
-  <div class="max-w-7xl mx-auto">
-       <!-- Header -->
+    <div class="max-w-7xl mx-auto">
+        <!-- Header -->
         <div class="mb-12">
             <div class="flex items-center gap-2 mb-4">
                 <h2 class="text-3xl lg:text-4xl font-bold text-gray-900">Frequently Asked
@@ -275,63 +261,55 @@
                 </h2>
             </div>
             <p class="text-lg text-gray-600">
-               Get answers to your most common questions about our aesthetic treatments and procedures.
+                Get answers to your most common questions about our aesthetic treatments and procedures.
             </p>
         </div>
 
-    <!-- Treatment Category Tabs -->
-    <div class="mb-8">
-      <div class="flex flex-wrap justify-center gap-2 sm:gap-4">
-        @for (category of categories; track $index) {
-            <button  
-          (click)="setActiveCategory(category)"
-          [class]="activeCategory === category ? 'bg-red-500 text-white border-red-500' : 'bg-white text-gray-700 border-gray-300 hover:bg-gray-50'"
-          class="px-4 py-2 text-sm font-medium border rounded-lg transition-all duration-200">
-          {{ category }}
-        </button>
-        }
-      </div> 
-    </div>
-
-    <!-- FAQ Items -->
-    <div class="space-y-4 max-w-7xl mx-auto">
-    
-        @for (faq of getFilteredFAQs(); track $index) {
-             <div 
-        class="border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition-all duration-300">
-        <button 
-          (click)="toggleFAQ(faq.id)"
-          class="w-full px-6 py-5 text-left flex items-center justify-between bg-white hover:bg-gray-50 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-inset">
-          <h3 class="text-lg font-semibold text-gray-900 pr-4">
-            {{ faq.question }}
-          </h3>
-          <div class="flex-shrink-0">
-            <svg 
-              class="w-6 h-6 text-red-500 transform transition-transform duration-200"
-              [class.rotate-45]="faq.isExpanded" 
-              fill="none" 
-              stroke="currentColor" 
-              viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
-            </svg>
-          </div>
-        </button>
-
-        <div 
-          class="overflow-hidden transition-all duration-300 ease-in-out"
-          [class.max-h-0]="!faq.isExpanded"
-          [class.max-h-96]="faq.isExpanded">
-          <div class="px-6 pb-5 pt-2 bg-gray-50 border-t border-gray-100">
-            <p class="text-gray-700 leading-relaxed whitespace-pre-line">
-              {{ faq.answer }}
-            </p>
-          </div>
+        <!-- Treatment Category Tabs -->
+        <div class="mb-8">
+            <div class="flex flex-wrap justify-center gap-2 sm:gap-4">
+                @for (category of categories; track $index) {
+                <button (click)="setActiveCategory(category)"
+                    [class]="activeCategory === category ? 'bg-red-500 text-white border-red-500' : 'bg-white text-gray-700 border-gray-300 hover:bg-gray-50'"
+                    class="px-4 py-2 text-sm font-medium border rounded-lg transition-all duration-200">
+                    {{ category }}
+                </button>
+                }
+            </div>
         </div>
-      </div>
-        }
-     
+
+        <!-- FAQ Items -->
+        <div class="space-y-4 max-w-7xl mx-auto">
+
+            @for (faq of getFilteredFAQs(); track $index) {
+            <div class="border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition-all duration-300">
+                <button (click)="toggleFAQ(faq.id)"
+                    class="w-full px-6 py-5 text-left flex items-center justify-between bg-white hover:bg-gray-50 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-inset">
+                    <h3 class="text-lg font-semibold text-gray-900 pr-4">
+                        {{ faq.question }}
+                    </h3>
+                    <div class="flex-shrink-0">
+                        <svg class="w-6 h-6 text-red-500 transform transition-transform duration-200"
+                            [class.rotate-45]="faq.isExpanded" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                        </svg>
+                    </div>
+                </button>
+
+                <div class="overflow-hidden transition-all duration-300 ease-in-out" [class.max-h-0]="!faq.isExpanded"
+                    [class.max-h-96]="faq.isExpanded">
+                    <div class="px-6 pb-5 pt-2 bg-gray-50 border-t border-gray-100">
+                        <p class="text-gray-700 leading-relaxed whitespace-pre-line">
+                            {{ faq.answer }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            }
+
+        </div>
     </div>
-  </div>
 </section>
 
 
