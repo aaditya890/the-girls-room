@@ -22,6 +22,33 @@
     </div>
   </div>
 
+  <!-- Tailwind Animations -->
+  <style>
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-fadeInUp {
+      animation: fadeInUp 0.8s ease forwards;
+    }
+
+    .delay-150 {
+      animation-delay: 0.15s;
+    }
+
+    .delay-300 {
+      animation-delay: 0.3s;
+    }
+  </style>
+
   <!-- Form Section -->
   <div
     class="md:w-1/2 relative flex flex-col justify-center bg-[url('assets/popub-img2.webp')] bg-cover bg-center md:bg-none">
@@ -43,14 +70,14 @@
         <span class="font-bold text-zinc-200 sm:text-gray-900">15000+</span> treatments performed
       </p>
 
-      <!-- ✅ Reactive form bindings added -->
+      <!-- Reactive form -->
       <form class="space-y-2 relative" [formGroup]="leadForm" (submit)="onSubmit()">
         <div>
-          <input type="text" placeholder="Full name" formControlName="name"
+          <input type="text" placeholder="Full Name" formControlName="name"
             class="w-full px-4 py-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-1 focus:ring-zinc-500">
         </div>
         <div>
-          <input type="email" placeholder="Email" formControlName="email"
+          <input type="email" placeholder="Email Address" formControlName="email"
             class="w-full px-4 py-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-1 focus:ring-zinc-500">
         </div>
         <div>
@@ -69,8 +96,8 @@
         </div>
         <div>
           <span class="text-xs text-white md:text-gray-800 text-justify">
-            *By signing up you accept our terms and conditions. Cannot be used in
-            conjunction with other offers. May exclude certain courses. Offer valid for new clients.
+            *By signing up, you accept our terms and conditions. Cannot be used in
+            conjunction with other offers. Certain courses may be excluded. Offer valid for new clients only.
           </span>
         </div>
       </form>
