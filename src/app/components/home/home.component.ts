@@ -515,7 +515,7 @@ export class HomeComponent {
   }
 
    whatsappEnquiry(): void {
-    const message = encodeURIComponent("Hi Aarvi Ventures! I would like to know more.")
+    const message = encodeURIComponent("Hi")
     const phone = "+447878350664"
     const whatsappUrl = `https://api.whatsapp.com/send?phone=${phone}&text=${message}`
     window.open(whatsappUrl, "_blank")

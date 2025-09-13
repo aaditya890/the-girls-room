@@ -1,10 +1,10 @@
 <!-- Intro -->
-<section class="pt-28 pb-10 bg-gradient-to-br from-white via-red-50/30 to-white relative overflow-hidden">
+<section class="pt-20 pb-10 bg-gradient-to-br from-white via-red-50/30 to-white relative overflow-hidden">
   <!-- Background decorative elements -->
   <div class="absolute top-10 right-10 w-32 h-32 bg-red-100/40 rounded-full blur-3xl"></div>
   <div class="absolute bottom-10 left-10 w-24 h-24 bg-red-200/30 rounded-full blur-2xl"></div>
 
-  <div class="mx-auto max-w-5xl px-6 text-center py-14">
+  <div class="mx-auto max-w-5xl px-6 text-center py-4">
     <!-- Heading -->
     <h2 class="text-3xl md:text-5xl font-semibold text-neutral-900 mb-4 leading-tight relative">
       Advanced Treatments for <span class="text-red-500">Natural Beauty <span class="absolute top-0 h-2 w-2 rounded-full animate-ping"></span></span>
@@ -54,44 +54,185 @@
   </div>
 </section>
 
-<!-- Treatments -->
-<section class="py-20 bg-white">
-  <div class="mx-auto max-w-7xl px-6">
-    <div class="text-left mb-12">
-      <h2 class="text-3xl md:text-4xl font-light text-neutral-800 mb-2">Our <span class="text-red-500">Treatments</span></h2>
-      <p class="text-neutral-600 max-w-2xl">Discover our comprehensive range of treatments designed to enhance your natural beauty.</p>
+<!-- Treatments Section with Automatic Sliders -->
+<section class="py-16 bg-white overflow-hidden">
+  <div class="mx-auto max-w-full px-6">
+    
+    <!-- Section Header -->
+    <div class="text-left">
+      <h2 class="text-3xl md:text-4xl font-light text-neutral-800 mb-4">
+        Our <span class="text-red-500">Treatments</span>
+      </h2>
+      <p class="text-neutral-600 max-w-2xl">
+        Discover our comprehensive range of treatments designed to enhance your natural beauty.
+      </p>
     </div>
 
-    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 auto-rows-fr">
-      @for (t of treatments; track $index) {
-        <article class="group bg-white border border-neutral-200 hover:border-neutral-300 transition-all duration-500 hover:shadow-xl hover:-translate-y-1 h-full flex flex-col">
-          <div class="aspect-[4/3] bg-neutral-100 overflow-hidden">
-            <img [src]="t.image" [alt]="t.title"
-                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-          </div>
-          <div class="p-6 flex flex-col flex-1">
-            <h3 class="text-xl font-light tracking-wide text-neutral-800 mb-3">{{ t.title }}</h3>
-            <p class="text-sm text-neutral-600 leading-relaxed line-clamp-3 mb-4">{{ t.summary }}</p>
-            <div class="mt-auto flex gap-3">
-              <button (click)="openTreatmentDialog(t)"
-                      class="flex-1 inline-flex items-center justify-center h-10 px-4 border border-neutral-800 text-neutral-800 text-xs tracking-[0.16em] hover:bg-neutral-800 hover:text-white transition-all duration-300">
-                LEARN MORE
-              </button>
-              <a [routerLink]="['/contact']"
-                 class="inline-flex items-center justify-center h-10 px-4 bg-red-50 text-black text-xs tracking-[0.16em] hover:bg-red-100 transition-colors duration-300 border border-red-200">
-                BOOK
-              </a>
+    <!-- Top Row - First 5 Treatments Moving Left to Right -->
+    <div class="relative mb-6 overflow-hidden">
+      <div class="top-slider flex gap-4 will-change-transform" 
+           style="width: calc(100% * 3);">
+        @for (treatment of topRowTreatments; track trackByIndex($index, treatment)) {
+          <article class="group bg-white border border-neutral-200 hover:border-neutral-300 transition-all duration-500 hover:shadow-xl hover:-translate-y-1 flex-none w-[280px] rounded-lg overflow-hidden">
+            <!-- Image Container -->
+            <div class="aspect-[4/3] bg-neutral-100 overflow-hidden">
+              <img [src]="treatment.image" 
+                   [alt]="treatment.title"
+                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
             </div>
-          </div>
-        </article>
-      }
+            
+            <!-- Content -->
+            <div class="p-5 flex flex-col h-[200px]">
+              <h3 class="text-lg font-light tracking-wide text-neutral-800 mb-2">
+                {{ treatment.title }}
+              </h3>
+              <p class="text-sm text-neutral-600 leading-relaxed line-clamp-3 mb-4 flex-grow">
+                {{ treatment.summary }}
+              </p>
+              
+              <!-- Action Buttons -->
+              <div class="flex gap-3 mt-auto">
+                <button (click)="openTreatmentDialog(treatment)"
+                        class="flex-1 inline-flex items-center justify-center h-9 px-3 border border-neutral-800 text-neutral-800 text-xs tracking-[0.16em] hover:bg-neutral-800 hover:text-white transition-all duration-300">
+                  LEARN MORE
+                </button>
+                <a [routerLink]="['/contact']"
+                   class="inline-flex items-center justify-center h-9 px-4 bg-red-50 text-black text-xs tracking-[0.16em] hover:bg-red-100 transition-colors duration-300 border border-red-200">
+                  BOOK
+                </a>
+              </div>
+            </div>
+          </article>
+        }
+      </div>
     </div>
+
+    <!-- Bottom Row - Last 5 Treatments Moving Right to Left -->
+    <div class="relative overflow-hidden">
+      <div class="bottom-slider flex gap-4 will-change-transform" 
+           style="width: calc(100% * 3);">
+        @for (treatment of bottomRowTreatments; track trackByIndex($index, treatment)) {
+          <article class="group bg-white border border-neutral-200 hover:border-neutral-300 transition-all duration-500 hover:shadow-xl hover:-translate-y-1 flex-none w-[280px] rounded-lg overflow-hidden">
+            <!-- Image Container -->
+            <div class="aspect-[4/3] bg-neutral-100 overflow-hidden">
+              <img [src]="treatment.image" 
+                   [alt]="treatment.title"
+                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+            </div>
+            
+            <!-- Content -->
+            <div class="p-5 flex flex-col h-[200px]">
+              <h3 class="text-lg font-light tracking-wide text-neutral-800 mb-2">
+                {{ treatment.title }}
+              </h3>
+              <p class="text-sm text-neutral-600 leading-relaxed line-clamp-3 mb-4 flex-grow">
+                {{ treatment.summary }}
+              </p>
+              
+              <!-- Action Buttons -->
+              <div class="flex gap-3 mt-auto">
+                <button (click)="openTreatmentDialog(treatment)"
+                        class="flex-1 inline-flex items-center justify-center h-9 px-3 border border-neutral-800 text-neutral-800 text-xs tracking-[0.16em] hover:bg-neutral-800 hover:text-white transition-all duration-300">
+                  LEARN MORE
+                </button>
+                <a [routerLink]="['/contact']"
+                   class="inline-flex items-center justify-center h-9 px-4 bg-red-50 text-black text-xs tracking-[0.16em] hover:bg-red-100 transition-colors duration-300 border border-red-200">
+                  BOOK
+                </a>
+              </div>
+            </div>
+          </article>
+        }
+      </div>
+    </div>
+
   </div>
 </section>
 
+<!-- Treatment Detail Modal -->
+@if (selectedTreatment) {
+  <div class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
+       (click)="closeTreatmentDialog()">
+    <div class="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl"
+         (click)="$event.stopPropagation()">
+      
+      <!-- Modal Header -->
+      <div class="relative">
+        <img [src]="selectedTreatment.image" 
+             [alt]="selectedTreatment.title"
+             class="w-full h-64 object-cover rounded-t-2xl" />
+        <button (click)="closeTreatmentDialog()"
+                class="absolute top-4 right-4 w-10 h-10 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white transition-colors duration-300">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Modal Content -->
+      <div class="p-8">
+        <h2 class="text-3xl font-bold text-neutral-800 mb-4">{{ selectedTreatment.title }}</h2>
+        
+        <!-- Treatment Info Grid -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+          <div class="bg-neutral-50 p-4 rounded-lg text-center">
+            <div class="text-sm text-neutral-600 mb-1">Duration</div>
+            <div class="font-semibold text-neutral-800">{{ selectedTreatment.duration }}</div>
+          </div>
+          <div class="bg-neutral-50 p-4 rounded-lg text-center">
+            <div class="text-sm text-neutral-600 mb-1">Downtime</div>
+            <div class="font-semibold text-neutral-800">{{ selectedTreatment.downtime }}</div>
+          </div>
+          <div class="bg-neutral-50 p-4 rounded-lg text-center">
+            <div class="text-sm text-neutral-600 mb-1">Results</div>
+            <div class="font-semibold text-neutral-800">{{ selectedTreatment.results }}</div>
+          </div>
+          <div class="bg-neutral-50 p-4 rounded-lg text-center">
+            <div class="text-sm text-neutral-600 mb-1">Sessions</div>
+            <div class="font-semibold text-neutral-800">{{ selectedTreatment.sessions }}</div>
+          </div>
+        </div>
+
+        <!-- Treatment Description -->
+        <div class="mb-6">
+          <h3 class="text-xl font-semibold text-neutral-800 mb-3">About This Treatment</h3>
+          <p class="text-neutral-600 leading-relaxed whitespace-pre-line">{{ selectedTreatment.content }}</p>
+        </div>
+
+        <!-- Benefits -->
+        <div class="mb-8">
+          <h3 class="text-xl font-semibold text-neutral-800 mb-4">Key Benefits</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+            @for (benefit of selectedTreatment.benefits; track $index) {
+              <div class="flex items-center">
+                <div class="w-2 h-2 bg-red-500 rounded-full mr-3 flex-shrink-0"></div>
+                <span class="text-neutral-600">{{ benefit }}</span>
+              </div>
+            }
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="flex gap-4">
+          <a [routerLink]="['/contact']" 
+             class="flex-1 inline-flex items-center justify-center h-12 px-6 border border-neutral-800 text-neutral-800 font-semibold tracking-[0.16em] hover:bg-neutral-800 hover:text-white transition-all duration-300 rounded-lg">
+            BOOK CONSULTATION
+          </a>
+          <button (click)="closeTreatmentDialog()"
+                  class="px-6 py-3 border-2 border-neutral-300 text-neutral-700 font-semibold rounded-lg hover:border-neutral-400 transition-colors duration-300">
+            CLOSE
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+}
+
+
+
 <!-- After Treatment Care -->
-<section class="py-20 bg-white">
-  <div class="mx-auto max-w-7xl px-6">
+<section class="py-10 bg-white">
+  <div class="mx-auto max-w-full px-6">
     <div class="text-left mb-10">
       <h2 class="text-3xl md:text-4xl font-light text-neutral-800 mb-2">
         After <span class="text-red-500">Care</span>
@@ -193,7 +334,7 @@
         </ul>
       </ng-container>
 
-      <div class="flex gap-3 sticky bottom-0 bg-white pt-4 pb-2 -mx-6 px-6 md:-mx-8 md:px-8 border-t">
+      <div class="flex gap-3 sticky -bottom-6 bg-white pt-4 pb-2 -mx-6 px-6 md:-mx-8 md:px-8 border-t">
         <a [routerLink]="['/contact']"
            (click)="closeTreatmentDialog()"
            class="flex-1 inline-flex items-center justify-center h-11 px-6 bg-neutral-800 text-white text-xs tracking-[0.16em] hover:bg-neutral-700 transition">

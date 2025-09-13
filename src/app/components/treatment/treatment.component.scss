@@ -16,3 +16,27 @@
 @media (prefers-reduced-motion: reduce) {
   .marquee { animation-duration: 0s; }
 }
+
+
+
+/* step-by-step marquee (one card per step) */
+@keyframes slide-rtl {
+  to { transform: translateX(calc(-1 * var(--step) * var(--count))); }
+}
+@keyframes slide-ltr {
+  to { transform: translateX(calc(var(--step) * var(--count))); }
+}
+
+.animate-rtl, .animate-ltr {
+  animation-iteration-count: infinite;
+  animation-timing-function: steps(var(--count));
+  animation-duration: calc(var(--count) * var(--duration, 2.8s));
+  will-change: transform;
+}
+.animate-rtl { animation-name: slide-rtl; }
+.animate-ltr { animation-name: slide-ltr; }
+
+/* optional: hide scrollbars if any overflow shows */
+.hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+.hide-scrollbar::-webkit-scrollbar { display: none; }
+
