@@ -123,6 +123,15 @@ certificates: Certificate[] = [
     image: "assets/certificates/Advanced-filler-Lily.webp", // or your file, e.g. 'assets/certificates/Advanced-filler-Lily.webp'
     year: "2024",
   },
+  {
+    id: 7,
+    title: "Advanced Dermal Filler",
+    description: "Certified in advanced dermal filler techniques for facial rejuvenation.",
+    recipient: "Angela Francis",
+    institution: "The Vogue Academy",
+    image: "assets/certificates/Advanced-filler-Lily.webp",
+    year: "2024",
+  }
 ];
 
 

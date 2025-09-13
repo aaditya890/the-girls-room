@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
-import { MatDialog, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
+import { Component, Inject } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialog, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { FormBuilder, Validators, ReactiveFormsModule, FormGroup } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-dialog',
   standalone: true,
-  imports: [MatDialogModule, ReactiveFormsModule],
+  imports: [MatDialogModule, ReactiveFormsModule,CommonModule],
   templateUrl: './dialog.component.html',
   styleUrl: './dialog.component.scss'
 })
@@ -20,6 +21,7 @@ export class DialogComponent {
 
   constructor(
     private dialogRef: MatDialogRef<DialogComponent>,
+       @Inject(MAT_DIALOG_DATA) public data: { compact?: boolean },
     private matdialog: MatDialog,
     private fb: FormBuilder
   ) {}

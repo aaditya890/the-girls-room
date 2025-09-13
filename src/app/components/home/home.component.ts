@@ -3,6 +3,7 @@ import { ContactUsComponent } from "../contact-us/contact-us.component";
 import { ReviewTestimonialComponent } from "../review-testimonial/review-testimonial.component";
 import { NgOptimizedImage } from '@angular/common';
 import { TestimonialsComponent } from "../testimonials/testimonials.component";
+import { RouterLink } from "@angular/router";
 
 interface Service {
   name: string;
@@ -32,7 +33,7 @@ interface FAQ {
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [ContactUsComponent, ReviewTestimonialComponent],
+  imports: [ContactUsComponent, ReviewTestimonialComponent, RouterLink],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
