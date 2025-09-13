@@ -1,46 +1,7 @@
-testinmonial page
-logo png main
-cosnole data on conatct and dialog 
-icon image on pricing page 
-
-
-<!-- Feature Section -->
-<!-- <section class="pt-12 pb-20 bg-gray-50">
-    <div class="mx-auto max-w-7xl">
-        <div class="text-center mb-12">
-            <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-                Why to choose <span class="text-red-500">Skin Care Clinic</span>
-            </h2>
-            <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-                Experience world-class dermatological care with our advanced treatments and expert medical professionals
-            </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            @for (feature of features; track $index) {
-            <div class="text-center group hover:transform hover:scale-105 transition-all duration-300">
-                <div class="mb-6 flex justify-center">
-                    <div
-                        class="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300 text-red-500">
-                        <img [src]="feature.icon" alt="circle logos">
-                    </div>
-                </div>
-                <h3 class="text-xl font-semibold text-gray-900 mb-3">
-                    {{ feature.title }}
-                </h3>
-                <p class="text-gray-600 leading-relaxed">
-                    {{ feature.description }}
-                </p>
-            </div>
-            }
-        </div>
-    </div>
-</section> -->
+hover stop the cards on treat
+feature icons changes
+payment icons on footer 
+num font
 
 
 
-
-Why choose us 
-Experience world-class Aesthetic care with our advanced treatments and expert medical professionals
-
-steps-----
