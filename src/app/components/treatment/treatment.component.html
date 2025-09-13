@@ -7,7 +7,7 @@
   <div class="mx-auto max-w-5xl px-6 text-center py-14">
     <!-- Heading -->
     <h2 class="text-3xl md:text-5xl font-semibold text-neutral-900 mb-4 leading-tight relative">
-      Advanced Treatments for  <span class="text-red-500">Natural Beauty <span class="absolute top-0 h-2 w-2 rounded-full animate-ping"></span></span>
+      Advanced Treatments for <span class="text-red-500">Natural Beauty <span class="absolute top-0 h-2 w-2 rounded-full animate-ping"></span></span>
     </h2>
 
     <!-- Description -->
@@ -15,20 +15,6 @@
       {{ intro }}
     </p>
   </div>
-<!-- 
-  <div class="mx-auto max-w-6xl px-6 text-center relative">    
-    <h2 class="text-3xl md:text-5xl font-light text-neutral-800 mb-8 leading-tight relative">
-      Advanced Treatments for 
-      <span class="text-red-500 font-medium">Natural Beauty <span class="bg-red-500 h-3 w-3 rounded-full absolute top-0 animate-ping"></span></span>
-    </h2>
-    
-    <div class="max-w-4xl mx-auto">
-      <p class="text-lg md:text-xl text-neutral-600 leading-relaxed mb-8">
-        {{ intro }}
-      </p>
-    
-    </div>
-  </div> -->
 </section>
 
 <!-- Enhanced Highlights -->
@@ -52,7 +38,7 @@
           </svg>
         </div>
         <h3 class="text-sm font-semibold tracking-[0.22em] text-neutral-800 mb-2">SKIN HEALTH FIRST</h3>
-        <p class="text-sm text-neutral-600 leading-relaxed">Advanced protocols that cleanse, nourish and protect your natural beauty.</p>
+        <p class="text-sm text-neutral-600 leading-relaxed">Advanced protocols that cleanse, nourish, and protect your natural beauty.</p>
       </div>
       
       <div class="group p-8 bg-white border border-neutral-200 hover:border-neutral-300 transition-all duration-300 hover:shadow-lg">
@@ -61,23 +47,21 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
           </svg>
         </div>
-        <h3 class="text-sm font-semibold tracking-[0.22em] text-neutral-800 mb-2">TAILORED PLANS</h3>
-        <p class="text-sm text-neutral-600 leading-relaxed">Personalized treatment plans designed for your unique goals and lifestyle.</p>
+        <h3 class="text-sm font-semibold tracking-[0.22em] text-neutral-800 mb-2">TAILOURED PLANS</h3>
+        <p class="text-sm text-neutral-600 leading-relaxed">Personalised treatment plans designed for your unique goals and lifestyle.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Treatments (stable 4x2 on desktop) -->
+<!-- Treatments -->
 <section class="py-20 bg-white">
   <div class="mx-auto max-w-7xl px-6">
     <div class="text-left mb-12">
-      <h2 class="text-3xl md:text-4xl font-light text-neutral-800 mb-2">Our <span class="text-red-500">Treatments</span>
-      </h2>
-      <p class="text-neutral-600 max-w-2xl">Discover our comprehensive range of treatments designed to enhance your natural beauty</p>
+      <h2 class="text-3xl md:text-4xl font-light text-neutral-800 mb-2">Our <span class="text-red-500">Treatments</span></h2>
+      <p class="text-neutral-600 max-w-2xl">Discover our comprehensive range of treatments designed to enhance your natural beauty.</p>
     </div>
 
-    <!-- 2 cols on sm, 4 cols from lg; fixed rows, no spanning -->
     <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 auto-rows-fr">
       @for (t of treatments; track $index) {
         <article class="group bg-white border border-neutral-200 hover:border-neutral-300 transition-all duration-500 hover:shadow-xl hover:-translate-y-1 h-full flex flex-col">
@@ -85,12 +69,9 @@
             <img [src]="t.image" [alt]="t.title"
                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
           </div>
-
-          <!-- make body fill equal height, push actions to bottom -->
           <div class="p-6 flex flex-col flex-1">
             <h3 class="text-xl font-light tracking-wide text-neutral-800 mb-3">{{ t.title }}</h3>
             <p class="text-sm text-neutral-600 leading-relaxed line-clamp-3 mb-4">{{ t.summary }}</p>
-
             <div class="mt-auto flex gap-3">
               <button (click)="openTreatmentDialog(t)"
                       class="flex-1 inline-flex items-center justify-center h-10 px-4 border border-neutral-800 text-neutral-800 text-xs tracking-[0.16em] hover:bg-neutral-800 hover:text-white transition-all duration-300">
@@ -108,48 +89,36 @@
   </div>
 </section>
 
-
-<!-- After Treatment Care: Auto-Scrolling Cards -->
+<!-- After Treatment Care -->
 <section class="py-20 bg-white">
   <div class="mx-auto max-w-7xl px-6">
-    <!-- Heading -->
     <div class="text-left mb-10">
       <h2 class="text-3xl md:text-4xl font-light text-neutral-800 mb-2">
         After <span class="text-red-500">Care</span>
       </h2>
       <p class="text-neutral-600 max-w-2xl">
-        Comprehensive aftercare to maximize your treatment results and ensure optimal healing
+        Comprehensive aftercare to maximise your treatment results and ensure optimal healing.
       </p>
     </div>
 
-    <!-- AUTO-SCROLL ROW (marquee) -->
     <div class="group relative overflow-hidden rounded-2xl py-2">
       <div class="marquee flex items-stretch">
-        <!-- 2x list to make a seamless loop -->
         <ng-container *ngFor="let _ of [0,1]; let pass = index">
           @for (item of aftercareData; track item.url) {
-            <!-- CARD -->
             <article
               class="mx-4 w-72 sm:w-80 shrink-0 rounded-2xl bg-white ring-1 ring-neutral-200/70 shadow-sm hover:ring-neutral-300 transition-all duration-300">
-              
-              <!-- Title -->
               <div class="h-12 px-5 flex items-center justify-center text-center">
                 <h3 class="text-[15px] font-semibold text-neutral-800 line-clamp-1 w-full">
                   {{ item.title }}
                 </h3>
               </div>
-
-              <!-- Image (consistent aspect, centered) -->
               <div class="px-5">
                 <div class="relative aspect-[4/3] rounded-xl bg-neutral-50 ring-1 ring-neutral-200 overflow-hidden flex items-center justify-center">
-                  <!-- Want full image, no crop? change to object-contain -->
                   <img [src]="item.url" [alt]="item.title"
                        class="w-full h-full object-cover rounded-xl" />
                   <div class="pointer-events-none absolute inset-0 shadow-[inset_0_1px_0_rgba(255,255,255,0.5)]"></div>
                 </div>
               </div>
-
-              <!-- Subtitle -->
               <div class="h-14 px-6 pb-5 pt-3 flex items-center justify-center">
                 <p class="text-sm text-neutral-600 text-center leading-relaxed line-clamp-2">
                   {{ item.subtitle }}
@@ -163,11 +132,10 @@
   </div>
 </section>
 
-
 <!-- CTA Section -->
 <section class="py-16 bg-neutral-800">
   <div class="mx-auto max-w-4xl px-6 text-center">
-    <h2 class="text-3xl md:text-4xl font-light text-white mb-4">Ready to Begin ?</h2>
+    <h2 class="text-3xl md:text-4xl font-light text-white mb-4">Ready to Begin?</h2>
     <p class="text-neutral-300 text-lg mb-8 max-w-2xl mx-auto">Book a consultation with our expert team to discover the perfect treatment plan for you.</p>
     <div class="flex flex-col sm:flex-row gap-4 justify-center">
       <a [routerLink]="['/contact']"
@@ -182,7 +150,7 @@
   </div>
 </section>
 
-<!-- Treatment Detail Dialog (NO IMAGE) -->
+<!-- Treatment Detail Dialog -->
 <div *ngIf="selectedTreatment"
      class="fixed inset-0 z-50 grid place-items-center p-4 bg-black/50 backdrop-blur-sm"
      (click)="closeTreatmentDialog()">
@@ -198,9 +166,8 @@
       </svg>
     </button>
 
-    <!-- Content only -->
+    <!-- Content -->
     <div class="h-full overflow-y-auto p-6 md:p-8">
-      <!-- Header -->
       <h2 class="text-2xl md:text-3xl font-light text-neutral-800 mb-2">
         {{ selectedTreatment.title }}
       </h2>
@@ -208,13 +175,11 @@
         {{ selectedTreatment.summary }}
       </p>
 
-      <!-- Detailed Content -->
       <h3 class="text-lg font-medium text-neutral-800 mb-3">Treatment Overview</h3>
       <p class="text-neutral-700 leading-relaxed whitespace-pre-line mb-6">
         {{ selectedTreatment.content }}
       </p>
 
-      <!-- Benefits -->
       <ng-container *ngIf="selectedTreatment.benefits?.length">
         <h3 class="text-lg font-medium text-neutral-800 mb-3">Key Benefits</h3>
         <ul class="space-y-2 mb-6">
@@ -228,7 +193,6 @@
         </ul>
       </ng-container>
 
-      <!-- Actions (sticks to bottom on long content) -->
       <div class="flex gap-3 sticky bottom-0 bg-white pt-4 pb-2 -mx-6 px-6 md:-mx-8 md:px-8 border-t">
         <a [routerLink]="['/contact']"
            (click)="closeTreatmentDialog()"
@@ -243,8 +207,6 @@
     </div>
   </div>
 </div>
-
-
 
 <!-- Contact Section -->
 <app-contact-us></app-contact-us>
