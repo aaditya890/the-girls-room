@@ -40,18 +40,6 @@
   scrollbar-width: none;
 }
 
-// Button hover effects
-button {
-  transition: all 0.3s ease-in-out;
-}
-
-button:hover {
-  transform: scale(1.05);
-}
-
-button:active {
-  transform: scale(0.98);
-}
 
 // Mobile-specific button styles
 @media (max-width: 640px) {

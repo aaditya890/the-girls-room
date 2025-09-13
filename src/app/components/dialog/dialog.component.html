@@ -1,5 +1,4 @@
-<div class="flex flex-col-reverse md:flex-row w-full md:max-w-4xl mx-auto bg-white shadow-lg overflow-hidden relative">
-  <!-- Close Button -->
+<div class="flex flex-col-reverse md:flex-row w-full md:max-w-4xl mx-auto bg-white shadow-lg overflow-hidden">
   <div (click)="closeDialog()"
     class="absolute top-2 right-3 z-10 text-white sm:text-black font-extrabold cursor-pointer">
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
@@ -8,29 +7,18 @@
     </svg>
   </div>
 
-  <!-- Image Section (md+) -->
-  <div
-    class="hidden md:block md:w-1/2 relative h-80 md:h-auto bg-[url('assets/di.png')] bg-cover bg-center overflow-hidden group">
-    <!-- Gradient overlay -->
-    <div
-      class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/30 transition-opacity duration-700 group-hover:opacity-90">
-    </div>
-
-    <!-- Content -->
-    <div class="absolute mt-[430px] inset-0 flex flex-col justify-center items-center text-center p-4">
-      <!-- Animated sale badge -->
-      <p
-        class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4 text-white bg-black bg-opacity-70 px-8 py-3 rounded-md animate-fadeInUp shadow-lg text-shadow-md">
+  <!-- Image Section with Background (visible only on md and above) -->
+  <div class="hidden md:block md:w-1/2 relative h-80 md:h-auto bg-[url('assets/popub-img2.webp')] bg-cover bg-center">
+    <div class="absolute inset-0 bg-black/40"></div>
+    <div class="absolute inset-0 flex flex-col justify-center items-center text-white text-center p-4">
+      <p class="text-2xl sm:text-3xl md:text-5xl font-bold mb-3 bg-black bg-opacity-70 px-6 py-2 rounded-md mt-80 font-mono">
         30% OFF
       </p>
-
-      <!-- Enhanced Info Text -->
       <span
         class="text-sm sm:text-base md:text-sm bg-gradient-to-r from-white/90 to-white/70 text-black font-semibold px-6 py-3 rounded-xl shadow-lg border border-gray-200 leading-snug tracking-wide text-center animate-fadeInUp delay-150">
-        DUE TO HIGH DEMAND. <span class="text-red-400 font-bold">30% OFF</span> IS <br />
-        BACK FOR A <span class="uppercase text-red-400 font-bold">LIMITED TIME ONLY</span>
-      </span>
-
+        DUE TO HIGH DEMAND. <span class="text-red-400 font-bold"><span class="font-mono">30%</span> OFF</span>  <br />
+       IS BACK FOR A <span class="uppercase text-red-400 font-bold">LIMITED TIME ONLY</span>
+              </span>
     </div>
   </div>
 
@@ -62,22 +50,24 @@
   </style>
 
   <!-- Form Section -->
-  <div class="md:w-1/2 relative flex flex-col justify-center bg-[url('assets/di.png')] bg-cover bg-center md:bg-none">
+  <div
+    class="md:w-1/2 relative flex flex-col justify-center bg-[url('assets/popub-img2.webp')] bg-cover bg-center md:bg-none">
     <div class="absolute inset-0 bg-black/70 md:hidden"></div>
 
     <div class="relative md:bg-transparent p-4 rounded-lg">
       <h2
-        class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4 text-white md:text-zinc-800 drop-shadow-md text-center tracking-wide">
+        class="text-3xl sm:text-5xl md:text-5xl font-extrabold mb-4 text-white md:text-zinc-800 drop-shadow-md text-center font-mono">
         GET 30% OFF
       </h2>
 
       <p class="text-center text-lg sm:text-xl font-semibold mb-3 text-white md:text-gray-800">
-        Your First Treatment Course at <br class="hidden sm:block" /> EF MEDISPA
+        Your First Treatment Course at <br class="hidden sm:block" /> The Girls Room London
       </p>
 
       <p class="text-center text-sm sm:text-base mb-6 text-white/90 md:text-gray-600 leading-relaxed">
-        Established <span class="font-bold text-zinc-200 sm:text-gray-900">2007</span> · <br />
-        <span class="font-bold text-zinc-200 sm:text-gray-900">250,000+</span> treatments performed
+        Established
+        <span class="font-bold text-zinc-200 sm:text-gray-900">2020 </span>. <br />
+        <span class="font-bold text-zinc-200 sm:text-gray-900">15000+</span> treatments performed
       </p>
 
       <!-- Reactive form -->
