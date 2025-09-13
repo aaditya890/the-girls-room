@@ -1,5 +1,6 @@
 <!-- Floating WhatsApp Button (Bottom Right) -->
-<div class="fixed bottom-6 right-6 z-50 group"> <button (click)="whatsappEnquiry()"
+<div class="fixed bottom-6 right-6 z-50 group">
+    <button (click)="whatsappEnquiry()"
         class="relative w-14 h-14 md:w-16 md:h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl shadow-2xl shadow-green-500/30 transform transition-all duration-300 hover:scale-110 flex items-center justify-center overflow-visible">
         <svg class="w-7 h-7 md:w-8 md:h-8 text-white z-10 relative" fill="currentColor" viewBox="0 0 24 24">
             <path
@@ -8,14 +9,17 @@
         <div
             class="absolute inset-0 bg-green-400 rounded-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-300 animate-ping">
         </div>
-    </button> <!-- Tooltip -->
+    </button>
+   
     <div
         class="absolute bottom-full right-0 mb-3 px-3 py-2 bg-slate-800/90 backdrop-blur-sm text-white text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap border border-slate-700 shadow-xl">
         Quick WhatsApp Inquiry <div
             class="absolute top-full right-4 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-slate-800">
         </div>
     </div>
-</div> <!-- Hero Section -->
+</div>
+
+<!-- Hero Section -->
 <section class="relative bg-white overflow-visible">
     <div class="pt-24 lg:py-24"> <!-- ✅ proper 7xl container -->
         <div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -76,11 +80,11 @@
                             class="mt-2 inline-flex items-center gap-4 rounded-xl border border-gray-200 bg-white/70 px-2 py-1 shadow-sm backdrop-blur-sm w-fit max-w-[400px]">
                             <img src="assets/certificates/ABT-Accredited-Logo.png" alt="ABT Accredited"
                                 class="h-8 md:h-14 w-auto object-contain" loading="lazy" decoding="async" />
-                                <span class="h-5 w-px bg-gray-200"></span>
+                            <span class="h-5 w-px bg-gray-200"></span>
                             <img src="assets/certificates/vctc.png" alt="VCTC Accredited"
-                            class="h-8 md:h-12 w-auto object-contain" loading="lazy" decoding="async" />
-                             <span class="h-5 w-px bg-gray-200"></span>
-                             <img src="assets/certificates/The-CPD-Group.png" alt="CPD Accredited"
+                                class="h-8 md:h-12 w-auto object-contain" loading="lazy" decoding="async" />
+                            <span class="h-5 w-px bg-gray-200"></span>
+                            <img src="assets/certificates/The-CPD-Group.png" alt="CPD Accredited"
                                 class="h-8 md:h-10 w-auto object-contain" loading="lazy" decoding="async" />
                         </div>
                     </div>
@@ -139,7 +143,8 @@
 </section>
 
 
-<section class="py-10 mb-16 overflow-x-clip max-auto max-w-full">
+<!-- Video Showcase -->
+<section class="py-10 mb-12 overflow-x-clip max-auto max-w-full">
     <div class="md:mb-12 px-4 md:px-8 mx-auto max-w-full">
         <h2 class="font-bold text-2xl sm:text-4xl text-[#0e1649]">
             <span>Trending on</span>
@@ -167,8 +172,8 @@
     <!-- edge-to-edge scroller with soft shadows -->
     <div class="relative overflow-hidden mx-auto max-w-full rounded-lg">
         <!-- left rounded fade mask -->
-         <!-- <div class="h-[300px] w-[100px] absolute bg-neutral-600 rounded-full z-20 -left-10 top-28 blur-[130px]"></div> -->
-          
+        <!-- <div class="h-[300px] w-[100px] absolute bg-neutral-600 rounded-full z-20 -left-10 top-28 blur-[130px]"></div> -->
+
         <!-- right rounded fade mask -->
         <!-- <div class="h-[300px] w-[100px] absolute bg-neutral-600 rounded-full z-20 -right-10 top-28 blur-[120px]"></div> -->
         <!-- track -->
@@ -195,8 +200,44 @@
             </article> } <!-- /card -->
         </div>
     </div>
-</section> <!-- Banner Section -->
-<section class="relative bg-cover bg-center bg-no-repeat h-[300px] flex items-center"
+</section> 
+
+
+<!-- Feature Section -->
+<section class="pt-12 mb-12">
+    <div class="mx-auto max-w-7xl">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+                Why to choose <span class="text-red-500">The Girls Room</span>
+            </h2>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+              Experience world-class Aesthetic care with our advanced treatments and expert medical professionals
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            @for (feature of features; track $index) {
+            <div class="text-center group hover:transform hover:scale-105 transition-all duration-300">
+                <div class="mb-6 flex justify-center">
+                    <div
+                        class="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300 text-red-500">
+                        <img [src]="feature.icon" alt="circle logos">
+                    </div>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-3">
+                    {{ feature.title }}
+                </h3>
+                <p class="text-gray-600 leading-relaxed">
+                    {{ feature.description }}
+                </p>
+            </div>
+            }
+        </div>
+    </div>
+</section> 
+
+<!-- Banner Section -->
+<section class="top-12 bottom-12 relative bg-cover bg-center bg-no-repeat h-[300px] flex items-center"
     style="background-image: url('assets/banner-image.webp');">
     <div class="container mx-auto">
         <div class="max-w-lg text-white">
@@ -212,7 +253,7 @@
 </section>
 
 <!-- Faqs Section -->
-<section class="bg-white py-20 px-4 sm:px-6 lg:px-8">
+<section class="bg-white pt-32 pb-8 px-4 sm:px-6 lg:px-8">
     <div class="max-w-7xl mx-auto">
         <!-- Header -->
         <div class="mb-12">
@@ -246,7 +287,8 @@
                             [class.rotate-45]="faq.isExpanded" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-                        </svg> </div>
+                        </svg>
+                    </div>
                 </button>
                 <div class="overflow-hidden transition-all duration-300 ease-in-out" [class.max-h-0]="!faq.isExpanded"
                     [class.max-h-96]="faq.isExpanded">
@@ -254,8 +296,10 @@
                         <p class="text-gray-700 leading-relaxed whitespace-pre-line"> {{ faq.answer }} </p>
                     </div>
                 </div>
-            </div> } </div>
+            </div> }
+        </div>
     </div>
 </section>
+
 <app-review-testimonial></app-review-testimonial>
 <app-contact-us></app-contact-us>

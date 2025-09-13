@@ -33,6 +33,8 @@ type AfterCareData = {
 export class TreatmentComponent {
   heroUrl = "assets/images/treatments-hero.jpg"
   selectedTreatment: any
+   
+  private animationFrameId: number | null = null
 
   intro = `Explore advanced skincare and personalized care with our curated treatments. From glow-restoring facials to precision dermal therapies, each service is designed for exceptional results with the highest standards of safety and comfort.`
 
@@ -221,10 +223,8 @@ The treatment removes hair from the root, resulting in slower regrowth and progr
       summary:
         "Advanced treatment using medical-grade laser technology to permanently reduce unwanted hair. Safe, effective, and suitable for most skin types.",
       content: `Our laser hair removal treatments utilize state-of-the-art medical-grade laser technology to provide permanent hair reduction. The advanced laser systems target hair follicles with precision while protecting the surrounding skin.
-
-The treatment works by delivering controlled light energy to the hair follicles, which absorb the light and are subsequently destroyed. This process effectively reduces hair growth over a series of treatments, with many clients experiencing permanent hair reduction.
-
-Our certified technicians customize each treatment based on your skin type, hair color, and treatment area to ensure optimal results and safety. The procedure is comfortable and efficient, with most areas requiring only a few minutes of treatment time.`,
+      The treatment works by delivering controlled light energy to the hair follicles, which absorb the light and are subsequently destroyed. This process effectively reduces hair growth over a series of treatments, with many clients experiencing permanent hair reduction.
+      Our certified technicians customize each treatment based on your skin type, hair color, and treatment area to ensure optimal results and safety. The procedure is comfortable and efficient, with most areas requiring only a few minutes of treatment time.`,
       benefits: [
         "Permanent hair reduction",
         "Precision targeting of hair follicles",
@@ -245,8 +245,7 @@ Our certified technicians customize each treatment based on your skin type, hair
       summary:
         "Targeted skin care plans using professional-grade products to improve clarity, hydration, and overall skin health. Suitable for all skin types.",
       content: `Our Skin Care treatments focus on restoring balance and strengthening the skin barrier with a personalised plan. After a detailed skin analysis, we select professional-grade cleansers, exfoliants, serums, and moisturisers tailored to your goals—whether that's calming sensitivity, clearing breakouts, brightening pigmentation, or boosting hydration.
-
-Treatments may include gentle exfoliation, mask therapy, LED/light hydration, and barrier-repair protocols. You'll leave with an easy, effective home-care routine to maintain results between visits.`,
+      Treatments may include gentle exfoliation, mask therapy, LED/light hydration, and barrier-repair protocols. You'll leave with an easy, effective home-care routine to maintain results between visits.`,
       benefits: [
         "Improves overall skin health and glow",
         "Balances oil and hydration levels",
@@ -259,8 +258,109 @@ Treatments may include gentle exfoliation, mask therapy, LED/light hydration, an
       downtime: "None",
       results: "Immediate hydration; progressive clarity over weeks",
       sessions: "Every 4–6 weeks"
+    },
+    {
+      title: "+ Micro-needling",
+      slug: "+microneedling",
+      image: "assets/service-images/micro-needling.webp",
+      summary:
+        "Collagen-inducing therapy using precision micro-channels to stimulate skin renewal, improve texture, soften scars and fine lines, and enhance product absorption.",
+      content: `+ Micro-needling (also known as collagen induction therapy) creates thousands of controlled micro-channels in the skin to trigger a natural healing response. This boosts collagen and elastin, smooths uneven texture, and softens the look of scars, pores, and fine lines.
+      After a detailed consultation, we adjust needle depth and technique to suit your skin type and concerns. A sterile, single-use cartridge is used for every treatment, and targeted serums are applied to maximise results and support recovery.
+      You can expect mild redness (similar to light sun exposure) for 24–48 hours. Results develop progressively over the following weeks as new collagen is laid down, with best outcomes seen after a short course of treatments.`,
+      benefits: [
+        "Stimulates collagen and elastin production",
+        "Improves texture, tone, and luminosity",
+        "Softens acne scarring and fine lines",
+        "Minimises the appearance of enlarged pores",
+        "Enhances absorption of active serums",
+        "Customisable depth for different areas"
+      ],
+      duration: "45–60 minutes",
+      downtime: "24–48 hours of mild redness",
+      results: "Progressive over 2–6 weeks",
+      sessions: "3–6 sessions, 4–6 weeks apart"
+    },
+    {
+      title: "Dermaplaning",
+      slug: "dermaplaning",
+      image: "assets/service-images/dermaplaning.webp",
+      summary:
+        "A gentle, manual exfoliation that removes dead skin and fine vellus hair (peach fuzz) for instantly smoother, brighter, make-up-ready skin.",
+      content: `Dermaplaning uses a specialised sterile blade to lift away built-up dead skin cells and fine vellus hair from the surface of the skin. This reveals a softer, more radiant complexion and allows skincare and make-up to apply flawlessly.
+      The treatment is comfortable and suitable for most skin types, including sensitive skin. It pairs beautifully with hydrating masks, peels, or LED for enhanced glow with zero downtime.
+      Skin feels immediately smooth and looks more even and bright—perfect before events or as a regular maintenance treatment.`,
+      benefits: [
+        "Instantly smooth, luminous complexion",
+        "Removes peach fuzz for flawless make-up",
+        "Improves penetration of active skincare",
+        "Refines uneven texture and dullness",
+        "Comfortable with no downtime",
+        "Great add-on to facials and peels"
+      ],
+      duration: "30–45 minutes",
+      downtime: "None",
+      results: "Immediate glow",
+      sessions: "Every 4–6 weeks or before events"
     }
+
   ]
+
+
+ // Split treatments: first 5 for top row, last 5 for bottom row
+  topRowTreatments: Treatment[] = []
+  bottomRowTreatments: Treatment[] = []
+
+  ngOnInit() {
+    // Split treatments into two groups
+    const firstFive = this.treatments.slice(0, 5)
+    const lastFive = this.treatments.slice(5, 10)
+
+    // Create seamless infinite scroll arrays - triple duplication for smooth loop
+    this.topRowTreatments = [...firstFive, ...firstFive, ...firstFive]
+    this.bottomRowTreatments = [...lastFive, ...lastFive, ...lastFive]
+
+    this.startAnimation()
+  }
+
+  ngOnDestroy() {
+    if (this.animationFrameId) {
+      cancelAnimationFrame(this.animationFrameId)
+    }
+  }
+
+  private startAnimation() {
+    const topSlider = document.querySelector(".top-slider") as HTMLElement
+    const bottomSlider = document.querySelector(".bottom-slider") as HTMLElement
+
+    if (!topSlider || !bottomSlider) return
+
+    let topPosition = 0
+    let bottomPosition = 0
+    const speed = 0.4
+
+    const animate = () => {
+      // Top slider: Move LEFT TO RIGHT
+      topPosition += speed
+      if (topPosition >= topSlider.scrollWidth / 3) {
+        topPosition = 0
+      }
+      topSlider.style.transform = `translateX(-${topPosition}px)`
+
+      // Bottom slider: Move RIGHT TO LEFT - Fixed logic
+      bottomPosition += speed
+      if (bottomPosition >= bottomSlider.scrollWidth / 3) {
+        bottomPosition = 0
+      }
+      // For right-to-left movement, we need to start from the right and move left
+      const bottomTransform = bottomSlider.scrollWidth / 3 - bottomPosition
+      bottomSlider.style.transform = `translateX(-${bottomTransform}px)`
+
+      this.animationFrameId = requestAnimationFrame(animate)
+    }
+
+    animate()
+  }
 
   openTreatmentDialog(treatment: Treatment): void {
     this.selectedTreatment = treatment
