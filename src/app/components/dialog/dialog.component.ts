@@ -48,7 +48,7 @@ export class DialogComponent {
 
     // Build payload for Web3Forms
     const payload = {
-      access_key: '668de2f9-fa43-4e10-b6e3-63923b232b72',
+      access_key: '27bc336c-4125-4338-963c-21ef5fc40d74',
       name: this.leadForm.value.name,
       email: this.leadForm.value.email,
       subject: this.leadForm.value.subject || 'New enquiry',
