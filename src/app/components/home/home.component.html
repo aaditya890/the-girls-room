@@ -10,7 +10,7 @@
             class="absolute inset-0 bg-green-400 rounded-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-300 animate-ping">
         </div>
     </button>
-   
+
     <div
         class="absolute bottom-full right-0 mb-3 px-3 py-2 bg-slate-800/90 backdrop-blur-sm text-white text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap border border-slate-700 shadow-xl">
         Quick WhatsApp Inquiry <div
@@ -21,10 +21,10 @@
 
 <!-- Hero Section -->
 <section class="relative bg-white overflow-visible">
-    <div class="pt-24 lg:py-24"> 
+    <div class="pt-24 lg:py-24">
         <!-- ✅ proper 7xl container -->
         <div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 mb-10 md:-mb-16">
-            <div class="grid grid-cols-1 lg:grid-cols-2 items-center gap-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 items-center gap-2 md:gap-8">
                 <!-- LEFT -->
                 <div class="space-y-6">
                     <div
@@ -50,7 +50,7 @@
                     </div>
 
                     <div class="flex flex-col sm:flex-row gap-3">
-                        <button
+                        <button (click)="openDialog()"
                             class="px-6 py-3 bg-red-500 text-white font-semibold rounded-lg hover:bg-red-600 transition-shadow shadow-lg">
                             <span class="flex items-center justify-center gap-2">
                                 BOOK CONSULTATION
@@ -93,7 +93,7 @@
                 <!-- RIGHT Visual - Animated Service Carousel -->
                 <div class="relative w-full h-full flex justify-center items-center">
                     <!-- Main Image Container -->
-                    <div class="relative w-full max-w-xl mt-10 h-[350px] md:h-[450px] rounded-[18px] overflow-hidden">
+                    <div class="relative w-full max-w-xl mt-2 md:mt-10 h-[350px] md:h-[450px] rounded-[18px] overflow-hidden">
                         <div class="flex items-center justify-center h-full gap-4">
                             <!-- Left Image -->
                             <div
@@ -141,7 +141,7 @@
     </div>
 </section>
 
-<section class="py-10 mb-12 overflow-x-clip max-auto max-w-full">
+<section class="py-2 md:py-10 mb-6 overflow-x-clip max-auto max-w-full">
     <div class="md:mb-4 px-4 md:px-6 mx-auto max-w-7xl">
         <h2 class="font-bold text-2xl sm:text-4xl text-[#0e1649]">
             <span>Trending on</span>
@@ -174,13 +174,10 @@
         <!-- right rounded fade mask -->
         <!-- <div class="h-[300px] w-[100px] absolute bg-neutral-600 rounded-full z-20 -right-10 top-28 blur-[120px]"></div> -->
         <!-- track -->
-        <div #trackRef
-  class="relative flex gap-4 md:gap-6 overflow-x-auto overflow-y-hidden no-scrollbar scroll-smooth
-         px-4 sm:px-6 lg:px-8 py-8 lg:py-10 snap-x snap-mandatory touch-pan-x"
-  role="list" aria-label="Social videos">
- <!-- COMPACT CARD --> @for (v of items; track $index) {
-            <article role="listitem"
-  class="relative shrink-0 snap-start w-[64vw] xs:w-[58vw] sm:w-[48vw] md:h-[440px]
+        <div #trackRef class="relative flex gap-4 md:gap-6 overflow-x-auto overflow-y-hidden no-scrollbar scroll-smooth
+         px-4 sm:px-6 lg:px-8 py-8 lg:py-10 snap-x snap-mandatory touch-pan-x" role="list" aria-label="Social videos">
+            <!-- COMPACT CARD --> @for (v of items; track $index) {
+            <article role="listitem" class="relative shrink-0 snap-start w-[64vw] xs:w-[58vw] sm:w-[48vw] md:h-[440px]
          md:w-[410px] lg:w-[240px] xl:w-[260px] 2xl:w-[280px] rounded-2xl overflow-hidden bg-white">
                 <!-- 9:16 aspect -->
                 <div class="relative aspect-[9/16] bg-gray-100"> <video #videoEl
@@ -198,46 +195,64 @@
             </article> } <!-- /card -->
         </div>
     </div>
-</section> 
+</section>
 
 
 <!-- Feature Section -->
-<section class="pt-12 mb-12">
+<section class="mb-4 md:mb-12">
     <div class="mx-auto max-w-7xl">
-        <div class="text-center mb-12">
-            <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-                Why to choose <span class="text-red-500">Us</span>
+        <div class="text-center mb-16">
+            <!-- Title -->
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-6 leading-snug">
+                Why Choose <span class="text-red-500 relative inline-block">
+                    Us
+                    <span
+                        class="absolute left-0 bottom-0 w-full h-1 bg-red-500 rounded-md transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+                </span>
             </h2>
-            <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-              Experience world-class Aesthetic care with our advanced treatments and expert medical professionals
+
+            <!-- Subtitle -->
+            <p class="text-base md:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                Experience world-class <span class="font-semibold text-gray-800">aesthetic care</span> with our advanced
+                treatments and
+                <span class="font-semibold text-red-500">expert medical professionals</span>.
             </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 md:gap-4">
             @for (feature of features; track $index) {
-            <div class="text-center group hover:transform hover:scale-105 transition-all duration-300">
+            <div
+                class="text-center group hover:scale-105 transition-transform duration-300 bg-white shadow-md hover:shadow-xl rounded-2xl p-6 border border-neutral-100 mx-3 my-1 md:mx-0 md:my-0">
+
+                <!-- Icon wrapper -->
                 <div class="mb-6 flex justify-center">
                     <div
-                        class="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300 text-red-500">
-                        <img [src]="feature.icon" alt="circle logos">
+                        class="w-20 h-20 bg-gradient-to-tr from-red-100 via-white to-red-50 rounded-full flex items-center justify-center shadow-md group-hover:shadow-lg transition duration-300">
+                        <img [src]="feature.icon" alt="circle logos" class="w-14 h-14" />
                     </div>
                 </div>
-                <h3 class="text-xl font-semibold text-gray-900 mb-3">
+
+                <!-- Title -->
+                <h3
+                    class="text-2xl font-bold text-gray-900 mb-2 group-hover:text-red-500 transition-colors duration-300">
                     {{ feature.title }}
                 </h3>
-                <p class="text-gray-600 leading-relaxed">
+
+                <!-- Description -->
+                <p class="text-gray-600 leading-relaxed text-base">
                     {{ feature.description }}
                 </p>
             </div>
+
             }
         </div>
     </div>
-</section> 
+</section>
 
 <!-- Banner Section -->
 <section class="top-12 bottom-12 relative bg-cover bg-center bg-no-repeat h-[300px] flex items-center"
     style="background-image: url('assets/banner-image.webp');">
-    <div class="container mx-auto">
+    <div class="container mx-auto md:max-w-7xl">
         <div class="max-w-lg text-white">
             <h1 class="text-3xl md:text-4xl font-semibold leading-snug">
                 Step up your beauty game <br />

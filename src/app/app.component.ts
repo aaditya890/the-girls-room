@@ -17,6 +17,7 @@ export class AppComponent implements OnInit{
   title = 'The Girls Room'; 
   
   ngOnInit(): void {
+    // this.MatDialog.open(DialogComponent,{});
     console.log("The Girls Room ! Welcome to our website. We are delighted to have you here and look forward to assisting you on your journey to enhanced beauty and confidence.");
   }
 }
