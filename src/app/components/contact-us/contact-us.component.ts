@@ -24,8 +24,11 @@ export class ContactUsComponent {
 
   copiedEmail = false;
   copiedPhone = false;
+
+  // Submit state
   isSubmitting = false;
   submitSuccess = false;
+  submitError: string | null = null;
 
   // Reactive form
   contactForm = this.fb.group({
@@ -72,16 +75,54 @@ export class ContactUsComponent {
     return 'Invalid value';
   }
 
-  async submitToWhatsApp() {
-    if (this.contactForm.invalid) { this.contactForm.markAllAsTouched(); return; }
+  // ===== Submit to Web3Forms =====
+  async submitToWhatsApp() { // keeping your existing name used in template
+    if (this.contactForm.invalid) {
+      this.contactForm.markAllAsTouched();
+      return;
+    }
+
     this.isSubmitting = true;
-    console.log('Contact form payload:', this.contactForm.value);
-    setTimeout(() => {
+    this.submitSuccess = false;
+    this.submitError = null;
+
+    const v = this.contactForm.value;
+
+    const payload = {
+      access_key: '668de2f9-fa43-4e10-b6e3-63923b232b72',
+      name: v.name,
+      email: v.email,
+      subject: v.subject || 'New enquiry',
+      message: v.message,
+      from_name: 'The Girls Room London – Website',
+      // page_url: typeof window !== 'undefined' ? window.location.href : '',
+      user_agent: typeof navigator !== 'undefined' ? navigator.userAgent : '',
+      botcheck: '' // honeypot
+      // redirect: 'https://your-domain.com/thank-you' // optional
+    };
+
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+
+      const data = await res.json();
+
+      if (data?.success) {
+        this.submitSuccess = true;
+        this.contactForm.reset();
+        // Auto-hide success after a bit (optional)
+        setTimeout(() => (this.submitSuccess = false), 3000);
+      } else {
+        this.submitError = data?.message || 'Submission failed. Please try again.';
+      }
+    } catch {
+      this.submitError = 'Network error. Please check your connection and try again.';
+    } finally {
       this.isSubmitting = false;
-      this.submitSuccess = true;
-      this.contactForm.reset();
-      setTimeout(() => (this.submitSuccess = false), 3000);
-    }, 500);
+    }
   }
 
   telHref() {

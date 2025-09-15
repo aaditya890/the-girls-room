@@ -1,9 +1,10 @@
 import { Component, ElementRef, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { ContactUsComponent } from "../contact-us/contact-us.component";
 import { ReviewTestimonialComponent } from "../review-testimonial/review-testimonial.component";
-import { NgOptimizedImage } from '@angular/common';
-import { TestimonialsComponent } from "../testimonials/testimonials.component";
+import {MatDialog, MatDialogModule,} from '@angular/material/dialog';
 import { RouterLink } from "@angular/router";
+import { DialogComponent } from '../dialog/dialog.component';
+import { take } from 'rxjs';
 
 interface Service {
   name: string;
@@ -33,7 +34,7 @@ interface FAQ {
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [ContactUsComponent, ReviewTestimonialComponent, RouterLink],
+  imports: [ContactUsComponent, ReviewTestimonialComponent, RouterLink,MatDialogModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
@@ -41,11 +42,37 @@ export class HomeComponent {
   heroUrl = 'assets/hero-bg.jpg';
   // Hero Section Variables
   typedText: string = "";
+  // simple config
+  private readonly DIALOG_LS_KEY = 'promoClosedAt';
+  private readonly COOLDOWN_MS = 24 * 60 * 60 * 1000; // 24h (change to 6*60*60*1000 for 6h)
   private typingInterval?: number;
   currentIndex = 0;
   isAnimating = false;
   private intervalId?: number;
 
+  constructor(private dialog:MatDialog){} 
+
+   private shouldOpenPromoDialog(): boolean {
+    if (typeof window === 'undefined') return false;
+    const ts = Number(localStorage.getItem(this.DIALOG_LS_KEY));
+    if (!ts || Number.isNaN(ts)) return true;
+
+    const expired = (Date.now() - ts) > this.COOLDOWN_MS;
+    if (expired) {
+      // auto-clear so it can show again next time
+      try { localStorage.removeItem(this.DIALOG_LS_KEY); } catch {}
+    }
+    return expired; // open only if expired
+  }
+
+  openDialog(): void {
+    const ref = this.dialog.open(DialogComponent, { data: { compact: false } });
+
+    // remember close time so we don't reopen during cooldown
+    ref.afterClosed().subscribe(() => {
+      try { localStorage.setItem(this.DIALOG_LS_KEY, String(Date.now())); } catch {}
+    });
+  }
   // Hero Section Data
   services: Service[] = [
     { name: "Laser Removal", image: "assets/service-images/laser-hair-removal.webp" },
@@ -1119,6 +1146,10 @@ export class HomeComponent {
 
   ngOnInit(): void {
     this.startCarousel();
+     // Only open if not dismissed recently
+    if (this.shouldOpenPromoDialog()) {
+      this.openDialog();
+    }
     this.typeWriterEffect(this.currentServiceName);
   }
 
