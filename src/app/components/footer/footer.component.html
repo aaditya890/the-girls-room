@@ -36,7 +36,7 @@
                         </div>
                         <a href="mailto:info@aesthetics.com"
                             class="text-sm text-neutral-700 hover:text-neutral-900 transition-colors">
-                           {{emailText}}
+                            {{emailText}}
                         </a>
                     </div>
                     <div class="flex justify-start flex-col gap-2 mt-2">
@@ -110,44 +110,53 @@
                     <div class="flex">
                         <a href="https://www.facebook.com/people/The-Girls-Room-London/100061440397375/" target="_blank"
                             class="w-10 h-10">
-                           <img src="assets/Logo/sm-icon/facebook.svg" alt="facebook" class="w-7 h-7 filter">
+                            <img src="assets/Logo/sm-icon/facebook.svg" alt="facebook" class="w-7 h-7 filter">
                         </a>
 
-                        <a href="https://www.instagram.com/thegirlsroomlondon" target="_blank"
-                            class="w-10 h-10">
+                        <a href="https://www.instagram.com/thegirlsroomlondon" target="_blank" class="w-10 h-10">
                             <img src="assets/Logo/sm-icon/instagram.svg" alt="instagram" class="w-7 h-7">
                         </a>
 
-                        <a href="https://www.tiktok.com/@the.girls.room4" target="_blank"
-                            class="w-10 h-10">
+                        <a href="https://www.tiktok.com/@the.girls.room4" target="_blank" class="w-10 h-10">
                             <img src="assets/Logo/sm-icon/tiktok.svg" alt="tiktok" class="w-7 h-7">
                         </a>
 
-                        <a (click)="whatsappEnquiry()" target="_blank"
-                            class="w-10 h-10">
+                        <a (click)="whatsappEnquiry()" target="_blank" class="w-10 h-10">
                             <img src="assets/Logo/sm-icon/whatsapp.svg" alt="whatsapp" class="w-8 h-8">
                         </a>
                     </div>
                 </div>
             </div>
-  </div>
-  </div>
-  <!-- Bottom Footer -->
-  <div class="border-t border-neutral-200 bg-neutral-800">
-    <div class="mx-auto max-w-full px-6 py-6">
-      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
-        
-        <!-- Copyright -->
-        <div class="flex flex-col sm:flex-row items-center gap-4 text-sm text-neutral-400">
-          <span>&copy; 2025 The Girls Room. All Rights Reserved.</span>
-          <div class="flex gap-4">
-            <a routerLink="/privacy-policy" class="hover:text-white transition-colors cursor-pointer">Privacy Policy</a>
-            <a routerLink="/terms-and-conditions" class="hover:text-white transition-colors cursor-pointer">Terms & Conditions</a>
-          </div>
         </div>
+    </div>
+    <!-- Bottom Footer -->
+    <div class="border-t border-neutral-200 bg-neutral-800">
+        <div class="mx-auto max-w-full px-6 py-6">
+            <div class="flex flex-1 flex-col md:flex-row justify-between items-center gap-4">
+                <!-- Copyright -->
+                <div class="flex flex-col sm:flex-row items-center gap-4 text-sm text-neutral-400">
+                    <span>&copy; 2025 The Girls Room. All Rights Reserved.</span>
+                    <div class="flex gap-4">
+                        <a routerLink="/privacy-policy"
+                            class="hover:text-white transition-colors cursor-pointer">Privacy Policy</a>
+                        <a routerLink="/terms-and-conditions"
+                            class="hover:text-white transition-colors cursor-pointer">Terms & Conditions</a>
+                    </div>
+                </div>
+                <!-- Features-images -->
+                <div class="flex items-center flex-1 justify-start md:justify-end gap-1 md:gap-3 md:mr-28">
+                    <div class="mt-6">
+                        <img src="/assets/clr.png" alt="clearpay-image"
+                            class=" rounded-md h-10 md:h-[3rem] w-[8rem] md:w-[6rem]">
+                    </div>
+                    <div class="">
+                        <img src="/assets/cards-image.webp" alt="cards-image"
+                            class="text-white h-10 md:h-16 w-[8rem] md:w-[12rem]">
+                    </div>
+                </div>
 
-        <!-- Back to Top -->
-        <button (click)="scrollToTop()"
+                <!-- Back to Top -->
+                <!-- <button (click)="scrollToTop()"
           class="flex items-center gap-2 bg-red-500 text-white px-4 py-2 rounded-full text-sm tracking-wide hover:bg-red-400 transition-colors group">
           <span>BACK TO TOP</span>
           <svg class="w-4 h-4 transform group-hover:-translate-y-1 transition-transform" fill="none"
@@ -155,8 +164,8 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
               d="M5 10l7-7m0 0l7 7m-7-7v18" />
           </svg>
-        </button>
-      </div>
+        </button> -->
+            </div>
+        </div>
     </div>
-  </div>
 </footer>
