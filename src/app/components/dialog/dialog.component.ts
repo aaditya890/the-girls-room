@@ -8,9 +8,15 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [MatDialogModule, ReactiveFormsModule,CommonModule],
   templateUrl: './dialog.component.html',
-  styleUrl: './dialog.component.scss'
+  styleUrls: ['./dialog.component.scss']
 })
+
 export class DialogComponent {
+    // UI state
+  loading = false;
+  status: 'idle' | 'success' | 'error' = 'idle';
+  errorMsg = '';
+
   // Reactive form
   leadForm: FormGroup = this.fb.group({
     name: ['', [Validators.required, Validators.minLength(2)]],
@@ -21,28 +27,63 @@ export class DialogComponent {
 
   constructor(
     private dialogRef: MatDialogRef<DialogComponent>,
-       @Inject(MAT_DIALOG_DATA) public data: { compact?: boolean },
+    @Inject(MAT_DIALOG_DATA) public data: { compact?: boolean },
     private matdialog: MatDialog,
     private fb: FormBuilder
   ) {}
 
   closeDialog(): void {
-    // Either close the specific one:
     this.dialogRef.close();
-    // or close all (your original approach):
-    // this.matdialog.closeAll();
   }
 
-  onSubmit(): void {
+  async onSubmit(): Promise<void> {
     if (this.leadForm.invalid) {
       this.leadForm.markAllAsTouched();
       return;
     }
 
-    // 👉 Console the data (as requested)
-    console.log('Dialog lead form:', this.leadForm.value);
+    this.loading = true;
+    this.status = 'idle';
+    this.errorMsg = '';
 
-    // If you want to pass data back to caller and close:
-    this.dialogRef.close(this.leadForm.value);
+    // Build payload for Web3Forms
+    const payload = {
+      access_key: '668de2f9-fa43-4e10-b6e3-63923b232b72',
+      name: this.leadForm.value.name,
+      email: this.leadForm.value.email,
+      subject: this.leadForm.value.subject || 'New enquiry',
+      message: this.leadForm.value.message,
+      from_name: 'The Girls Room London – Website',
+      // Extras (optional; shows up in the email)
+      // page_url: typeof window !== 'undefined' ? window.location.href : '',
+      user_agent: typeof navigator !== 'undefined' ? navigator.userAgent : '',
+      // Honeypot (leave empty)
+      botcheck: ''
+    };
+
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+
+      const data = await res.json();
+
+      if (data?.success) {
+        this.status = 'success';
+        this.leadForm.reset();
+        // Close after a short delay, but you can remove if you want to keep it open
+        setTimeout(() => this.dialogRef.close({ ok: true }), 1200);
+      } else {
+        this.status = 'error';
+        this.errorMsg = data?.message || 'Submission failed. Please try again.';
+      }
+    } catch (err: any) {
+      this.status = 'error';
+      this.errorMsg = 'Network error. Please check your connection and try again.';
+    } finally {
+      this.loading = false;
+    }
   }
 }
