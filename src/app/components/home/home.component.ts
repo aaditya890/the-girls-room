@@ -61,25 +61,25 @@ export class HomeComponent {
   // Features Section Data
   features: Feature[] = [
     {
-      icon: "assets/service-images/1.webp",
+      icon: "assets/Logo/service-images/technology-2.png",
       title: "Advanced Technology",
       description:
         "We use the latest beauty and aesthetic equipment to deliver safe, effective, and long-lasting results.",
     },
     {
-      icon: "assets/service-images/2.webp",
+      icon: "assets/Logo/service-images/safe-2.png",
       title: "Hygienic & Safe",
       description:
         "Our clinic maintains the highest standards of hygiene and safety for every client, every time.",
     },
     {
-      icon: "assets/service-images/3.webp",
+      icon: "assets/Logo/service-images/environment-2.png",
       title: "Comfortable Environment",
       description:
         "Enjoy a relaxing and welcoming atmosphere designed to make your beauty journey stress-free.",
     },
     {
-      icon: "assets/service-images/pounds.webp",
+      icon: "assets/Logo/service-images/pound-2.png",
       title: "Affordable Packages",
       description:
         "Get premium quality treatments at transparent and competitive prices, with flexible packages.",
