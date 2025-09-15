@@ -10,7 +10,7 @@ interface Service {
   image: string;
 }
 
-interface VideoItem{
+interface VideoItem {
   src: string;
   poster: string;
   title: string;
@@ -49,11 +49,11 @@ export class HomeComponent {
   // Hero Section Data
   services: Service[] = [
     { name: "Laser Removal", image: "assets/service-images/laser-hair-removal.webp" },
-    { name: "Fat Dissolving", image: "assets/service-images/fat-dissolving.webp" }, 
+    { name: "Fat Dissolving", image: "assets/service-images/fat-dissolving.webp" },
     { name: "Facial Therapy", image: "assets/service-images/facial-treatment.webp" },
     { name: "Dermal Filler", image: "assets/service-images/dermal-filler.webp" },
     { name: "Anti-Wrinkle", image: "assets/service-images/anti-wrinkle-treatment.webp" },
-    { name: "Waxing", image: "assets/service-images/waxing.webp" }, 
+    { name: "Waxing", image: "assets/service-images/waxing.webp" },
     { name: "Hydra Facial", image: "assets/service-images/hydra-facial.webp" },
     { name: "Skin Care", image: "assets/service-images/skin-care.webp" }
   ];
@@ -87,7 +87,7 @@ export class HomeComponent {
   ];
 
   // FAQ Section Data
-   activeCategory = "Anti-Wrinkle Treatments"
+  activeCategory = "Anti-Wrinkle Treatments"
 
   categories = [
     "Expand All",
@@ -104,293 +104,994 @@ export class HomeComponent {
     // Anti-Wrinkle Treatments - General FAQs
     {
       id: 1,
-      question: "How long do anti-wrinkle treatment results last?",
-      answer:
-        "Anti-wrinkle treatment results typically last 3-6 months, depending on the individual, treatment area, and lifestyle factors. Regular treatments help maintain optimal results.",
+      question: "How long do results last?",
+      answer: "Results vary depending on treatment type and lifestyle.",
       category: "Anti-Wrinkle Treatments",
       isExpanded: false,
     },
     {
       id: 2,
-      question: "When will I see results from anti-wrinkle treatments?",
-      answer:
-        "You'll start to see results within 3-5 days, with full effects visible after 10-14 days. The muscles gradually relax, smoothing out wrinkles and fine lines.",
+      question: "When will I see results?",
+      answer: "Most treatments show results within days to weeks.",
       category: "Anti-Wrinkle Treatments",
       isExpanded: false,
     },
     {
       id: 3,
-      question: "Are anti-wrinkle treatments painful?",
-      answer:
-        "Most clients experience minimal discomfort. The injections feel like small pinpricks, and the procedure is over quickly. We can apply numbing cream if needed.",
+      question: "Is the treatment painful?",
+      answer: "Mild discomfort may occur but is usually minimal.",
       category: "Anti-Wrinkle Treatments",
       isExpanded: false,
     },
     {
       id: 4,
-      question: "What should I avoid before anti-wrinkle treatment?",
-      answer:
-        "Avoid alcohol, caffeine, sunbeds, and blood thinners where possible for 24-48 hours before treatment. Stop strong skincare actives like retinol 2-3 days before.",
+      question: "Are there side effects?",
+      answer: "Temporary redness, swelling, or bruising may occur.",
       category: "Anti-Wrinkle Treatments",
       isExpanded: false,
     },
     {
       id: 5,
-      question: "Can I wear makeup after anti-wrinkle treatment?",
-      answer:
-        "Wait at least 4 hours before applying makeup. Avoid touching or massaging the treated area for 24 hours to prevent the product from spreading.",
+      question: "How long does the treatment take?",
+      answer: "Typically 30–60 minutes depending on the treatment.",
       category: "Anti-Wrinkle Treatments",
       isExpanded: false,
     },
-
-    // Dermal Fillers - General FAQs
     {
       id: 6,
-      question: "How long do dermal filler results last?",
-      answer:
-        "Dermal filler results typically last 6-18 months, depending on the type of filler used, treatment area, and individual metabolism. Lip fillers may last 6-12 months, while cheek fillers can last 12-18 months.",
-      category: "Dermal Fillers",
+      question: "Who is suitable for this treatment?",
+      answer: "Most healthy adults; a consultation confirms suitability.",
+      category: "Anti-Wrinkle Treatments",
       isExpanded: false,
     },
     {
       id: 7,
-      question: "When will I see results from dermal fillers?",
-      answer:
-        "Results are visible immediately after treatment, though there may be initial swelling. Final results are seen after 2-3 weeks once any swelling has completely subsided.",
-      category: "Dermal Fillers",
+      question: "Can this treatment be combined with others?",
+      answer: "Yes, many treatments complement each other.",
+      category: "Anti-Wrinkle Treatments",
       isExpanded: false,
     },
     {
       id: 8,
-      question: "Are dermal filler treatments painful?",
-      answer:
-        "Most fillers contain lidocaine (local anaesthetic) to minimize discomfort. You may feel pressure and mild discomfort during injection, but pain is generally minimal.",
-      category: "Dermal Fillers",
+      question: "Is there downtime?",
+      answer: "Most treatments have little to no downtime.",
+      category: "Anti-Wrinkle Treatments",
       isExpanded: false,
     },
     {
       id: 9,
-      question: "What should I avoid before dermal filler treatment?",
-      answer:
-        "Avoid alcohol, caffeine, sunbeds, and blood thinners where possible. Stop strong skincare actives like retinol or acids 2-3 days before treatment.",
-      category: "Dermal Fillers",
+      question: "Are the results natural?",
+      answer: "Yes – treatments are designed to enhance your features.",
+      category: "Anti-Wrinkle Treatments",
       isExpanded: false,
     },
     {
       id: 10,
-      question: "What if I notice bruising or swelling after fillers?",
-      answer:
-        "Apply a cold compress and arnica cream. Mild swelling and bruising are normal and should resolve within a few days. Avoid heat treatments and exercise for 24-48 hours.",
-      category: "Dermal Fillers",
+      question: "Is the treatment safe?",
+      answer: "Yes, when carried out by a qualified professional.",
+      category: "Anti-Wrinkle Treatments",
       isExpanded: false,
     },
-
-    // HydraFacials - General FAQs
+    // Anti-Wrinkle Treatments - Before & After FAQs
     {
       id: 11,
-      question: "How long do HydraFacial results last?",
-      answer:
-        "HydraFacial results are visible immediately and can last 5-7 days. For optimal results, we recommend monthly treatments to maintain healthy, glowing skin.",
-      category: "HydraFacials",
+      question: "What should I avoid before treatment?",
+      answer: "Avoid alcohol, caffeine, sunbeds, and blood thinners where possible.",
+      category: "Anti-Wrinkle Treatments",
       isExpanded: false,
     },
     {
       id: 12,
-      question: "When will I see results from HydraFacial?",
-      answer:
-        "You'll see immediate results after your HydraFacial treatment. Your skin will appear brighter, smoother, and more hydrated right away.",
-      category: "HydraFacials",
+      question: "Should I stop skincare products before treatment?",
+      answer: "Avoid strong actives like retinol or acids 2–3 days before.",
+      category: "Anti-Wrinkle Treatments",
       isExpanded: false,
     },
     {
       id: 13,
-      question: "Is HydraFacial treatment painful?",
-      answer:
-        "HydraFacial is completely painless and relaxing. Most clients find the treatment soothing and enjoyable, with no discomfort during or after the procedure.",
-      category: "HydraFacials",
+      question: "Can I eat before my appointment?",
+      answer: "Yes – a light meal is fine unless instructed otherwise.",
+      category: "Anti-Wrinkle Treatments",
       isExpanded: false,
     },
     {
       id: 14,
-      question: "Are there side effects with HydraFacial?",
-      answer:
-        "HydraFacial has minimal side effects. Some clients may experience slight redness immediately after treatment, which typically fades within an hour.",
-      category: "HydraFacials",
+      question: "Do I need to remove makeup?",
+      answer: "Yes – arrive with clean skin if possible.",
+      category: "Anti-Wrinkle Treatments",
       isExpanded: false,
     },
     {
       id: 15,
-      question: "Is there downtime after HydraFacial?",
-      answer:
-        "There's no downtime with HydraFacial. You can return to your normal activities immediately and even apply makeup right after treatment if desired.",
-      category: "HydraFacials",
+      question: "What can I expect immediately after treatment?",
+      answer: "Mild redness or swelling may occur, which usually fades quickly.",
+      category: "Anti-Wrinkle Treatments",
       isExpanded: false,
     },
-
-    // Body Waxing - General FAQs
     {
       id: 16,
-      question: "How long do body waxing results last?",
-      answer:
-        "Body waxing results typically last 3-6 weeks, depending on your hair growth cycle and the area treated. Regular waxing can lead to finer, sparser hair regrowth over time.",
-      category: "Body Waxing",
+      question: "Can I wear makeup afterwards?",
+      answer: "Wait at least 4–24 hours, depending on the treatment.",
+      category: "Anti-Wrinkle Treatments",
       isExpanded: false,
     },
     {
       id: 17,
-      question: "Is body waxing painful?",
-      answer:
-        "There is some discomfort during waxing, but it's brief and manageable. The pain decreases with regular treatments as hair becomes finer and skin adapts.",
-      category: "Body Waxing",
+      question: "When can I exercise again?",
+      answer: "Avoid heavy exercise for 24–48 hours.",
+      category: "Anti-Wrinkle Treatments",
       isExpanded: false,
     },
     {
       id: 18,
-      question: "What should I avoid before body waxing?",
-      answer:
-        "Avoid sun exposure, sunbeds, and exfoliating 24-48 hours before treatment. Don't shave for at least 2 weeks prior - hair should be 1/4 inch long for effective waxing.",
-      category: "Body Waxing",
+      question: "Can I go in the sun afterwards?",
+      answer: "Avoid sun exposure for 24–48 hours and use SPF daily.",
+      category: "Anti-Wrinkle Treatments",
       isExpanded: false,
     },
     {
       id: 19,
-      question: "What can I expect immediately after body waxing?",
-      answer:
-        "Mild redness and sensitivity are normal and usually fade within a few hours. The treated area may feel tender, and you might see some minor bumps initially.",
-      category: "Body Waxing",
+      question: "Are there any aftercare restrictions?",
+      answer: "Avoid heat treatments, facials, and saunas for 1–2 days.",
+      category: "Anti-Wrinkle Treatments",
       isExpanded: false,
     },
     {
       id: 20,
-      question: "Are there aftercare restrictions for body waxing?",
-      answer:
-        "Avoid heat treatments, hot baths, saunas, and tight clothing for 24-48 hours. Use gentle, fragrance-free products and avoid sun exposure on treated areas.",
-      category: "Body Waxing",
+      question: "What if I notice bruising or swelling?",
+      answer: "Apply a cold compress and arnica cream; it should resolve in a few days.",
+      category: "Anti-Wrinkle Treatments",
       isExpanded: false,
     },
-
-    // Dermaplaning - General FAQs
+    // Dermal Fillers - General FAQs
     {
       id: 21,
-      question: "How long do dermaplaning results last?",
-      answer:
-        "Dermaplaning results typically last 3-4 weeks. Your skin will remain smooth and bright until the hair naturally regrows, which is usually finer than before.",
-      category: "Dermaplaning Treatment",
+      question: "How long do results last?",
+      answer: "Results vary depending on treatment type and lifestyle.",
+      category: "Dermal Fillers",
       isExpanded: false,
     },
     {
       id: 22,
-      question: "When will I see results from dermaplaning?",
-      answer:
-        "Results are immediate! Your skin will feel incredibly smooth and look brighter right after treatment, with improved makeup application and skincare absorption.",
-      category: "Dermaplaning Treatment",
+      question: "When will I see results?",
+      answer: "Most treatments show results within days to weeks.",
+      category: "Dermal Fillers",
       isExpanded: false,
     },
     {
       id: 23,
-      question: "Is dermaplaning treatment painful?",
-      answer:
-        "Dermaplaning is completely painless. You'll feel a gentle scraping sensation as the blade removes dead skin and hair, but there's no discomfort involved.",
-      category: "Dermaplaning Treatment",
+      question: "Is the treatment painful?",
+      answer: "Mild discomfort may occur but is usually minimal.",
+      category: "Dermal Fillers",
       isExpanded: false,
     },
     {
       id: 24,
-      question: "Are there side effects with dermaplaning?",
-      answer:
-        "Side effects are minimal. Some clients may experience slight redness immediately after treatment, which typically subsides within an hour.",
-      category: "Dermaplaning Treatment",
+      question: "Are there side effects?",
+      answer: "Temporary redness, swelling, or bruising may occur.",
+      category: "Dermal Fillers",
       isExpanded: false,
     },
     {
       id: 25,
-      question: "Can I go in the sun after dermaplaning?",
-      answer:
-        "Avoid direct sun exposure for 24-48 hours after treatment and always use SPF 30+ daily. Your skin will be more sensitive to UV rays after exfoliation.",
-      category: "Dermaplaning Treatment",
+      question: "How long does the treatment take?",
+      answer: "Typically 30–60 minutes depending on the treatment.",
+      category: "Dermal Fillers",
       isExpanded: false,
     },
-
-    // Microneedling - General FAQs
     {
       id: 26,
-      question: "How long do microneedling results last?",
-      answer:
-        "Microneedling results develop over 4-6 weeks as collagen production increases. Results can last 4-6 months, with optimal results achieved through a series of 3-6 treatments.",
-      category: "Microneedling",
+      question: "Who is suitable for this treatment?",
+      answer: "Most healthy adults; a consultation confirms suitability.",
+      category: "Dermal Fillers",
       isExpanded: false,
     },
     {
       id: 27,
-      question: "When will I see results from microneedling?",
-      answer:
-        "Initial results may be visible within a few days, but significant improvements appear after 4-6 weeks as new collagen forms. Full results develop over 2-3 months.",
-      category: "Microneedling",
+      question: "Can this treatment be combined with others?",
+      answer: "Yes, many treatments complement each other.",
+      category: "Dermal Fillers",
       isExpanded: false,
     },
     {
       id: 28,
-      question: "Is microneedling treatment painful?",
-      answer:
-        "We apply numbing cream before treatment to minimize discomfort. You may feel mild pressure and tingling during the procedure, but pain is generally minimal.",
-      category: "Microneedling",
+      question: "Is there downtime?",
+      answer: "Most treatments have little to no downtime.",
+      category: "Dermal Fillers",
       isExpanded: false,
     },
     {
       id: 29,
-      question: "Are there side effects with microneedling?",
-      answer:
-        "Temporary redness and mild swelling are normal for 24-48 hours after treatment. Your skin may feel tight and look slightly sunburned initially.",
-      category: "Microneedling",
+      question: "Are the results natural?",
+      answer: "Yes – treatments are designed to enhance your features.",
+      category: "Dermal Fillers",
       isExpanded: false,
     },
     {
       id: 30,
-      question: "What should I avoid before microneedling?",
-      answer:
-        "Avoid retinol, acids, and exfoliating products for 3-5 days before treatment. Don't have facial treatments or use sunbeds 1-2 weeks prior.",
-      category: "Microneedling",
+      question: "Is the treatment safe?",
+      answer: "Yes, when carried out by a qualified professional.",
+      category: "Dermal Fillers",
       isExpanded: false,
     },
-
-    // Laser Hair Removal - General FAQs
+    // Dermal Fillers - Before & After FAQs
     {
       id: 31,
-      question: "How long do laser hair removal results last?",
-      answer:
-        "Laser hair removal provides long-lasting results. After completing a full course (6-8 sessions), most clients enjoy permanent hair reduction with occasional maintenance sessions.",
-      category: "Laser Hair Removal",
+      question: "What should I avoid before treatment?",
+      answer: "Avoid alcohol, caffeine, sunbeds, and blood thinners where possible.",
+      category: "Dermal Fillers",
       isExpanded: false,
     },
     {
       id: 32,
-      question: "When will I see results from laser hair removal?",
-      answer:
-        "Hair will start shedding 1-3 weeks after treatment. You'll notice significant reduction after 3-4 sessions, with optimal results after completing the full course.",
-      category: "Laser Hair Removal",
+      question: "Should I stop skincare products before treatment?",
+      answer: "Avoid strong actives like retinol or acids 2–3 days before.",
+      category: "Dermal Fillers",
       isExpanded: false,
     },
     {
       id: 33,
-      question: "Is laser hair removal painful?",
-      answer:
-        "Most clients describe the sensation as a rubber band snapping against the skin. We use cooling technology to minimize discomfort during treatment.",
-      category: "Laser Hair Removal",
+      question: "Can I eat before my appointment?",
+      answer: "Yes – a light meal is fine unless instructed otherwise.",
+      category: "Dermal Fillers",
       isExpanded: false,
     },
     {
       id: 34,
-      question: "What should I avoid before laser hair removal?",
-      answer:
-        "Avoid plucking, waxing, and sunbeds for 4-6 weeks before treatment. Shave the area 24 hours prior and avoid fake tan. A patch test is required 24-48 hours before your first session.",
-      category: "Laser Hair Removal",
+      question: "Do I need to remove makeup?",
+      answer: "Yes – arrive with clean skin if possible.",
+      category: "Dermal Fillers",
       isExpanded: false,
     },
     {
       id: 35,
-      question: "Are there aftercare restrictions for laser hair removal?",
-      answer:
-        "Avoid heat treatments, hot baths, saunas, and exercise for 24-48 hours. Use SPF 30+ daily and avoid sun exposure on treated areas. Don't pluck or wax between sessions.",
+      question: "What can I expect immediately after treatment?",
+      answer: "Mild redness or swelling may occur, which usually fades quickly.",
+      category: "Dermal Fillers",
+      isExpanded: false,
+    },
+    {
+      id: 36,
+      question: "Can I wear makeup afterwards?",
+      answer: "Wait at least 4–24 hours, depending on the treatment.",
+      category: "Dermal Fillers",
+      isExpanded: false,
+    },
+    {
+      id: 37,
+      question: "When can I exercise again?",
+      answer: "Avoid heavy exercise for 24–48 hours.",
+      category: "Dermal Fillers",
+      isExpanded: false,
+    },
+    {
+      id: 38,
+      question: "Can I go in the sun afterwards?",
+      answer: "Avoid sun exposure for 24–48 hours and use SPF daily.",
+      category: "Dermal Fillers",
+      isExpanded: false,
+    },
+    {
+      id: 39,
+      question: "Are there any aftercare restrictions?",
+      answer: "Avoid heat treatments, facials, and saunas for 1–2 days.",
+      category: "Dermal Fillers",
+      isExpanded: false,
+    },
+    {
+      id: 40,
+      question: "What if I notice bruising or swelling?",
+      answer: "Apply a cold compress and arnica cream; it should resolve in a few days.",
+      category: "Dermal Fillers",
+      isExpanded: false,
+    },
+    // HydraFacials - General FAQs
+    {
+      id: 41,
+      question: "How long do results last?",
+      answer: "Results vary depending on treatment type and lifestyle.",
+      category: "HydraFacials",
+      isExpanded: false,
+    },
+    {
+      id: 42,
+      question: "When will I see results?",
+      answer: "Most treatments show results within days to weeks.",
+      category: "HydraFacials",
+      isExpanded: false,
+    },
+    {
+      id: 43,
+      question: "Is the treatment painful?",
+      answer: "Mild discomfort may occur but is usually minimal.",
+      category: "HydraFacials",
+      isExpanded: false,
+    },
+    {
+      id: 44,
+      question: "Are there side effects?",
+      answer: "Temporary redness, swelling, or bruising may occur.",
+      category: "HydraFacials",
+      isExpanded: false,
+    },
+    {
+      id: 45,
+      question: "How long does the treatment take?",
+      answer: "Typically 30–60 minutes depending on the treatment.",
+      category: "HydraFacials",
+      isExpanded: false,
+    },
+    {
+      id: 46,
+      question: "Who is suitable for this treatment?",
+      answer: "Most healthy adults; a consultation confirms suitability.",
+      category: "HydraFacials",
+      isExpanded: false,
+    },
+    {
+      id: 47,
+      question: "Can this treatment be combined with others?",
+      answer: "Yes, many treatments complement each other.",
+      category: "HydraFacials",
+      isExpanded: false,
+    },
+    {
+      id: 48,
+      question: "Is there downtime?",
+      answer: "Most treatments have little to no downtime.",
+      category: "HydraFacials",
+      isExpanded: false,
+    },
+    {
+      id: 49,
+      question: "Are the results natural?",
+      answer: "Yes – treatments are designed to enhance your features.",
+      category: "HydraFacials",
+      isExpanded: false,
+    },
+    {
+      id: 50,
+      question: "Is the treatment safe?",
+      answer: "Yes, when carried out by a qualified professional.",
+      category: "HydraFacials",
+      isExpanded: false,
+    },
+    // HydraFacials - Before & After FAQs
+    {
+      id: 51,
+      question: "What should I avoid before treatment?",
+      answer: "Avoid alcohol, caffeine, sunbeds, and blood thinners where possible.",
+      category: "HydraFacials",
+      isExpanded: false,
+    },
+    {
+      id: 52,
+      question: "Should I stop skincare products before treatment?",
+      answer: "Avoid strong actives like retinol or acids 2–3 days before.",
+      category: "HydraFacials",
+      isExpanded: false,
+    },
+    {
+      id: 53,
+      question: "Can I eat before my appointment?",
+      answer: "Yes – a light meal is fine unless instructed otherwise.",
+      category: "HydraFacials",
+      isExpanded: false,
+    },
+    {
+      id: 54,
+      question: "Do I need to remove makeup?",
+      answer: "Yes – arrive with clean skin if possible.",
+      category: "HydraFacials",
+      isExpanded: false,
+    },
+    {
+      id: 55,
+      question: "What can I expect immediately after treatment?",
+      answer: "Mild redness or swelling may occur, which usually fades quickly.",
+      category: "HydraFacials",
+      isExpanded: false,
+    },
+    {
+      id: 56,
+      question: "Can I wear makeup afterwards?",
+      answer: "Wait at least 4–24 hours, depending on the treatment.",
+      category: "HydraFacials",
+      isExpanded: false,
+    },
+    {
+      id: 57,
+      question: "When can I exercise again?",
+      answer: "Avoid heavy exercise for 24–48 hours.",
+      category: "HydraFacials",
+      isExpanded: false,
+    },
+    {
+      id: 58,
+      question: "Can I go in the sun afterwards?",
+      answer: "Avoid sun exposure for 24–48 hours and use SPF daily.",
+      category: "HydraFacials",
+      isExpanded: false,
+    },
+    {
+      id: 59,
+      question: "Are there any aftercare restrictions?",
+      answer: "Avoid heat treatments, facials, and saunas for 1–2 days.",
+      category: "HydraFacials",
+      isExpanded: false,
+    },
+    {
+      id: 60,
+      question: "What if I notice bruising or swelling?",
+      answer: "Apply a cold compress and arnica cream; it should resolve in a few days.",
+      category: "HydraFacials",
+      isExpanded: false,
+    },
+    // Body Waxing - General FAQs
+    {
+      id: 61,
+      question: "How long do results last?",
+      answer: "Results vary depending on treatment type and lifestyle.",
+      category: "Body Waxing",
+      isExpanded: false,
+    },
+    {
+      id: 62,
+      question: "When will I see results?",
+      answer: "Most treatments show results within days to weeks.",
+      category: "Body Waxing",
+      isExpanded: false,
+    },
+    {
+      id: 63,
+      question: "Is the treatment painful?",
+      answer: "Mild discomfort may occur but is usually minimal.",
+      category: "Body Waxing",
+      isExpanded: false,
+    },
+    {
+      id: 64,
+      question: "Are there side effects?",
+      answer: "Temporary redness, swelling, or bruising may occur.",
+      category: "Body Waxing",
+      isExpanded: false,
+    },
+    {
+      id: 65,
+      question: "How long does the treatment take?",
+      answer: "Typically 30–60 minutes depending on the treatment.",
+      category: "Body Waxing",
+      isExpanded: false,
+    },
+    {
+      id: 66,
+      question: "Who is suitable for this treatment?",
+      answer: "Most healthy adults; a consultation confirms suitability.",
+      category: "Body Waxing",
+      isExpanded: false,
+    },
+    {
+      id: 67,
+      question: "Can this treatment be combined with others?",
+      answer: "Yes, many treatments complement each other.",
+      category: "Body Waxing",
+      isExpanded: false,
+    },
+    {
+      id: 68,
+      question: "Is there downtime?",
+      answer: "Most treatments have little to no downtime.",
+      category: "Body Waxing",
+      isExpanded: false,
+    },
+    {
+      id: 69,
+      question: "Are the results natural?",
+      answer: "Yes – treatments are designed to enhance your features.",
+      category: "Body Waxing",
+      isExpanded: false,
+    },
+    {
+      id: 70,
+      question: "Is the treatment safe?",
+      answer: "Yes, when carried out by a qualified professional.",
+      category: "Body Waxing",
+      isExpanded: false,
+    },
+    // Body Waxing - Before & After FAQs
+    {
+      id: 71,
+      question: "What should I avoid before treatment?",
+      answer: "Avoid alcohol, caffeine, sunbeds, and blood thinners where possible.",
+      category: "Body Waxing",
+      isExpanded: false,
+    },
+    {
+      id: 72,
+      question: "Should I stop skincare products before treatment?",
+      answer: "Avoid strong actives like retinol or acids 2–3 days before.",
+      category: "Body Waxing",
+      isExpanded: false,
+    },
+    {
+      id: 73,
+      question: "Can I eat before my appointment?",
+      answer: "Yes – a light meal is fine unless instructed otherwise.",
+      category: "Body Waxing",
+      isExpanded: false,
+    },
+    {
+      id: 74,
+      question: "Do I need to remove makeup?",
+      answer: "Yes – arrive with clean skin if possible.",
+      category: "Body Waxing",
+      isExpanded: false,
+    },
+    {
+      id: 75,
+      question: "What can I expect immediately after treatment?",
+      answer: "Mild redness or swelling may occur, which usually fades quickly.",
+      category: "Body Waxing",
+      isExpanded: false,
+    },
+    {
+      id: 76,
+      question: "Can I wear makeup afterwards?",
+      answer: "Wait at least 4–24 hours, depending on the treatment.",
+      category: "Body Waxing",
+      isExpanded: false,
+    },
+    {
+      id: 77,
+      question: "When can I exercise again?",
+      answer: "Avoid heavy exercise for 24–48 hours.",
+      category: "Body Waxing",
+      isExpanded: false,
+    },
+    {
+      id: 78,
+      question: "Can I go in the sun afterwards?",
+      answer: "Avoid sun exposure for 24–48 hours and use SPF daily.",
+      category: "Body Waxing",
+      isExpanded: false,
+    },
+    {
+      id: 79,
+      question: "Are there any aftercare restrictions?",
+      answer: "Avoid heat treatments, facials, and saunas for 1–2 days.",
+      category: "Body Waxing",
+      isExpanded: false,
+    },
+    {
+      id: 80,
+      question: "What if I notice bruising or swelling?",
+      answer: "Apply a cold compress and arnica cream; it should resolve in a few days.",
+      category: "Body Waxing",
+      isExpanded: false,
+    },
+    // Dermaplaning - General FAQs
+    {
+      id: 81,
+      question: "How long do results last?",
+      answer: "Results vary depending on treatment type and lifestyle.",
+      category: "Dermaplaning",
+      isExpanded: false,
+    },
+    {
+      id: 82,
+      question: "When will I see results?",
+      answer: "Most treatments show results within days to weeks.",
+      category: "Dermaplaning",
+      isExpanded: false,
+    },
+    {
+      id: 83,
+      question: "Is the treatment painful?",
+      answer: "Mild discomfort may occur but is usually minimal.",
+      category: "Dermaplaning",
+      isExpanded: false,
+    },
+    {
+      id: 84,
+      question: "Are there side effects?",
+      answer: "Temporary redness, swelling, or bruising may occur.",
+      category: "Dermaplaning",
+      isExpanded: false,
+    },
+    {
+      id: 85,
+      question: "How long does the treatment take?",
+      answer: "Typically 30–60 minutes depending on the treatment.",
+      category: "Dermaplaning",
+      isExpanded: false,
+    },
+    {
+      id: 86,
+      question: "Who is suitable for this treatment?",
+      answer: "Most healthy adults; a consultation confirms suitability.",
+      category: "Dermaplaning",
+      isExpanded: false,
+    },
+    {
+      id: 87,
+      question: "Can this treatment be combined with others?",
+      answer: "Yes, many treatments complement each other.",
+      category: "Dermaplaning",
+      isExpanded: false,
+    },
+    {
+      id: 88,
+      question: "Is there downtime?",
+      answer: "Most treatments have little to no downtime.",
+      category: "Dermaplaning",
+      isExpanded: false,
+    },
+    {
+      id: 89,
+      question: "Are the results natural?",
+      answer: "Yes – treatments are designed to enhance your features.",
+      category: "Dermaplaning",
+      isExpanded: false,
+    },
+    {
+      id: 90,
+      question: "Is the treatment safe?",
+      answer: "Yes, when carried out by a qualified professional.",
+      category: "Dermaplaning",
+      isExpanded: false,
+    },
+    // Dermaplaning - Before & After FAQs
+    {
+      id: 91,
+      question: "What should I avoid before treatment?",
+      answer: "Avoid alcohol, caffeine, sunbeds, and blood thinners where possible.",
+      category: "Dermaplaning",
+      isExpanded: false,
+    },
+    {
+      id: 92,
+      question: "Should I stop skincare products before treatment?",
+      answer: "Avoid strong actives like retinol or acids 2–3 days before.",
+      category: "Dermaplaning",
+      isExpanded: false,
+    },
+    {
+      id: 93,
+      question: "Can I eat before my appointment?",
+      answer: "Yes – a light meal is fine unless instructed otherwise.",
+      category: "Dermaplaning",
+      isExpanded: false,
+    },
+    {
+      id: 94,
+      question: "Do I need to remove makeup?",
+      answer: "Yes – arrive with clean skin if possible.",
+      category: "Dermaplaning",
+      isExpanded: false,
+    },
+    {
+      id: 95,
+      question: "What can I expect immediately after treatment?",
+      answer: "Mild redness or swelling may occur, which usually fades quickly.",
+      category: "Dermaplaning",
+      isExpanded: false,
+    },
+    {
+      id: 96,
+      question: "Can I wear makeup afterwards?",
+      answer: "Wait at least 4–24 hours, depending on the treatment.",
+      category: "Dermaplaning",
+      isExpanded: false,
+    },
+    {
+      id: 97,
+      question: "When can I exercise again?",
+      answer: "Avoid heavy exercise for 24–48 hours.",
+      category: "Dermaplaning",
+      isExpanded: false,
+    },
+    {
+      id: 98,
+      question: "Can I go in the sun afterwards?",
+      answer: "Avoid sun exposure for 24–48 hours and use SPF daily.",
+      category: "Dermaplaning",
+      isExpanded: false,
+    },
+    {
+      id: 99,
+      question: "Are there any aftercare restrictions?",
+      answer: "Avoid heat treatments, facials, and saunas for 1–2 days.",
+      category: "Dermaplaning",
+      isExpanded: false,
+    },
+    {
+      id: 100,
+      question: "What if I notice bruising or swelling?",
+      answer: "Apply a cold compress and arnica cream; it should resolve in a few days.",
+      category: "Dermaplaning",
+      isExpanded: false,
+    },
+    // Microneedling - General FAQs
+    {
+      id: 101,
+      question: "How long do results last?",
+      answer: "Results vary depending on treatment type and lifestyle.",
+      category: "Microneedling",
+      isExpanded: false,
+    },
+    {
+      id: 102,
+      question: "When will I see results?",
+      answer: "Most treatments show results within days to weeks.",
+      category: "Microneedling",
+      isExpanded: false,
+    },
+    {
+      id: 103,
+      question: "Is the treatment painful?",
+      answer: "Mild discomfort may occur but is usually minimal.",
+      category: "Microneedling",
+      isExpanded: false,
+    },
+    {
+      id: 104,
+      question: "Are there side effects?",
+      answer: "Temporary redness, swelling, or bruising may occur.",
+      category: "Microneedling",
+      isExpanded: false,
+    },
+    {
+      id: 105,
+      question: "How long does the treatment take?",
+      answer: "Typically 30–60 minutes depending on the treatment.",
+      category: "Microneedling",
+      isExpanded: false,
+    },
+    {
+      id: 106,
+      question: "Who is suitable for this treatment?",
+      answer: "Most healthy adults; a consultation confirms suitability.",
+      category: "Microneedling",
+      isExpanded: false,
+    },
+    {
+      id: 107,
+      question: "Can this treatment be combined with others?",
+      answer: "Yes, many treatments complement each other.",
+      category: "Microneedling",
+      isExpanded: false,
+    },
+    {
+      id: 108,
+      question: "Is there downtime?",
+      answer: "Most treatments have little to no downtime.",
+      category: "Microneedling",
+      isExpanded: false,
+    },
+    {
+      id: 109,
+      question: "Are the results natural?",
+      answer: "Yes – treatments are designed to enhance your features.",
+      category: "Microneedling",
+      isExpanded: false,
+    },
+    {
+      id: 110,
+      question: "Is the treatment safe?",
+      answer: "Yes, when carried out by a qualified professional.",
+      category: "Microneedling",
+      isExpanded: false,
+    },
+    // Microneedling - Before & After FAQs
+    {
+      id: 111,
+      question: "What should I avoid before treatment?",
+      answer: "Avoid alcohol, caffeine, sunbeds, and blood thinners where possible.",
+      category: "Microneedling",
+      isExpanded: false,
+    },
+    {
+      id: 112,
+      question: "Should I stop skincare products before treatment?",
+      answer: "Avoid strong actives like retinol or acids 2–3 days before.",
+      category: "Microneedling",
+      isExpanded: false,
+    },
+    {
+      id: 113,
+      question: "Can I eat before my appointment?",
+      answer: "Yes – a light meal is fine unless instructed otherwise.",
+      category: "Microneedling",
+      isExpanded: false,
+    },
+    {
+      id: 114,
+      question: "Do I need to remove makeup?",
+      answer: "Yes – arrive with clean skin if possible.",
+      category: "Microneedling",
+      isExpanded: false,
+    },
+    {
+      id: 115,
+      question: "What can I expect immediately after treatment?",
+      answer: "Mild redness or swelling may occur, which usually fades quickly.",
+      category: "Microneedling",
+      isExpanded: false,
+    },
+    {
+      id: 116,
+      question: "Can I wear makeup afterwards?",
+      answer: "Wait at least 4–24 hours, depending on the treatment.",
+      category: "Microneedling",
+      isExpanded: false,
+    },
+    {
+      id: 117,
+      question: "When can I exercise again?",
+      answer: "Avoid heavy exercise for 24–48 hours.",
+      category: "Microneedling",
+      isExpanded: false,
+    },
+    {
+      id: 118,
+      question: "Can I go in the sun afterwards?",
+      answer: "Avoid sun exposure for 24–48 hours and use SPF daily.",
+      category: "Microneedling",
+      isExpanded: false,
+    },
+    {
+      id: 119,
+      question: "Are there any aftercare restrictions?",
+      answer: "Avoid heat treatments, facials, and saunas for 1–2 days.",
+      category: "Microneedling",
+      isExpanded: false,
+    },
+    {
+      id: 120,
+      question: "What if I notice bruising or swelling?",
+      answer: "Apply a cold compress and arnica cream; it should resolve in a few days.",
+      category: "Microneedling",
+      isExpanded: false,
+    },
+    // Laser Hair Removal - General FAQs
+    {
+      id: 121,
+      question: "How long do results last?",
+      answer: "Results vary depending on treatment type and lifestyle.",
+      category: "Laser Hair Removal",
+      isExpanded: false,
+    },
+    {
+      id: 122,
+      question: "When will I see results?",
+      answer: "Most treatments show results within days to weeks.",
+      category: "Laser Hair Removal",
+      isExpanded: false,
+    },
+    {
+      id: 123,
+      question: "Is the treatment painful?",
+      answer: "Mild discomfort may occur but is usually minimal.",
+      category: "Laser Hair Removal",
+      isExpanded: false,
+    },
+    {
+      id: 124,
+      question: "Are there side effects?",
+      answer: "Temporary redness, swelling, or bruising may occur.",
+      category: "Laser Hair Removal",
+      isExpanded: false,
+    },
+    {
+      id: 125,
+      question: "How long does the treatment take?",
+      answer: "Typically 30–60 minutes depending on the treatment.",
+      category: "Laser Hair Removal",
+      isExpanded: false,
+    },
+    {
+      id: 126,
+      question: "Who is suitable for this treatment?",
+      answer: "Most healthy adults; a consultation confirms suitability.",
+      category: "Laser Hair Removal",
+      isExpanded: false,
+    },
+    {
+      id: 127,
+      question: "Can this treatment be combined with others?",
+      answer: "Yes, many treatments complement each other.",
+      category: "Laser Hair Removal",
+      isExpanded: false,
+    },
+    {
+      id: 128,
+      question: "Is there downtime?",
+      answer: "Most treatments have little to no downtime.",
+      category: "Laser Hair Removal",
+      isExpanded: false,
+    },
+    {
+      id: 129,
+      question: "Are the results natural?",
+      answer: "Yes – treatments are designed to enhance your features.",
+      category: "Laser Hair Removal",
+      isExpanded: false,
+    },
+    {
+      id: 130,
+      question: "Is the treatment safe?",
+      answer: "Yes, when carried out by a qualified professional.",
+      category: "Laser Hair Removal",
+      isExpanded: false,
+    },
+    // Laser Hair Removal - Before & After FAQs
+    {
+      id: 131,
+      question: "What should I avoid before treatment?",
+      answer: "Avoid alcohol, caffeine, sunbeds, and blood thinners where possible.",
+      category: "Laser Hair Removal",
+      isExpanded: false,
+    },
+    {
+      id: 132,
+      question: "Should I stop skincare products before treatment?",
+      answer: "Avoid strong actives like retinol or acids 2–3 days before.",
+      category: "Laser Hair Removal",
+      isExpanded: false,
+    },
+    {
+      id: 133,
+      question: "Can I eat before my appointment?",
+      answer: "Yes – a light meal is fine unless instructed otherwise.",
+      category: "Laser Hair Removal",
+      isExpanded: false,
+    },
+    {
+      id: 134,
+      question: "Do I need to remove makeup?",
+      answer: "Yes – arrive with clean skin if possible.",
+      category: "Laser Hair Removal",
+      isExpanded: false,
+    },
+    {
+      id: 135,
+      question: "What can I expect immediately after treatment?",
+      answer: "Mild redness or swelling may occur, which usually fades quickly.",
+      category: "Laser Hair Removal",
+      isExpanded: false,
+    },
+    {
+      id: 136,
+      question: "Can I wear makeup afterwards?",
+      answer: "Wait at least 4–24 hours, depending on the treatment.",
+      category: "Laser Hair Removal",
+      isExpanded: false,
+    },
+    {
+      id: 137,
+      question: "When can I exercise again?",
+      answer: "Avoid heavy exercise for 24–48 hours.",
+      category: "Laser Hair Removal",
+      isExpanded: false,
+    },
+    {
+      id: 138,
+      question: "Can I go in the sun afterwards?",
+      answer: "Avoid sun exposure for 24–48 hours and use SPF daily.",
+      category: "Laser Hair Removal",
+      isExpanded: false,
+    },
+    {
+      id: 139,
+      question: "Are there any aftercare restrictions?",
+      answer: "Avoid heat treatments, facials, and saunas for 1–2 days.",
+      category: "Laser Hair Removal",
+      isExpanded: false,
+    },
+    {
+      id: 140,
+      question: "What if I notice bruising or swelling?",
+      answer: "Apply a cold compress and arnica cream; it should resolve in a few days.",
       category: "Laser Hair Removal",
       isExpanded: false,
     },
@@ -514,7 +1215,7 @@ export class HomeComponent {
     return this.services[this.currentIndex]?.name ?? '';
   }
 
-   whatsappEnquiry(): void {
+  whatsappEnquiry(): void {
     const message = encodeURIComponent("Hi")
     const phone = "+447878350664"
     const whatsappUrl = `https://api.whatsapp.com/send?phone=${phone}&text=${message}`
@@ -523,16 +1224,16 @@ export class HomeComponent {
 
 
   // video 
-    @ViewChild('trackRef', { static: true }) trackRef!: ElementRef<HTMLElement>;
+  @ViewChild('trackRef', { static: true }) trackRef!: ElementRef<HTMLElement>;
   @ViewChildren('videoEl') videos!: QueryList<ElementRef<HTMLVideoElement>>;
 
   items: VideoItem[] = [
-    { src: 'assets/reels/1.mp4', poster: 'assets/social/1.jpg', title: 'Did you know?' },
-    { src: 'assets/reels/2.mp4', poster: 'assets/social/2.jpg', title: 'Unboxing' },
-    { src: 'https://www.pexels.com/download/video/26964421/', poster: 'assets/social/3.jpg', title: 'Travel BFF' },
-    { src: 'https://www.pexels.com/download/video/25252820/', poster: 'assets/social/4.jpg', title: 'Personal BFF' },
-    { src: 'https://www.pexels.com/download/video/25537955/', poster: 'assets/social/5.jpg', title: 'Minimal Desk' },
-    { src: 'https://www.pexels.com/download/video/4821103/', poster: 'assets/social/6.jpg', title: 'Living Room' },
+    { src: 'assets/video/1.mp4', poster: 'assets/social/1.jpg', title: 'Did you know?' },
+    { src: 'assets/video/2.mp4', poster: 'assets/social/2.jpg', title: 'Unboxing' },
+    { src: 'assets/video/3.mp4', poster: 'assets/social/3.jpg', title: 'Travel BFF' },
+    { src: 'assets/video/4.mp4', poster: 'assets/social/4.jpg', title: 'Personal BFF' },
+    { src: 'assets/video/5.mp4', poster: 'assets/social/5.jpg', title: 'Minimal Desk' },
+    { src: 'assets/video/6.mp4', poster: 'assets/social/6.jpg', title: 'Living Room' },
   ];
 
   private io?: IntersectionObserver;
@@ -554,7 +1255,7 @@ export class HomeComponent {
           const v = entry.target as HTMLVideoElement;
           if (entry.isIntersecting && entry.intersectionRatio >= 0.6) {
             v.muted = true;
-            v.play().catch(() => {});
+            v.play().catch(() => { });
           } else {
             v.pause();
           }
@@ -595,10 +1296,10 @@ export class HomeComponent {
   onPointerUp(e: any) {
     const el = this.trackRef.nativeElement;
     this.isDown = false;
-    try { el.releasePointerCapture(e.pointerId); } catch {}
+    try { el.releasePointerCapture(e.pointerId); } catch { }
     el.classList.remove('grabbing');
   }
 
-  
+
 
 }

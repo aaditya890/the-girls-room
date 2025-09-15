@@ -73,23 +73,19 @@
 
 
 
-/* Hide scrollbar but keep horizontal scroll (ALL major engines) */
 .no-scrollbar {
-  overflow-x: auto;
-
-  /* Firefox */
-  scrollbar-width: none;
-
-  /* Old Edge/IE */
-  -ms-overflow-style: none;
+  scrollbar-width: none;      /* Firefox   */
+  -ms-overflow-style: none;   /* Old Edge  */
 }
 
+.no-scrollbar::-webkit-scrollbar { display: none; } /* Chromium/WebKit */
+
+/* make touch swipes scroll horizontally */
+.touch-pan-x { touch-action: pan-x; }
 /* Chromium / WebKit */
 .no-scrollbar::-webkit-scrollbar { width: 0 !important; height: 0 !important; display: none !important; }
 .no-scrollbar::-webkit-scrollbar-track { background: transparent !important; }
 .no-scrollbar::-webkit-scrollbar-thumb { background: transparent !important; border: none !important; }
 
-/* Drag feedback cursor */
-.no-scrollbar { cursor: grab; }
-.no-scrollbar.grabbing { cursor: grabbing; }
+
 

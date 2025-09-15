@@ -33,7 +33,8 @@ type AfterCareData = {
 export class TreatmentComponent {
   heroUrl = "assets/images/treatments-hero.jpg"
   selectedTreatment: any
-   
+  pauseTop = false;
+  pauseBottom = false;
   private animationFrameId: number | null = null
 
   intro = `Explore advanced skincare and personalized care with our curated treatments. From glow-restoring facials to precision dermal therapies, each service is designed for exceptional results with the highest standards of safety and comfort.`
@@ -329,37 +330,33 @@ The treatment removes hair from the root, resulting in slower regrowth and progr
     }
   }
 
-  private startAnimation() {
-    const topSlider = document.querySelector(".top-slider") as HTMLElement
-    const bottomSlider = document.querySelector(".bottom-slider") as HTMLElement
+   private startAnimation() {
+    const topSlider = document.querySelector(".top-slider") as HTMLElement;
+    const bottomSlider = document.querySelector(".bottom-slider") as HTMLElement;
+    if (!topSlider || !bottomSlider) return;
 
-    if (!topSlider || !bottomSlider) return
-
-    let topPosition = 0
-    let bottomPosition = 0
-    const speed = 0.4
+    let topPosition = 0;
+    let bottomPosition = 0;
+    const speed = 0.4;
 
     const animate = () => {
-      // Top slider: Move LEFT TO RIGHT
-      topPosition += speed
-      if (topPosition >= topSlider.scrollWidth / 3) {
-        topPosition = 0
+      // Only move if NOT paused
+      if (!this.pauseTop) {
+        topPosition += speed;
+        if (topPosition >= topSlider.scrollWidth / 3) topPosition = 0;
+        topSlider.style.transform = `translateX(-${topPosition}px)`;
       }
-      topSlider.style.transform = `translateX(-${topPosition}px)`
 
-      // Bottom slider: Move RIGHT TO LEFT - Fixed logic
-      bottomPosition += speed
-      if (bottomPosition >= bottomSlider.scrollWidth / 3) {
-        bottomPosition = 0
+      if (!this.pauseBottom) {
+        bottomPosition += speed;
+        if (bottomPosition >= bottomSlider.scrollWidth / 3) bottomPosition = 0;
+        const bottomTransform = bottomSlider.scrollWidth / 3 - bottomPosition; // RTL motion
+        bottomSlider.style.transform = `translateX(-${bottomTransform}px)`;
       }
-      // For right-to-left movement, we need to start from the right and move left
-      const bottomTransform = bottomSlider.scrollWidth / 3 - bottomPosition
-      bottomSlider.style.transform = `translateX(-${bottomTransform}px)`
+      this.animationFrameId = requestAnimationFrame(animate);
+    };
 
-      this.animationFrameId = requestAnimationFrame(animate)
-    }
-
-    animate()
+    animate();
   }
 
   openTreatmentDialog(treatment: Treatment): void {

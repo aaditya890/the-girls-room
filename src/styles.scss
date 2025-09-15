@@ -39,8 +39,15 @@ $the-girls-room-theme: mat.define-light-theme((
 @tailwind components;
 @tailwind utilities;
 
+.cl-font {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+}
+
 html,body{
     font-family: "Syne", sans-serif;
 }
 html, body { height: 100%; }
 body { margin: 0; }
+
+
