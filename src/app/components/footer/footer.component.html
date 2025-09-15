@@ -123,8 +123,7 @@
                         @if (newsletterForm.get('email')?.invalid && (newsletterForm.get('email')?.touched ||
                         newsletterForm.get('email')?.dirty)) {
                         <div id="nl-email-error" class="text-xs text-red-600 -mt-2">
-                            {{ newsletterForm.get('email')?.errors?.['required'] ? 'Email is required' : 'Please enter a
-                            valid email' }}
+                            {{ newsletterForm.get('email')?.errors?.['required'] ? 'Email is required' : 'Please enter a valid email' }}
                         </div>
                         }
 
