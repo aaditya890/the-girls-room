@@ -1,0 +1,13 @@
+/* Pick a realistic minimum footer height for your layout */
+:root { --footer-min-h: 520px; } /* tune if your footer is taller/shorter */
+
+/* Placeholder that reserves space before the footer renders */
+.footer-skeleton { height: var(--footer-min-h); }
+
+/* Lock the layout size of the real footer so it doesn't shift when content paints */
+.footer-host {
+  display: block;
+  min-height: var(--footer-min-h);
+  content-visibility: auto;
+  contain-intrinsic-size: var(--footer-min-h); /* browsers use this height before paint */
+}

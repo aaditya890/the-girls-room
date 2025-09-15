@@ -141,6 +141,7 @@
     </div>
 </section>
 
+<!-- Reel/Video Showcase Section -->
 <section class="py-2 md:py-10 mb-6 overflow-x-clip max-auto max-w-full">
     <div class="md:mb-4 px-4 md:px-6 mx-auto max-w-7xl">
         <h2 class="font-bold text-2xl sm:text-4xl text-[#0e1649]">
@@ -181,7 +182,7 @@
          md:w-[410px] lg:w-[240px] xl:w-[260px] 2xl:w-[280px] rounded-2xl overflow-hidden bg-white">
                 <!-- 9:16 aspect -->
                 <div class="relative aspect-[9/16] bg-gray-100"> <video #videoEl
-                        class="absolute inset-0 w-full h-full object-cover" [poster]="v.poster || ''" [src]="v.src"
+                        class="absolute inset-0 w-full h-full object-cover" 
                         preload="metadata" playsinline muted loop></video> <!-- FULL-WIDTH BRAND OVERLAY -->
                     <div class="pointer-events-none absolute inset-0"> <!-- gradient layer -->
                         <!-- <div class="absolute inset-x-0 bottom-0 h-16 md:h-20 bg-gradient-to-b from-transparent via-gray-500/70 to-gray-500/90" ></div> -->
@@ -196,7 +197,6 @@
         </div>
     </div>
 </section>
-
 
 <!-- Feature Section -->
 <section class="mb-4 md:mb-12">
