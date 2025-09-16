@@ -73,6 +73,7 @@ export class HomeComponent {
       try { localStorage.setItem(this.DIALOG_LS_KEY, String(Date.now())); } catch {}
     });
   }
+
   // Hero Section Data
   services: Service[] = [
     { name: "Laser Removal", image: "assets/service-images/laser-hair-removal.webp" },
@@ -1159,7 +1160,6 @@ export class HomeComponent {
     this.io?.disconnect();
   }
 
-
   // Hero Section Methods
   get currentServicePhrase(): string {
     return `Transform Your ${this.services[this.currentIndex]?.name ?? ""}`;
@@ -1331,7 +1331,5 @@ export class HomeComponent {
     try { el.releasePointerCapture(e.pointerId); } catch { }
     el.classList.remove('grabbing');
   }
-
-
 
 }

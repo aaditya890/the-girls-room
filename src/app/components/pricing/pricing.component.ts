@@ -38,7 +38,7 @@ export class PricingComponent {
 
    serviceCategories: ServiceCategory[] = [
     {
-      title: "Cosmetic Injectables",
+      title: "Anti-Wrinkle",
       icon: "assets/Logo/pricing-page-icons/cosmetic-injectables-treatments.webp",
       services: [
         { name: "Fat Dissolving Injections", price: "£60.00", duration: "30-45 mins" },
@@ -235,7 +235,7 @@ export class PricingComponent {
       "Upper Body Treatments": "Upper Body",
       "Laser hair removal": "Laser Hair Removal",
       "Body Wax": "Body Wax",
-      "Cosmetic Injectables & Treatments": "Injectables",
+      "Anti-Wrinkle": "Injectables",
       "Dermal Fillers": "Fillers",
       Facials: "Facials",
     }
