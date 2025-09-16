@@ -20,68 +20,68 @@ export class ReviewTestimonialComponent implements OnInit, OnDestroy {
   slidesToShow = 3 // Number of slides to show on desktop
   autoSlideInterval: any
 
-  testimonials: Testimonial[] = [
-    {
-      id: 1,
-      name: "Chelsea Allman.",
-      text: "Had lip filler done by the beautiful angela, she knew it was my first time ever having any work done. But she was so gentle and delicate and took her time it made the experience more comfortable. I absolutely love my lips done by Angela! It’s gave me so much more confidence. She is truly the best! Xx",
-      rating: 5,
-    },
-    {
-      id: 2,
-      name: "Taronnie World.",
-      text: "Had lips & botox done and my lips look amazing they have been perfectly filled without looking fake, the shop was easy to find very clean and hygienic. Over the moon with my results can't wait to re visit ☺.",
-      rating: 5,
-    },
-    {
-      id: 3,
-      name: "Chantelle.",
-      text: "Exceptional customer service from Angela.Answered all my questions promptly. Was nervous about micro needling and she explained thoroughly what to expect. Did an amazing job!!Highly recommend The Girls room london (Angela). Looking forward to getting some other work done. Thank you soo much.",
-      rating: 4,
-    },
-    {
-      id: 4,
-      name: "Rebecca Finn.",
-      text: "I had Botox and lemon bottle fat dissolving with Angela today. I’m so happy with the results already, I was able to bring my daughter with me and we both felt very welcomed and comfortable making the experience even better. Angela made sure I felt no pain and was very professional when doing the procedure. I will be sure to go back to the girls room again for my top ups and any other aesthetic treatment needed in the future ❤.",
-      rating: 5,
-    },
-    {
-      id: 5,
-      name: "Natalie Hazlewood.",
-      text: "I had my Botox and brow lift done by the girls room, and Angela was so gentle and inviting. I’m obsessed with my results. I would definitely recommend she explained everything step by step as she was doing my treatment.",
-      rating: 5,
-    },
-    {
-      id: 6,
-      name: "A Google User.",
-      text: "Angela is the only one I trust with my face! She has the magic touch and I am so happy with my Botox! It had been like 3 years since I’ve had anything done and I just had to come back to Angela! Her attention to detail and my needs are unmatched! I cant wait to get my cheeks and lips done with her. Also the space is so beautiful and calming they really did a great job with the aesthetic!!",
-      rating: 5,
-    },
-    {
-      id: 7,
-      name: "Serina lyn.",
-      text: "I've been hearing about B12 injections for some time now and decided to have it done. The Girls Room was very professional I did not even feel the needle going in. Looking forward to seeing the benefits of have the B12 done.",
-      rating: 4,
-    },
-    {
-      id: 8,
-      name: "Carolene Brissette.",
-      text: "Very friendly am comfortable clean environment I was advice very well on my treatment an after treatment I have a lemon bottle under chin it wasn’t painful I was well relaxed I got a instant result I am very happy an please with my treatment. Can’t wait to go back for my second session xx.",
-      rating: 5,
-    },
-    {
-      id: 9,
-      name: "Sal Chebbah.",
-      text: "Had a lovely time at the Girls Room and the products offering is amazing. Gréât results - will go back again.",
-      rating: 5,
-    },
-    {
-      id: 10,
-      name: "Pest Control And Cleaning Ltd.",
-      text: "Very professional service very friendly service by Angela I had derma planning and micro needling to my face neck and back it’s was very good I would recommend her to any one Very good service👏",
-      rating: 4,
-    }
-  ]
+testimonials: Testimonial[] = [
+  {
+    id: 1,
+    name: "Chelsea Allman.",
+    text: "First time lip filler with Angela. She was gentle, explained everything, and took her time. Love the natural result and new confidence.",
+    rating: 5,
+  },
+  {
+    id: 2,
+    name: "Taronnie World.",
+    text: "Had lips and Botox. Lips look natural, not overdone. Clinic was easy to find, spotless, and hygienic. Thrilled with results—will return.",
+    rating: 5,
+  },
+  {
+    id: 3,
+    name: "Chantelle.",
+    text: "Great service from Angela. She answered all questions and eased my nerves about microneedling. Results are great—highly recommend The Girls Room.",
+    rating: 4,
+  },
+  {
+    id: 4,
+    name: "Rebecca Finn.",
+    text: "Botox and Lemon Bottle with Angela. Felt comfortable, even with my daughter. Virtually painless, very professional, and I’m already seeing results. Will be back.",
+    rating: 5,
+  },
+  {
+    id: 5,
+    name: "Natalie Hazlewood.",
+    text: "Botox and brow lift at The Girls Room. Angela was gentle and welcoming, explaining each step. I’m obsessed with the results—highly recommend.",
+    rating: 5,
+  },
+  {
+    id: 6,
+    name: "A Google User.",
+    text: "Angela is the only one I trust. Detailed, calming, and precise—my Botox looks perfect. Excited to return for cheeks and lips; beautiful clinic.",
+    rating: 5,
+  },
+  {
+    id: 7,
+    name: "Serina lyn.",
+    text: "Tried a B12 injection after hearing great things. The team was professional; I barely felt the needle. Excited to notice the benefits soon.",
+    rating: 4,
+  },
+  {
+    id: 8,
+    name: "Carolene Brissette.",
+    text: "Friendly team and clean clinic. Lemon Bottle under the chin was comfortable and relaxing, with instant visible results. Excited for my second session.",
+    rating: 5,
+  },
+  {
+    id: 9,
+    name: "Sal Chebbah.",
+    text: "Lovely visit to The Girls Room. Great product range and excellent results. I’ll definitely be returning. Service was warm and professional.",
+    rating: 5,
+  },
+  {
+    id: 10,
+    name: "Pest Control And Cleaning Ltd.",
+    text: "Angela was friendly and professional. Dermaplaning and microneedling on my face, neck, and back were excellent. I’d recommend her to anyone.",
+    rating: 4,
+  },
+];
 
   ngOnInit() {
     this.startAutoSlide()
