@@ -34,4 +34,13 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngOnDestroy(): void { this.io?.disconnect(); }
+
+  
+  whatsappEnquiry(): void {
+    const message = encodeURIComponent("Hi")
+    const phone = "+447878350664"
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=${phone}&text=${message}`
+    window.open(whatsappUrl, "_blank")
+  }
+
 }

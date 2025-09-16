@@ -30,6 +30,10 @@ export const routes: Routes = [
       loadComponent: () => import('./components/terms-and-conditions/terms-and-conditions.component').then(c => c.TermsAndConditionsComponent)
    },
    {
+      path:'gdpr',
+      loadComponent: () => import('../app/components/gdpr/gdpr.component').then((m) => m.GdprComponent)
+   },
+   {
       path:'testimonials',
       loadComponent: () => import('./components/testimonials/testimonials.component').then(c => c.TestimonialsComponent)
    }
