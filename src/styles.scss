@@ -46,6 +46,7 @@ $the-girls-room-theme: mat.define-light-theme((
 
 html,body{
     font-family: "Syne", sans-serif;
+    overflow-x: hidden;
 }
 html, body { height: 100%; }
 body { margin: 0; }
