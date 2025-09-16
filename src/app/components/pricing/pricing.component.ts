@@ -191,9 +191,9 @@ export class PricingComponent {
     {
       category: "Full Body Packages",
       packages: [
-        { name: "Female Full Body (6 Sessions)", price: "£1,650", duration: "—" },
-        { name: "Male Full Body (6 Sessions)", price: "£1,650", duration: "—" },
-        { name: "Mini Full Body (Excl. back & shoulders, 6 Sessions)", price: "£1,350", duration: "—" },
+        { name: "Female Full Body (6 Sessions)", price: "£1,650", duration: "" },
+        { name: "Male Full Body (6 Sessions)", price: "£1,650", duration: "" },
+        { name: "Mini Full Body (Excl. back & shoulders, 6 Sessions)", price: "£1,350", duration: "" },
       ],
     },
   ]
