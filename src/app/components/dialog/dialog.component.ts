@@ -2,11 +2,12 @@ import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialog, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { FormBuilder, Validators, ReactiveFormsModule, FormGroup } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { Router, RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-dialog',
   standalone: true,
-  imports: [MatDialogModule, ReactiveFormsModule,CommonModule],
+  imports: [MatDialogModule, ReactiveFormsModule, CommonModule],
   templateUrl: './dialog.component.html',
   styleUrls: ['./dialog.component.scss']
 })
@@ -29,12 +30,19 @@ export class DialogComponent {
     private dialogRef: MatDialogRef<DialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: { compact?: boolean },
     private matdialog: MatDialog,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private router:Router
   ) {}
 
   closeDialog(): void {
     this.dialogRef.close();
   }
+
+  navigateAndClose(){
+    this.router.navigate(['/terms-and-conditions'])
+    this.closeDialog()
+  }
+
 
   async onSubmit(): Promise<void> {
     if (this.leadForm.invalid) {

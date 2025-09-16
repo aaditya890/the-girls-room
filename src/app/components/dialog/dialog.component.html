@@ -26,7 +26,7 @@
     <div class="absolute inset-0 bg-black/70 md:hidden"></div>
 
     <div class="relative md:bg-transparent p-4 rounded-lg">
-      <p class="text-3xl sm:text-5xl md:text-5xl font-extrabold mb-4 text-white md:text-zinc-800 drop-shadow-md text-center cl-font">
+      <p class="text-3xl sm:text-5xl md:text-5xl font-extrabold mb-4 text-white md:text-zinc-800 text-center cl-font">
         GET <span class="text-red-500">30%</span> OFF
       </p>
 
@@ -84,7 +84,7 @@
 
         <div>
           <span class="text-xs text-white md:text-gray-800 text-justify">
-            *By signing up, you accept our terms and conditions. Cannot be used in
+            *By signing up, you accept our <a (click)="navigateAndClose()" class="underline cursor-pointer">terms and conditions</a> Cannot be used in
             conjunction with other offers. Certain courses may be excluded. Offer valid for new clients only.
           </span>
         </div>
