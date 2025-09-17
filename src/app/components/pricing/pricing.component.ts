@@ -36,15 +36,20 @@ export class PricingComponent {
   activeCategory = -1 // Start with "All" selected
   expandedServices: { [key: string]: boolean } = {}
 
-   serviceCategories: ServiceCategory[] = [
+  serviceCategories: ServiceCategory[] = [
     {
       title: "Anti-Wrinkle",
       icon: "assets/Logo/pricing-page-icons/cosmetic-injectables-treatments.webp",
       services: [
-        { name: "Fat Dissolving Injections", price: "£60.00", duration: "30-45 mins" },
-        { name: "Anti-Wrinkle Injections", price: "£100.00", duration: "20-40 mins" },
-        { name: "Dermal Fillers", price: "£90.00", duration: "45 mins - 1 hr 20 mins" },
-        { name: "Vitamin Injections", price: "£30.00", duration: "30 mins" },
+        { name: "Bunny lines", price: "£100", duration: "20 min" },
+        { name: "Eye brow lift", price: "£100", duration: "20 min" },
+        { name: "Lip Flip", price: "£90", duration: "20 min" },
+        { name: "Smokers lines", price: "£120", duration: "20 min" },
+        { name: "Two areas", price: "£180", duration: "30 min" },
+        { name: "Three areas", price: "£210", duration: "30 min" },
+        { name: "Jawline slimmer", price: "£250", duration: "40 min each" },
+        { name: "Neck lift", price: "£200", duration: "41 min each" },
+        { name: "Arm pits", price: "£200", duration: "42 min each" },
       ],
     },
     {

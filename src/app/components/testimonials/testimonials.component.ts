@@ -131,6 +131,42 @@ certificates: Certificate[] = [
     institution: "The Vogue Academy",
     image: "assets/certificates/Advanced-filler-Lily.webp",
     year: "2024",
+  },
+    {
+    id: 8,
+    title: "nw1",
+    description: "Certified in advanced dermal filler techniques for facial rejuvenation.",
+    recipient: "Angela Francis",
+    institution: "The Vogue Academy",
+    image: "assets/certificates/nw1.png",
+    year: "2024",
+  },
+    {
+    id: 9,
+    title: "nw2",
+    description: "Certified in advanced dermal filler techniques for facial rejuvenation.",
+    recipient: "Angela Francis",
+    institution: "The Vogue Academy",
+    image: "assets/certificates/nw2.png",
+    year: "2024",
+  },
+    {
+    id: 10,
+    title: "nw3",
+    description: "Certified in advanced dermal filler techniques for facial rejuvenation.",
+    recipient: "Angela Francis",
+    institution: "The Vogue Academy",
+    image: "assets/certificates/nw3.jpg",
+    year: "2024",
+  },
+   {
+    id: 11,
+    title: "nw4",
+    description: "Certified in advanced dermal filler techniques for facial rejuvenation.",
+    recipient: "Angela Francis",
+    institution: "The Vogue Academy",
+    image: "assets/certificates/nw4.webp",
+    year: "2024",
   }
 ];
 

@@ -1,3 +1,76 @@
 video me stuck ho jata hai -- Done
 faqs me a part to better vision 
 pricing tab
+
+
+
+<!-- Reel/Video Showcase Section -->
+<section class="py-2 md:py-10 mb-6 overflow-x-clip max-auto max-w-full">
+    <div class="md:mb-4 px-4 md:px-6 mx-auto max-w-7xl">
+        <h2 class="font-bold text-2xl sm:text-4xl text-[#0e1649]">
+            <span>Real People. Real </span>
+            <span
+                class="ml-1 inline-flex items-center rounded-md bg-gradient-to-r from-[#6a1b6e]/12 to-[#b21e6b]/12 ring-1 ring-inset ring-[#6a1b6e]/25">
+                <span class="text-white bg-gradient-to-r from-red-500 to-red-500 px-2 py-0.5 rounded-md block   ">
+                    Result
+                </span>
+            </span>
+
+            <br class="block" />
+            <span class="mt-2 inline-flex items-center gap-2 text-base sm:text-lg font-semibold">
+                <span class="relative flex h-2.5 w-2.5">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500/35"></span>
+                    <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-800"></span>
+                </span>
+                <span
+                    class="inline-flex items-center rounded-full bg-white/60 px-3 py-1 border border-[#0e1649]/15 text-[#0e1649] backdrop-blur-sm hover:bg-white/80 transition">
+                    <a href="https://www.instagram.com/thegirlsroomlondon" target="_blank">Tap to Visit</a>
+                </span>
+            </span>
+        </h2>
+    </div>
+
+    <!-- edge-to-edge scroller with soft shadows -->
+    <div class="relative mx-auto md:ml-24 rounded-md">
+        <div #trackRef class="relative flex gap-4 md:gap-6 overflow-x-auto overflow-y-hidden no-scrollbar scroll-smooth
+         px-4 sm:px-6 lg:px-8 py-8 lg:py-10 snap-x snap-mandatory touch-pan" role="list" aria-label="Social videos">
+            <!-- COMPACT CARD --> @for (v of items; track $index) {
+            <article role="listitem" class="relative shrink-0 snap-start w-[64vw] xs:w-[58vw] sm:w-[48vw] md:h-[440px]
+         md:w-[410px] lg:w-[240px] xl:w-[260px] 2xl:w-[280px] rounded-2xl overflow-hidden bg-white">
+                <!-- 9:16 aspect -->
+                <div class="relative aspect-[9/16] bg-gray-100">
+                    <video #videoEl class="absolute inset-0 w-full h-full object-cover bg-black" [poster]="v.poster"
+                        playsinline muted preload="metadata">
+                        <source [src]="v.src" type="video/mp4" />
+                        <!-- optional fallback text -->
+                        Your browser does not support HTML5 video.
+                    </video>
+                    <!-- FULL-WIDTH BRAND OVERLAY -->
+                    <!-- <div class="pointer-events-none absolute inset-0">
+                        <div class="absolute bottom-2 left-3 right-3">
+                            <div class="text-white font-extrabold text-sm sm:text-base drop-shadow"> {{ v.title }}
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </article> } <!-- /card -->
+        </div>
+    </div>
+</section>
+
+
+interface VideoItem {
+  src: string;
+  poster: string;
+  title: string;
+}
+
+  items: VideoItem[] = [
+    { src: 'assets/video/1.mp4', poster: 'assets/social/1.jpg', title: 'Did you know?' },
+    { src: 'assets/video/2.mp4', poster: 'assets/social/2.jpg', title: 'Unboxing' },
+    { src: 'assets/video/3.mp4', poster: 'assets/social/3.jpg', title: 'Travel BFF' },
+    { src: 'assets/video/4.mp4', poster: 'assets/social/4.jpg', title: 'Personal BFF' },
+    { src: 'assets/video/5.mp4', poster: 'assets/social/5.jpg', title: 'Minimal Desk' },
+    { src: 'assets/video/6.mp4', poster: 'assets/social/6.jpg', title: 'Living Room' },
+  ];
+

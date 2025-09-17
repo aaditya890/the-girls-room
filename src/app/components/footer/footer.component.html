@@ -1,7 +1,7 @@
 <section class="bg-neutral-50 border-t border-neutral-200" style="content-visibility:auto;contain-intrinsic-size:520px">
   <!-- Main Footer Content -->
   <div class="mx-auto max-w-7xl px-6 py-16">
-    <div class="grid lg:grid-cols-4 md:grid-cols-2 gap-12">
+    <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-12">
       <!-- Brand Section -->
       <div class="lg:col-span-1">
         <div class="mb-6">
@@ -11,8 +11,7 @@
               loading="lazy" decoding="async" />
           </div>
           <p class="text-sm text-neutral-600 leading-relaxed max-w-xs">
-            Transforming beauty through personalized treatments and expert care. Your journey to confidence
-            starts here.
+            Enhancing Beauty with Perfection
           </p>
         </div>
 
@@ -71,7 +70,7 @@
       </div>
 
       <!-- Services -->
-      <div>
+      <!-- <div>
         <h3 class="text-sm font-semibold tracking-[0.16em] text-neutral-800 mb-6 uppercase">Treatments</h3>
         <div class="space-y-3">
           <a routerLink="/treatment"
@@ -85,7 +84,7 @@
           <a routerLink="/treatment" class="block text-sm text-neutral-600 hover:text-neutral-900 transition-colors">Fat
             Dissolving</a>
         </div>
-      </div>
+      </div> -->
 
       <!-- Newsletter & Social -->
       <div>
@@ -174,29 +173,67 @@
     </div>
   </div>
 
-  <!-- Bottom Footer -->
-  <div class="border-t border-neutral-200 bg-neutral-800">
-    <div class="mx-auto max-w-full px-6 py-6">
-      <div class="flex flex-1 flex-col md:flex-row justify-between items-center gap-4">
-        <!-- Copyright -->
-        <div class="flex flex-col sm:flex-row items-center gap-4 text-sm text-neutral-400">
-          <span>&copy; 2025 The Girls Room. All Rights Reserved.</span>
-          <div class="flex gap-4">
-            <a routerLink="/privacy-policy" class="hover:text-white transition-colors cursor-pointer">Privacy Policy</a>
-            <a routerLink="/terms-and-conditions" class="hover:text-white transition-colors cursor-pointer">Terms &
-              Conditions</a>
-            <a routerLink="/gdpr" class="hover:text-white transition-colors cursor-pointer">GDPR</a>
-          </div>
-        </div>
+ <!-- Bottom Footer (sub-section) -->
+<div class="border-t border-neutral-800 bg-neutral-900">
+  <div class="mx-auto max-w-7xl px-6 py-6">
+    <div class="flex flex-1 flex-col md:flex-row items-center justify-between gap-4">
 
-        <!-- Payments strip with reserved box -->
-        <div class="flex items-center flex-1 justify-start md:justify-end gap-1 md:gap-3 md:mr-28">
-          <div class="h-12 w-[360px] sm:w-[420px]">
-            <img src="/assets/hs32.png" alt="Accepted payment methods" class="h-full w-full object-contain" width="420"
-              height="48" loading="lazy" decoding="async" />
-          </div>
-        </div>
-      </div>
+      <!-- Copyright + legal -->
+<div class="flex flex-col sm:flex-row items-center gap-3 text-sm text-neutral-400">
+  <span>© <span class="cl-font">2025</span> The Girls Room • All rights reserved.</span>
+
+ <nav aria-label="Legal links" class="flex items-center text-neutral-400">
+  <a
+    routerLink="/privacy-policy"
+    class="ml-3 pl-3 border-l border-neutral-600/50 px-0 leading-6
+           hover:text-white focus:outline-none focus:ring-2 focus:ring-white/30"
+  >
+    Privacy Policy
+  </a>
+
+  <a
+    routerLink="/terms-and-conditions"
+    class="ml-3 pl-3 border-l border-neutral-600/50 leading-6
+           hover:text-white focus:outline-none focus:ring-2 focus:ring-white/30"
+  >
+    Terms &amp; Conditions
+  </a>
+
+  <a
+    routerLink="/gdpr"
+    class="ml-3 pl-3 border-l border-neutral-600/50 leading-6
+           hover:text-white focus:outline-none focus:ring-2 focus:ring-white/30"
+  >
+    GDPR
+  </a>
+</nav>
+
+</div>
+
+
+      <!-- Payments strip (reserved size to avoid CLS) -->
+      <figure class="flex items-center justify-center h-12 w-[360px] sm:w-[420px] md:ml-auto">
+        <img
+          src="/assets/hs32.png"
+          alt="Accepted payment methods: Clearpay, Visa, Mastercard, Amex, PayPal, JCB"
+          class="h-full w-full object-contain"
+          width="420" height="48"
+          loading="lazy" decoding="async" />
+      </figure>
+    </div>
+
+    <!-- Credit line -->
+    <div class="mt-2">
+      <p class="text-xs text-neutral-500">
+        Designed &amp; Developed by
+        <a href="https://dmsprism.com" target="_blank" rel="noopener"
+           class="font-medium text-neutral-300 underline underline-offset-4 decoration-neutral-500/40
+                  hover:text-white hover:decoration-white transition">
+          Dmsprism
+        </a>
+      </p>
     </div>
   </div>
+</div>
+
 </section>
