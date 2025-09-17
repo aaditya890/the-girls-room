@@ -237,12 +237,11 @@ export class PricingComponent {
     const shortTitles: { [key: string]: string } = {
       "HydraFacial Treatments": "HydraFacial",
       "Face and Neck Treatments": "Face & Neck",
-      "Upper Body Treatments": "Upper Body",
       "Laser hair removal": "Laser Hair Removal",
       "Body Wax": "Body Wax",
-      "Anti-Wrinkle": "Injectables",
-      "Dermal Fillers": "Fillers",
-      Facials: "Facials",
+      "Anti-Wrinkle": "Anti-Wrinkle",
+      "Dermal Fillers": "Dermal Fillers",
+      "Facials": "Facials",
     }
     return shortTitles[title] || title
   }
