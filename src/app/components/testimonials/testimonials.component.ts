@@ -167,6 +167,24 @@ certificates: Certificate[] = [
     institution: "The Vogue Academy",
     image: "assets/certificates/nw4.webp",
     year: "2024",
+  },
+   {
+    id: 12,
+    title: "Hydra-Facial Course",
+    description: "Successfully completed the Hydra-facial training course.",
+    recipient: "Angela Francis",
+    institution: "My MeraKi Clinic & Academy",
+    image: "assets/certificates/nv6.jpg",
+    year: "2025",
+  },
+  {
+    id: 13,
+    title: "Facial Course",
+    description: "Successfully completed the facial training course.",
+    recipient: "Angela Francis",
+    institution: "My MeraKi Clinic & Academy",
+    image: "assets/certificates/nv5.jpg",
+    year: "2025",
   }
 ];
 

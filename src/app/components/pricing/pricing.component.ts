@@ -84,14 +84,33 @@ export class PricingComponent {
       ],
     },
     {
-      title: "Facials",
+      title: "Hydra Facials",
       icon: "assets/Logo/pricing-page-icons/facials.webp",
       services: [
-        { name: "Dermaplaning", price: "£50.00", duration: "120 min" },
+        // Existing
+        { name: "Dermaplaning", price: "£50.00", duration: "120 mins" },
         { name: "Facial - Micro-Needling", price: "£80.00", duration: "30-40 mins" },
         { name: "Girls glow", price: "£50.00", duration: "30 mins" },
-        { name: "Semi-Permanent Makeup - Hydra Gloss Lip", price: "£80", duration: "120 min" },
+        { name: "Semi-Permanent Makeup - Hydra Gloss Lip", price: "£80.00", duration: "120 mins" },
+
+        // From Excel Sheet
+        { name: "Led Light Therapy", duration: "25 mins", price: "£35" },
+        { name: "Lip Perk / Eye Perk (Add-On)", duration: "15 mins", price: "£35" },
+        { name: "Face + Neck + Décolletage HydraFacial", duration: "75 mins", price: "£300" },
+        { name: "Face and Neck HydraFacial", duration: "60 mins", price: "£230" },
+        { name: "Glass Anti-Wrinkle HydraFacial", duration: "60 mins", price: "£250" },
+        { name: "Express HydraFacial (Quick Cleanse and Hydrate)", duration: "30 mins", price: "£90" },
+        { name: "Platinum HydraFacial (LED + Booster + Lymph)", duration: "60 mins", price: "£200" },
+        { name: "Deluxe HydraFacial (with Boosters)", duration: "50 mins", price: "£150" },
+        { name: "Signature HydraFacial", duration: "45 mins", price: "£135" },
+        { name: "HydraFacial Non-Machine", duration: "60 mins", price: "£120" },
+        { name: "Luxury Facial", duration: "90 mins", price: "£100" },
+        { name: "Anti-Ageing Facial", duration: "75 mins", price: "£85" },
+        { name: "Hydrating Facial", duration: "60 mins", price: "£70" },
+        { name: "Deep Cleansing Facial", duration: "45 mins", price: "£60" },
+        { name: "Express Facial", duration: "30 mins", price: "£45" },
       ],
+
     },
     {
       title: "Laser Hair Removal - Face & Neck",
