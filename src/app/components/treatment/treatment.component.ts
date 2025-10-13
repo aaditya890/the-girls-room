@@ -16,7 +16,6 @@ type Treatment = {
   sessions: string
 }
 
-
 type AfterCareData = {
   url: string,
   title: string,
@@ -30,6 +29,7 @@ type AfterCareData = {
   templateUrl: "./treatment.component.html",
   styleUrls: ["./treatment.component.scss"],
 })
+
 export class TreatmentComponent {
   heroUrl = "assets/images/treatments-hero.jpg"
   selectedTreatment: any
@@ -307,8 +307,7 @@ The treatment removes hair from the root, resulting in slower regrowth and progr
 
   ]
 
-
- // Split treatments: first 5 for top row, last 5 for bottom row
+  // Split treatments: first 5 for top row, last 5 for bottom row
   topRowTreatments: Treatment[] = []
   bottomRowTreatments: Treatment[] = []
 
@@ -330,7 +329,7 @@ The treatment removes hair from the root, resulting in slower regrowth and progr
     }
   }
 
-   private startAnimation() {
+  private startAnimation() {
     const topSlider = document.querySelector(".top-slider") as HTMLElement;
     const bottomSlider = document.querySelector(".bottom-slider") as HTMLElement;
     if (!topSlider || !bottomSlider) return;
