@@ -18,8 +18,8 @@ export class ContactUsComponent {
   // Contact info
   contactEmail = 'support@thegirlsroomlondon.com';
   basedIn = 'East London Anti-wrinkle and Dermal filler, lemon bottle';
-  phone = '02046174666';
-  whatsappNumber = '02046174666';
+  phone = '447878350664';
+  whatsappNumber = '447878350664';
   para = "For any inquiries or assistance, reach us at the Girl's Room dedicated customer support. Email us using the form below, or call us directly.";
 
   copiedEmail = false;
