@@ -193,30 +193,30 @@ Multiple sessions may be required depending on the area being treated and the am
       results: "4-6 weeks",
       sessions: "2-4 treatments",
     },
-    {
-      title: "Waxing",
-      slug: "waxing",
-      image: "assets/service-images/waxing.webp",
-      summary:
-        "Professional hair removal using warm wax to extract hair from the root. Leaves skin smooth and hair-free for up to four weeks.",
-      content: `Our professional waxing services provide effective hair removal using high-quality warm wax formulations. We offer comprehensive waxing treatments for all areas of the body, from facial hair to full body services.
+//     {
+//       title: "Waxing",
+//       slug: "waxing",
+//       image: "assets/service-images/waxing.webp",
+//       summary:
+//         "Professional hair removal using warm wax to extract hair from the root. Leaves skin smooth and hair-free for up to four weeks.",
+//       content: `Our professional waxing services provide effective hair removal using high-quality warm wax formulations. We offer comprehensive waxing treatments for all areas of the body, from facial hair to full body services.
 
-Our experienced technicians use gentle techniques to minimize discomfort while ensuring thorough hair removal. We maintain the highest standards of hygiene and use premium wax products suitable for all skin types, including sensitive skin.
+// Our experienced technicians use gentle techniques to minimize discomfort while ensuring thorough hair removal. We maintain the highest standards of hygiene and use premium wax products suitable for all skin types, including sensitive skin.
 
-The treatment removes hair from the root, resulting in slower regrowth and progressively finer hair texture with regular sessions. Our comfortable treatment rooms and professional approach ensure a pleasant experience every time.`,
-      benefits: [
-        "Long-lasting hair removal",
-        "Smoother skin texture",
-        "Reduced hair regrowth over time",
-        "Professional hygiene standards",
-        "Suitable for all body areas",
-        "Cost-effective hair removal",
-      ],
-      duration: "15-120 minutes",
-      downtime: "None",
-      results: "Immediate",
-      sessions: "Every 4-6 weeks",
-    },
+// The treatment removes hair from the root, resulting in slower regrowth and progressively finer hair texture with regular sessions. Our comfortable treatment rooms and professional approach ensure a pleasant experience every time.`,
+//       benefits: [
+//         "Long-lasting hair removal",
+//         "Smoother skin texture",
+//         "Reduced hair regrowth over time",
+//         "Professional hygiene standards",
+//         "Suitable for all body areas",
+//         "Cost-effective hair removal",
+//       ],
+//       duration: "15-120 minutes",
+//       downtime: "None",
+//       results: "Immediate",
+//       sessions: "Every 4-6 weeks",
+//     },
     {
       title: "Laser Hair Removal",
       slug: "laser-hair-removal",
