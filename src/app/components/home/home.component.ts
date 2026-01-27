@@ -370,7 +370,7 @@ export class HomeComponent {
 
     { id: 111, question: 'Should I stop certain skincare before skin needling treatment?', answer: 'Discontinue retinol, AHAs and BHAs 3–5 days before.', category: 'Before & After', isExpanded: false },
     { id: 112, question: 'Can I wear makeup to the skin needling appointment?', answer: 'Arrive with clean skin; makeup will be removed before numbing cream is applied.', category: 'Before & After', isExpanded: false },
-    { id: 113, question: 'Can I have waxing or laser close to skin needling treatment?', answer: 'Avoid for at least a week before and after.', category: 'Before & After', isExpanded: false },
+    // { id: 113, question: 'Can I have waxing or laser close to skin needling treatment?', answer: 'Avoid for at least a week before and after.', category: 'Before & After', isExpanded: false },
     { id: 114, question: 'What should I avoid immediately after skin needling?', answer: 'Skip hot showers, saunas, swimming and heavy exercise for 24–48 hours.', category: 'Before & After', isExpanded: false },
     { id: 115, question: 'When can I restart active skincare like retinol after skin needling?', answer: 'Wait 5–7 days until the skin has fully recovered.', category: 'Before & After', isExpanded: false },
     { id: 116, question: 'Can I apply makeup after skin needling?', answer: 'Wait at least 24 hours; use only mineral makeup if necessary.', category: 'Before & After', isExpanded: false },
@@ -380,7 +380,7 @@ export class HomeComponent {
     { id: 120, question: 'When can I have the next skin needling session?', answer: 'After 4–6 weeks to allow full healing.', category: 'Before & After', isExpanded: false },
 
     { id: 121, question: 'How should I prepare before laser hair removal treatment?', answer: 'Shave the treatment area 24 hours beforehand.', category: 'Before & After', isExpanded: false },
-    { id: 122, question: 'Can I wax or pluck before laser hair removal sessions?', answer: 'No—avoid waxing, plucking or epilating for at least 4 weeks before treatment.', category: 'Before & After', isExpanded: false },
+    // { id: 122, question: 'Can I wax or pluck before laser hair removal sessions?', answer: 'No—avoid waxing, plucking or epilating for at least 4 weeks before treatment.', category: 'Before & After', isExpanded: false },
     { id: 123, question: 'Can I use self-tan or sunbathe before or after laser hair removal?', answer: 'Avoid sunbeds and self-tan for 2 weeks before and after each session.', category: 'Before & After', isExpanded: false },
   ];
 
