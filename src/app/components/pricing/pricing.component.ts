@@ -1,6 +1,8 @@
 import { Component } from "@angular/core"
 import { CommonModule } from "@angular/common"
 import { ContactUsComponent } from "../contact-us/contact-us.component";
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+
 
 interface Service {
   name: string
@@ -31,6 +33,7 @@ interface Package {
   imports: [CommonModule, ContactUsComponent],
   templateUrl: "./pricing.component.html",
   styleUrls: [], // Remove SCSS file reference
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class PricingComponent {
   activeCategory = -1 // Start with "All" selected
@@ -268,4 +271,8 @@ export class PricingComponent {
   get totalServices(): number {
     return this.serviceCategories ? this.serviceCategories.reduce((sum, cat) => sum + cat.services.length, 0) : 0
   }
+
+  getNumericPrice(price: string): string {
+  return price.replace(/[^\d.]/g, '');
+}
 }

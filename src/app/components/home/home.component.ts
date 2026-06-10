@@ -384,7 +384,6 @@ export class HomeComponent {
     { id: 123, question: 'Can I use self-tan or sunbathe before or after laser hair removal?', answer: 'Avoid sunbeds and self-tan for 2 weeks before and after each session.', category: 'Before & After', isExpanded: false },
   ];
 
-
   setActiveCategory(category: string) {
     this.activeCategory = category
     // Close all expanded FAQs when switching categories
