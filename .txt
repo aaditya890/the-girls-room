@@ -3,6 +3,9 @@ faqs me a part to better vision
 pricing tab
 
 
+thegirlsroomlondon@gmail.com
+Sideways1@
+
 
 <!-- Reel/Video Showcase Section -->
 <section class="py-2 md:py-10 mb-6 overflow-x-clip max-auto max-w-full">

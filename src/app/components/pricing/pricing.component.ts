@@ -48,8 +48,8 @@ export class PricingComponent {
         { name: "Eye brow lift", price: "£100", duration: "20 min" },
         { name: "Lip Flip", price: "£90", duration: "20 min" },
         { name: "Smokers lines", price: "£120", duration: "20 min" },
-        { name: "Two areas", price: "£180", duration: "30 min" },
-        { name: "Three areas", price: "£210", duration: "30 min" },
+        { name: "Two areas", price: "£100", duration: "30 min" },
+        { name: "Three areas", price: "£160", duration: "30 min" },
         { name: "Jawline slimmer", price: "£250", duration: "40 min each" },
         { name: "Neck lift", price: "£200", duration: "41 min each" },
         { name: "Arm pits", price: "£200", duration: "42 min each" },
@@ -161,34 +161,43 @@ export class PricingComponent {
         { name: "Female Full body excluding back & shoulders", price: "£260", duration: "60 min" },
       ],
     },
-    // {
-    //   title: "Waxing Services",
-    //   icon: "assets/Logo/pricing-page-icons/body-wax.webp",
-    //   services: [
-    //     { name: "Ladies' Waxing - Hollywood (Hot Wax)", price: "£35.00", duration: "60 min" },
-    //     { name: "Ladies' Waxing - Brazilian (Hot Wax)", price: "£30.00", duration: "50 min" },
-    //     { name: "Ladies' Waxing - Bikini (Hot Wax)", price: "£10.00", duration: "10 min" },
-    //     { name: "Ladies' Waxing - Extended Bikini (G-String) (Hot Wax)", price: "£15.00", duration: "15 min" },
-    //     { name: "Ladies' Waxing - Leg Half", price: "£15.00", duration: "20 min" },
-    //     { name: "Ladies' Waxing - Leg Full", price: "£20.00", duration: "40 min" },
-    //     { name: "Ladies' Waxing - Half Arm", price: "£8.00", duration: "15 min" },
-    //     { name: "Ladies' Waxing - Full Arm", price: "£16.00", duration: "20 min" },
-    //     { name: "Ladies' Waxing - Full Body", price: "£120.00", duration: "120 min" },
-    //     { name: "Ladies' Waxing - Buttocks", price: "£10.00", duration: "20 min" },
-    //     { name: "Ladies' Waxing - Underarm", price: "£7.00", duration: "15 min" },
-    //     { name: "Ladies' Waxing - Face Upper Lip", price: "£5.00", duration: "10 min" },
-    //     { name: "Ladies' Waxing - Face Lower Lip", price: "£5.00", duration: "10 min" },
-    //     { name: "Ladies' Waxing - Face Chin", price: "£7.00", duration: "10 min" },
-    //     { name: "Ladies' Waxing - Face Sides", price: "£7.00", duration: "10 min" },
-    //     { name: "Ladies' Waxing - Face Neck", price: "£8.00", duration: "10 min" },
-    //     { name: "Ladies' Waxing - Face Eyebrows", price: "£10.00", duration: "10 min" },
-    //     { name: "Ladies' Waxing - Face Lip & Chin", price: "£12.00", duration: "15 min" },
-    //     { name: "Ladies' Waxing - Full Face", price: "£20.00", duration: "30 min" },
-    //     { name: "Ladies' Waxing - Upper Body - Chest", price: "£10.00", duration: "30 min" },
-    //     { name: "Ladies' Waxing - Upper Body - Stomach", price: "£10.00", duration: "30 min" },
-    //     { name: "Ladies' Waxing - Upper Body - Back", price: "£15.00", duration: "35 min" },
-    //   ],
-    // },
+    {
+      title: "PRP Treatments",
+      icon: "assets/Logo/pricing-page-icons/prp.webp",
+      services: [
+        // PRP Hair Restoration
+        { name: "PRP Hair Restoration - Single Session", price: "£200", duration: "" },
+        { name: "PRP Hair Restoration - Course of 3 Sessions", price: "£500", duration: "" },
+        { name: "PRP Hair Restoration - Course of 6 Sessions", price: "£1000", duration: "" },
+
+        // PRP Skin Rejuvenation
+        { name: "PRP Skin Rejuvenation - Full Face", price: "£180", duration: "" },
+        { name: "PRP Skin Rejuvenation - Full Face & Neck", price: "£220", duration: "" },
+        { name: "PRP Skin Rejuvenation - Full Face, Neck & Décolletage", price: "£280", duration: "" },
+        { name: "PRP Skin Rejuvenation - Course of 3 Sessions", price: "£500", duration: "" },
+
+        // PRP Under Eyes
+        { name: "PRP Under Eyes - Single Session", price: "£120", duration: "" },
+        { name: "PRP Under Eyes - Course of 3 Sessions", price: "£330", duration: "" },
+
+        // PRF Under Eyes
+        { name: "PRF Under Eyes - Single Session", price: "£150", duration: "" },
+        { name: "PRF Under Eyes - Course of 3 Sessions", price: "£400", duration: "" },
+
+        // Vampire Facial
+        { name: "Vampire Facial - Single Session", price: "£220", duration: "" },
+        { name: "Vampire Facial - Course of 3 Sessions", price: "£600", duration: "" },
+
+        // Skin Boosters
+        { name: "Lumi Eyes - 1 Session", price: "£120", duration: "" },
+        { name: "Lumi Eyes Pro - 1 Session", price: "£150", duration: "" },
+        { name: "Lumi Pro Full Face", price: "£160", duration: "" },
+        { name: "Lumi Pro Face And Neck", price: "£220", duration: "" },
+        { name: "Lumi Eyes - 3 Sessions", price: "£300", duration: "" },
+        { name: "Lumi Eyes Pro - 3 Sessions", price: "£400", duration: "" },
+      ]
+    },
+
   ]
 
   laserPackages: PackageCategory[] = [
@@ -273,6 +282,6 @@ export class PricingComponent {
   }
 
   getNumericPrice(price: string): string {
-  return price.replace(/[^\d.]/g, '');
-}
+    return price.replace(/[^\d.]/g, '');
+  }
 }
